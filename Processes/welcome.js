@@ -23,7 +23,7 @@ ${metadata.desc}
           image: await getBuffer(ppgroup),
           mentions: [num],
           caption: mikutext,
-          footer: `${global.BotName}`,
+          footer: `Miku Nakano`,
           headerType: 4,
         };
       } else if (anu.action == "remove") {
@@ -37,7 +37,7 @@ I hope you will come back soon, but we are not going to miss you though!
           image: await getBuffer(ppuser),
           mentions: [num],
           caption: mikutext,
-          footer: `${global.BotName}`,
+          footer: `Miku Nakano`,
           headerType: 4,
         };
       }
