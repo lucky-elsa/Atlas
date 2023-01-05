@@ -13,9 +13,12 @@ module.exports = async (Miku, anu) => {
       if (anu.action == "add") {
         let WAuserName = num;
         mikutext = `
-Hello @${WAuserName.split("@")[0]},
-I am *Miku Nakano*, Welcome to ${metadata.subject}.
-*Group Description:*
+ʜᴇʟʟᴏ @${WAuserName.split("@")[0]},
+
+ɪ ᴀᴍ *ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*, ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ${metadata.subject}.
+*ɢʀᴏᴜᴘ ᴅᴇѕᴄʀɪᴘᴛɪᴏɴ:*
+
+
 ${metadata.desc}
 `;
 
@@ -29,8 +32,9 @@ ${metadata.desc}
       } else if (anu.action == "remove") {
         let WAuserName = num;
         mikutext = `
-Sayonara 👋, @${WAuserName.split("@")[0]},
-I hope you will come back soon, but we are not going to miss you though!
+@${WAuserName.split("@")[0]}ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴘ,
+@${WAuserName.split("@")[0]}
+ᴛʜɪɴᴋѕ ᴡᴇ ᴀʀᴇ ɢᴏɪɴɢ ᴛᴏ ᴍɪѕѕ💔😂 ʜɪᴍ/ʜᴇʀ.
 `;
 
         let buttonMessage = {
