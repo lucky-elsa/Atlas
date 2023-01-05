@@ -1,6 +1,6 @@
 module.exports = async (Miku, anu) => {
   try {
-    let metadata = await kiku.groupMetadata(anu.id);
+    let metadata = await Miku.groupMetadata(anu.id);
     let participants = m.participants;
 
     for (let num of participants) {
