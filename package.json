@@ -74,7 +74,8 @@
     "rumus-bdr": "^1.0.0",
     "util": "^0.12.5",
     "wa-sticker-formatter": "^4.3.2",
-    "yargs": "^17.6.2"
+    "yargs": "^17.6.2",
+    "youtube-yts": "^2.0.0"
   },
   "devDependencies": {
     "@hapi/boom": "^10.0.0",

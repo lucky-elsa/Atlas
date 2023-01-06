@@ -16,7 +16,7 @@ const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
 
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`);
+const { state, saveState } = useSingleFileAuthState(`./session.json`);
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
