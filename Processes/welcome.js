@@ -4,7 +4,8 @@ module.exports = async (Miku, anu) => {
       let participants = m.participants;
   
       for (let num of participants) {
-        try {
+        try
+         {
           ppuser = await Miku.profilePictureUrl(num, "image");
         } catch {
           ppuser = "https://wallpapercave.com/wp/wp10753770.jpg";
