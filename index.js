@@ -6,7 +6,6 @@ const { default: MikuConnect, DisconnectReason, fetchLatestBaileysVersion, useMu
 
 const fs = require("fs");
 const chalk = require("chalk");
-//import chalk from 'chalk';
 const pino = require("pino");
 const yargs = require("yargs");
 const path = require("path");
@@ -21,11 +20,14 @@ const { state, saveCreds } = useMultiFileAuthState(`./session.json`);
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
-//const Commands = new Collection()
+const { Collection, Simple } = require("./Core.js")
+const Commands = new Collection()
+const { color } = require('./lib/color');
+//const { Collection } = require("mongoose");
 
 
 const readCommands = () => {
-    let dir = path.join(__dirname, "./Commands")
+    let dir = path.join(__dirname, "./Commands/")
     let dirs = fs.readdirSync(dir)
     let cmdlist = {}
     try {

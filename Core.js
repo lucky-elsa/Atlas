@@ -1,22 +1,23 @@
 require("./index.js");
 const { generateWAMessage, areJidsSameUser, proto } = require("@adiwajshing/baileys")
-const { Simple, Collection, Function } = require("./lib")
+const { Simple, MikuCmd, Function } = require("./lib")
 const { isUrl, isNumber } = Function
 const Func = require("./lib")
 const fs = require("fs")
 const moment = require("moment-timezone")
 const chalk = require("chalk")
+const { color } = require('./lib/color')
 //const { correct } = require("./lib/Correct")
 const { QuickDB } = require("quick.db");
 const { Console } = require("console");
 
 const prefix = global.prefa;
 
-global.db = new QuickDB();
+//global.db = new QuickDB();
 global.Levels = require('discord-xp')
 Levels.setURL("mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority")
 
-console.log(color('\nDatabase has been connected Successfully !', 'aqua'))
+console.log(color('\nDatabase has been connected Successfully !', 'aqua'));
 
 //const CurrencySystem = require("currency-system");
 //global.cs = new CurrencySystem;
@@ -108,7 +109,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             await Miku.sendMessage(m.from, reactm)
         }
         if (!cool.has(m.sender)) {
-            cool.set(m.sender, new Collection());
+            cool.set(m.sender, new MikuCmd());
         }
         const now = Date.now();
         const timestamps = cool.get(m.sender);
