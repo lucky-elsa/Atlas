@@ -92,7 +92,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
                 { buttonId: `${prefix}help`, buttonText: { displayText: `help` }, type: 1 },]
             let buth = {
                 text: `*Command Info*\n\n${data.join("\n")}`,
-                footer: "Eternity",
+                footer: "Miku-MD",
                 buttons: buttonss,
                 headerType: 1
             }
