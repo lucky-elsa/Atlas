@@ -11,7 +11,8 @@
 
 
 # Patch note:
-- Base is around 70% ready!
+- Base is around 40% ready!
+- I have fucked up the code in rush  😥😥 !! Wait for me to fix it !! Don't do any changes now !! Code fucked up !! 
 
 
 <br>
