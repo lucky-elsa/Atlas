@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/FantoX001/Miku-MD#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "^5.0.0",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.0.22-alpha.0",
     "@develoka/angka-terbilang-js": "^1.4.2",
@@ -77,6 +77,7 @@
     "util": "^0.12.5",
     "wa-sticker-formatter": "^4.3.2",
     "yargs": "^17.6.2",
+    "yarn": "^1.22.19",
     "youtube-yts": "^2.0.0"
   },
   "devDependencies": {

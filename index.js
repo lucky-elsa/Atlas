@@ -1,6 +1,6 @@
 require("./config.js")
 
-const { default: MikuConnect, DisconnectReason, fetchLatestBaileysVersion, useMultiFileAuthState,
+const { default: MikuConnect, DisconnectReason, delay, fetchLatestBaileysVersion, useMultiFileAuthState,
     generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID,
     downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys");
 
@@ -9,25 +9,28 @@ const chalk = require("chalk");
 const pino = require("pino");
 const yargs = require("yargs");
 const path = require("path");
+const figlet = require('figlet');
 const FileType = require('file-type');
 const { Boom } = require("@hapi/boom");
 const CFonts = require('cfonts');
 const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
-const { state, saveCreds } = useMultiFileAuthState(`./session.json`);
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
-const { Collection, Simple } = require("./Core.js")
+const { Collection, Simple} = require("./lib");
+const { serialize, WAConnection } = Simple;
 const Commands = new Collection()
 const { color } = require('./lib/color');
-//const { Collection } = require("mongoose");
+Commands.prefix = prefa
+///const { Collection } = require("mongoose");
 
 
 const readCommands = () => {
-    let dir = path.join(__dirname, "./Commands/")
+    let dir = path.join(__dirname, "./Commands")
     let dirs = fs.readdirSync(dir)
     let cmdlist = {}
     try {
@@ -68,6 +71,7 @@ async function startMiku() {
 
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
+    const { state, saveCreds } = await useMultiFileAuthState(`./session.json`);
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -110,9 +114,7 @@ async function startMiku() {
         if (!m.message) return
         if (m.key && m.key.remoteJid == "status@broadcast") return
         if (m.key.id.startsWith("BAE5") && m.key.id.length == 16) return
-
-        if (config.options.autoRead) await Miku.readMessages([m.key])
-        require("./Processes/chat.js")(Miku, m, Commands, chatUpdate)
+        require("./Core.js")(Miku, m, Commands, chatUpdate)
     })
 
     /** Send Button 5 Images
@@ -383,7 +385,7 @@ async function startMiku() {
 
 startMiku()
 
-/*
+
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
 	fs.unwatchFile(file)
@@ -391,4 +393,3 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
-*/
