@@ -72,7 +72,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             console.log("" + "\n" + chalk.black(chalk.bgWhite('[ PRIV ]')), chalk.black(chalk.bgRedBright('PRIVATE CHATT')) + "\n" + chalk.black(chalk.bgWhite('[ TIME ]')), chalk.black(chalk.bgRedBright(new Date)) + "\n" + chalk.black(chalk.bgWhite('[ FROM ]')), chalk.black(chalk.bgRedBright(m.pushName + " @" + m.sender.split('@')[0])) + "\n" + chalk.black(chalk.bgWhite('[ BODY ]')), chalk.black(chalk.bgRedBright(body || type)) + "\n" + "")
         }
         if (isGroup && mods.includes(`${m.from}`)) {
-            if (body.includes("://chat.whatsapp.com/")) {
+            if (body.includes("https://chat.whatsapp.com/")) {
                 if (isAdmin) return
                 m.reply("*Group Link Detected!!!*");
                 await Miku.groupParticipantsUpdate(m.from, [m.sender], 'remove')
