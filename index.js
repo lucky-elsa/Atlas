@@ -24,7 +24,7 @@ const welcome = require('./Processes/welcome.js');
 const { Collection, Simple} = require("./lib");
 const { serialize, WAConnection } = Simple;
 const Commands = new Collection()
-const { color } = require('./lib/color.js');
+const { color } = require('./lib/color');
 Commands.prefix = prefa
 ///const { Collection } = require("mongoose");
 
