@@ -1,6 +1,6 @@
 require("./config.js")
 
-const { default: MikuConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion,
+const { default: MikuConnect, DisconnectReason, fetchLatestBaileysVersion, useMultiFileAuthState,
     generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID,
     downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys");
 
@@ -16,15 +16,18 @@ const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
 
-const { state, saveState } = useSingleFileAuthState(`./session.json`);
+const { state, saveCreds } = useMultiFileAuthState(`./session.json`);
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
+const { Collection, Simple } = require("./Core.js")
 const Commands = new Collection()
+const { color } = require('./lib/color');
+//const { Collection } = require("mongoose");
 
 
 const readCommands = () => {
-    let dir = path.join(__dirname, "./Commands")
+    let dir = path.join(__dirname, "./Commands/")
     let dirs = fs.readdirSync(dir)
     let cmdlist = {}
     try {
@@ -76,7 +79,7 @@ async function startMiku() {
     store.bind(Miku.ev)
 
     Miku.public = true
-    Miku.ev.on('creds.update', saveState)
+    Miku.ev.on('creds.update', saveCreds)
     Miku.serializeM = (m) => smsg(Miku, m, store)
 
     Miku.ev.on('connection.update', async (update) => {
