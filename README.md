@@ -1,6 +1,11 @@
 
-# Targets in this project:
+# Help me fix it base is 90% rady. This is the last error i am getting.
+![Screenshot (128)](https://user-images.githubusercontent.com/96835724/211188230-4b45a400-3923-45b0-8213-ea44f167e989.png)
+- Tap on this image. You can open and zoom it.
+- Probably the error is in `ore.js` o `ndex.js`!!
+<br>
 
+# Targets in this project:
 - No copy pasting from other bots.
 - No source code encryption.
 - Open source MIT licence.
@@ -9,10 +14,6 @@
 - Do not rush. We will make it slowly.
 <br>
 
-
-# Patch note:
-- Base is around 40% ready!
-- I have fucked up the code in rush  😥😥 !! Wait for me to fix it !! Don't do any changes now !! Code fucked up !! 
 
 
 <br>
