@@ -1,4 +1,4 @@
-global.prefa = '-';
+global.prefa = ['-'];
 global.owner = ['918101187835']
 
 

@@ -18,6 +18,7 @@ const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
+
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
@@ -71,7 +72,7 @@ async function startMiku() {
 
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
-    const { state, saveCreds } = await useMultiFileAuthState(`./session.json`);
+    const { state, saveCreds } = await useMultiFileAuthState(`./session`);
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
