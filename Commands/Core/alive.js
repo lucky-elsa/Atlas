@@ -4,7 +4,7 @@ module.exports = {
     desc: "Tells hello",
     cool:3,
     react: "🍁",
-    category: "General",
+    category: "Core",
     start: async(Miku, m,{pushName}) => {
         await Miku.sendMessage(m.from,{text:`Hello ${pushName}`},{quoted:m})
     }
