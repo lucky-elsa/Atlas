@@ -1,10 +1,4 @@
 
-# Help me fix it base is 90% ready. This is the last error i am getting.
-![Screenshot (128)](https://user-images.githubusercontent.com/96835724/211188230-4b45a400-3923-45b0-8213-ea44f167e989.png)
-- Tap on this image. You can open and zoom it.
-- Probably the error is in `core.js` o `index.js`!!
-<br>
-
 # Targets in this project:
 - No copy pasting from other bots.
 - No source code encryption.
