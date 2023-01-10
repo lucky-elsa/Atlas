@@ -1,5 +1,5 @@
 global.prefa = '-'; // Prefix
-global.owner = '918101187835';
+global.owner = ['918101187835'];
 
 
 global.mess = {
