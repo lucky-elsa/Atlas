@@ -1,6 +1,6 @@
 require("./index.js");
 const { generateWAMessage, areJidsSameUser, proto } = require("@adiwajshing/baileys")
-const { Simple, Collections, Function } = require("./lib")
+const { Simple, Collection, Function } = require("./lib")
 const { isUrl, isNumber } = Function
 const Func = require("./lib")
 const fs = require("fs")
@@ -10,7 +10,7 @@ const { color } = require('./lib/color')
 //const { correct } = require("./lib/Correct")
 const { QuickDB } = require("quick.db");
 const { Console } = require("console");
-const cool=new Collections()
+const cool=new Collection()
 
 const prefix = global.prefa;
 
@@ -44,19 +44,19 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
         const groupAdmin = isGroup ? participants.filter(v => v.admin !== null).map(v => v.id) : []
         const isBotAdmin = isGroup ? groupAdmin.includes(Miku.user?.jid) : false
         const isAdmin = isGroup ? groupAdmin.includes(sender) : false
-        const isOwner = [Miku.user?.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(sender)
-        const isCreator = [botNumber, ...global.Owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+     //   const isOwner = [Miku.user?.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(sender)
+        //const isCreator = [botNumber, ...global.Owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 
         //////////Database\\\\\\\\\\\\\\\\
 
-        const _mods = await db.get('mods')
+      /*  const _mods = await db.get('mods')
         const mods = _mods || []
         const _ban= await db.get("ban")
         global.ban=_ban|| []
         const _nsfw=await db.get("nsfw")
         global.nsfw=_nsfw||[]
         let wel= await db.get("events")
-        global.wlc = wel || []
+        global.wlc = wel || []*/
 
         const isCmd = body.startsWith(prefix)
         const quoted = m.quoted ? m.quoted : m
@@ -87,18 +87,12 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
     }
        
         if (m.message) {
-            addBalance(m.sender, randomNomor(574), balance)
+          //  addBalance(m.sender, randomNomor(574), balance)
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
                     }
         
 
 
-        if (isGroup && mods.includes(`${m.from}`)) {
-            if (body.includes("https://chat.whatsapp.com/")) {
-                if (isAdmin) return m.reply("*GC link detected!* \n\n*Link sent by Admin!*");
-                await Miku.groupParticipantsUpdate(m.from, [m.sender], 'remove');
-            }
-        }
         if (cmd) {
             const randomXp = Math.floor(Math.random() * 3) + 1;//Random amont of XP until the number you want + 1
             const haslUp = await Levels.appendXp(m.sender, "bot", randomXp);
@@ -129,7 +123,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             await Miku.sendMessage(m.from, reactm)
         }
         if (!cool.has(m.sender)) {
-            cool.set(m.sender, new MikuCmd());
+            cool.set(m.sender, new Collection());
         }
         const now = Date.now();
         const timestamps = cool.get(m.sender);
@@ -157,7 +151,6 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             args,
             ar,
             flags,
-            mods,
             isAdmin,
             groupAdmin,
             text,
