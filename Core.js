@@ -1,6 +1,6 @@
 require("./index.js");
 const { generateWAMessage, areJidsSameUser, proto } = require("@adiwajshing/baileys")
-const { Simple, Collection, Function } = require("./lib")
+const { Simple, Collections, Function } = require("./lib")
 const { isUrl, isNumber } = Function
 const Func = require("./lib")
 const fs = require("fs")
@@ -10,7 +10,7 @@ const { color } = require('./lib/color')
 //const { correct } = require("./lib/Correct")
 const { QuickDB } = require("quick.db");
 const { Console } = require("console");
-const cool=new Collection()
+const cool=new Collections()
 
 const prefix = global.prefa;
 

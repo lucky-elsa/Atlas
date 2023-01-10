@@ -22,12 +22,12 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
-const { Collection, Simple} = require("./lib");
+const { Collections, Simple} = require("./lib");
 const { serialize, WAConnection } = Simple;
-const Commands = new Collection()
+const Commands = new Collections()
 const { color } = require('./lib/color');
 Commands.prefix = prefa
-///const { Collection } = require("mongoose");
+///const { Collections } = require("mongoose");
 
 
 const readCommands = () => {
