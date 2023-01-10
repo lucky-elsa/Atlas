@@ -22,12 +22,12 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
-const { Collections, Simple} = require("./lib");
+const { Collection, Simple} = require("./lib");
 const { serialize, WAConnection } = Simple;
-const Commands = new Collections()
+const Commands = new Collection()
 const { color } = require('./lib/color');
 Commands.prefix = prefa
-///const { Collections } = require("mongoose");
+///const { Collection } = require("mongoose");
 
 
 const readCommands = () => {
@@ -72,7 +72,7 @@ async function startMiku() {
 
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
-    const { state, saveCreds } = await useMultiFileAuthState(`./session`);
+    const { state, saveCreds } = await useMultiFileAuthState(`./session/tes.json`);
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -106,7 +106,7 @@ async function startMiku() {
     //Welcome messages
 
     Miku.ev.on("group-participants.update", async (m) => {
-        welcome(client, m);
+        
     });
 
     Miku.ev.on("messages.upsert", async (chatUpdate) => {
