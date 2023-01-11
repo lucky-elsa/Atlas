@@ -1,4 +1,5 @@
 require("./index.js");
+require("./config.js");
 const { generateWAMessage, areJidsSameUser, proto } = require("@adiwajshing/baileys")
 const { Simple, Collection, Function } = require("./lib")
 const { isUrl, isNumber } = Function
@@ -8,13 +9,30 @@ const moment = require("moment-timezone")
 const chalk = require("chalk")
 const { color } = require('./lib/color')
 //const { correct } = require("./lib/Correct")
-const { QuickDB } = require("quick.db");
+const { QuickDB,MySQLDriver } = require("quick.db");
 const { Console } = require("console");
 const cool=new Collection()
 
 const prefix = global.prefa;
 
-//global.db = new QuickDB();
+const db = new QuickDB();
+/*(async () => {
+    const mysqlDriver = new MySQLDriver({
+        host: "localhost:3306",
+        user: "root",
+        password: "74325252",
+        database: "miku_db",
+    });
+    await mysqlDriver.connect(); // connect to the database **this is important**
+
+    const db = new QuickDB({ driver: mysqlDriver });
+    // Now you can use quick.db as normal
+
+    await db.set("userInfo", { difficulty: "Easy" });
+    // -> { difficulty: 'Easy' }
+})();
+*/
+
 global.Levels = require('discord-xp')
 Levels.setURL("mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority")
 
@@ -42,14 +60,26 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
         const pushname = m.pushName //|| 'NO name'
         const participants = isGroup ? metadata.participants : [sender]
         const groupAdmin = isGroup ? participants.filter(v => v.admin !== null).map(v => v.id) : []
+        const botNumber = await Miku.decodeJid(Miku.user.id)
         const isBotAdmin = isGroup ? groupAdmin.includes(Miku.user?.jid) : false
         const isAdmin = isGroup ? groupAdmin.includes(sender) : false
-     //   const isOwner = [Miku.user?.jid, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(sender)
-        //const isCreator = [botNumber, ...global.Owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isOwner = global.owner.includes(m.sender)
 
-        //////////Database\\\\\\\\\\\\\\\\
+        //////////Database\\\\\\\\\\\\\\\\s
 
-      /*  const _mods = await db.get('mods')
+        await db.push("userInfo.mods", global.owner)
+        var mikuModsList = await db.get("userInfo.mods")
+        /*
+        if(mikuModsList.includes(m.sender.num)){
+            console.log("Miku is a mod");
+        }
+        else{
+            console.log("Miku is not a mod");
+        };
+
+        /*
+        const _mods = await db.get('mods')
         const mods = _mods || []
         const _ban= await db.get("ban")
         global.ban=_ban|| []
@@ -72,17 +102,17 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
         const cmd = commands.get(cmdName) || Array.from(commands.values()).find((v) => v.alias.find((x) => x.toLowerCase() == cmdName)) || ""
         const icmd = commands.get(cmdName) || Array.from(commands.values()).find((v) => v.alias.find((x) => x.toLowerCase() == cmdName))
         const mentionByTag = type == "extendedTextMessage" && m.message.extendedTextMessage.contextInfo != null ? m.message.extendedTextMessage.contextInfo.mentionedJid : []
-        if (body.startsWith(prefix) && !icmd) return Miku.sendMessage(m.from, { text: "Baka no such command" },{quoted:m})
+        //if (body.startsWith(prefix) && !icmd) return Miku.sendMessage(m.from, { text: "Baka no such command" },{quoted:m})
 
 
         const flags= args.filter((arg) => arg.startsWith('--'))
        if(body.startsWith(prefix)&&!icmd) {
-        var Mikupic = `https://wallpapercave.com/wp/wp10524580.jpg`;
+        //var Mikupic = `https://user-images.githubusercontent.com/105273285/211724702-a46f84a9-1f3d-42fd-bfa4-24baa8e5229d.mp4`;
         let mikutext =`No such command programmed *${pushname}* senpai! Type *${prefix}help* to get my full command list!` 
         Miku.sendMessage(m.from,{
-            image:{url:Mikupic}, 
-            caption:mikutext},
-            {quoted:m}
+            video:fs.readFileSync('./Assets/miku.mp4'),gifPlayback: true, 
+            caption:mikutext}, 
+            {quoted:m},
             )
     }
        
@@ -111,7 +141,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
                 buttons: buttonss,
                 headerType: 1
             }
-            return Miku.sendMessage(m.from, buttonmess, { quoted: m })
+            return Miku.sendMessage(m.from, buttonmess,  {react: "🍁", quoted: m ,  })
         }
         if (cmd.react) {
             const reactm = {

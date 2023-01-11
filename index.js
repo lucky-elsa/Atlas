@@ -118,6 +118,22 @@ async function startMiku() {
         require("./Core.js")(Miku, m, Commands, chatUpdate)
     })
 
+
+    Miku.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+    
+    Miku.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = Miku.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = { id, name: contact.notify }
+        }
+    })
+
     /** Send Button 5 Images
      *
      * @param {*} jid
