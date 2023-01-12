@@ -17,6 +17,7 @@ const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
+const { smsg, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 
 
 const prefix = global.prefa;

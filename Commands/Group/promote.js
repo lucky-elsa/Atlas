@@ -6,7 +6,7 @@ module.exports = {
   alias: ["prom"],
   desc: "Promote a member",
   category: "Group",
-  usage: "[promote @user]",
+  usage: "promote @user",
   react: "🍁",
   start: async (
     Miku,

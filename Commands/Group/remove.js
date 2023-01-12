@@ -6,7 +6,7 @@ module.exports = {
   alias: ["rem"],
   desc: "Remove a member from group",
   category: "Group",
-  usage: "[remove @user]",
+  usage: "remove @user",
   react: "🍁",
   start: async (
     Miku,

@@ -3,6 +3,7 @@ require("./config.js");
 const { generateWAMessage, areJidsSameUser, proto } = require("@adiwajshing/baileys")
 const { Simple, Collection, Function } = require("./lib")
 const { isUrl, isNumber } = Function
+const { smsg, formatp, tanggal, GIFBufferToVideoBuffer, formatDate, getTime, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const Func = require("./lib")
 const fs = require("fs")
 const moment = require("moment-timezone")

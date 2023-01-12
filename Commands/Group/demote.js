@@ -6,7 +6,7 @@ module.exports = {
   alias: ["dem"],
   desc: "Demote a member",
   category: "Group",
-  usage: "[demote @user]",
+  usage: "demote @user",
   react: "🍁",
   start: async (
     Miku,
