@@ -6,7 +6,8 @@ module.exports = {
   alias: ["prom"],
   desc: "Promote a member",
   category: "Group",
-  usage: "[@user]",
+  usage: "[promote @user]",
+  react: "🍁",
   start: async (
     Miku,
     m,
@@ -15,7 +16,7 @@ module.exports = {
     if (!text)
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag a user to promote!` },
+        { text: `Please tag a user to *Promote*!` },
         { quoted: m }
       );
     if (!isAdmin)

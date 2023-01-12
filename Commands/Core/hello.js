@@ -2,7 +2,6 @@ module.exports = {
     name: "hi",
     alias: ["hello"],
     desc: "Say hello to bot.",
-    //cool:3,
     react: "🍁",
     category: "Core",
     start: async(Miku, m,{pushName,prefix}) => {
