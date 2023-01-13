@@ -25,7 +25,7 @@ module.exports = {
        let buttonMessage = {
         image: {url:shibam},
         caption: `What do you want ${pushName}senpai?🫣😜`,
-        footer: `*ᴍɪᴋᴜ*`,
+        footer: `*ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*`,
         buttons: buttons,
         headerType: 4
     }
