@@ -7,9 +7,9 @@ module.exports = {
     category: "fun",
     start: async(Miku, m,{pushName}) => {
      
-     let shibam = [
-       "https://pin.it/6ZsJzR8"
-       ]
+     const shibam = 
+       "https://i.ibb.co/N2hZQP8/13e13ff7e301144d6da57.jpg"
+       
      
      let buttons = [
               { buttonId: `${prefix}help`, buttonText: { displayText: 'HELP' }, type: 1 }
@@ -28,10 +28,9 @@ module.exports = {
         buttons: buttons,
         headerType: 4
     }
-    client.sendMessage(m.from, buttonMessage, { quoted: m })
-
-
-       
+    
+     await client.sendMessage(m.from, buttonMessage, { quoted: m })
+   
     }
 }
     
