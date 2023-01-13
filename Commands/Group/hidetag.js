@@ -1,5 +1,5 @@
 require("../../config.js");
-require("../../core.js");
+require("../../Core.js");
 
 module.exports = {
   name: "hidetag",

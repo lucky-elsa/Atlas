@@ -62,7 +62,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
         const participants = isGroup ? metadata.participants : [sender]
         const groupAdmin = isGroup ? participants.filter(v => v.admin !== null).map(v => v.id) : []
         const botNumber = await Miku.decodeJid(Miku.user.id)
-        const isBotAdmin = isGroup ? groupAdmin.includes(Miku.user?.jid) : false
+        const isBotAdmin = m.isGroup ? groupAdmin.includes(Miku.user?.jid) : false
         const isAdmin = isGroup ? groupAdmin.includes(sender) : false
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = global.owner.includes(m.sender)
