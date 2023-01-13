@@ -26,7 +26,7 @@ module.exports = {
         image: {url:shibam},
         caption: `What do you want *${pushName}*senpai?🫣😜`,
         footer: `*ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*`,
-        buttons: buttons1,buttons2, 
+        buttons: ["buttons1","buttons2"], 
         headerType: 4
     }
     
