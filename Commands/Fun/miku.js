@@ -14,17 +14,18 @@ module.exports = {
      let buttons = [
               { buttonId: `${prefix}help`, buttonText: { displayText: 'HELP' }, type: 1 }
 ,
-       { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
+         
+              { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
 ,
       
-       { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
+              { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
        
        ]
        
        let buttonMessage = {
         image: {url:shibam},
         caption: `What do you want ${pushName}senpai?🫣😜`,
-        footer: `*MIKU*`,
+        footer: `*ᴍɪᴋᴜ*`,
         buttons: buttons,
         headerType: 4
     }
