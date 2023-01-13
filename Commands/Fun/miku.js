@@ -30,7 +30,7 @@ module.exports = {
         headerType: 4
     }
     
-     await client.sendMessage(m.from, buttonMessage, { quoted: m })
+     await Miku.sendMessage(m.from, buttonMessage, { quoted: m })
    
     }
 }
