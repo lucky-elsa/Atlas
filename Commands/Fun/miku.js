@@ -11,13 +11,13 @@ module.exports = {
        "https://i.ibb.co/pJVqZNy/IMG-20230113-193233.jpg"
        
      
-     let buttons = [
+     let buttons1 = [
               { buttonId: `${prefix}help`, buttonText: { displayText: 'HELP' }, type: 1 }
 ,
          
               { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
-,
-      
+]
+     let buttons2 = [
               { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
        
        ]
@@ -26,7 +26,7 @@ module.exports = {
         image: {url:shibam},
         caption: `What do you want *${pushName}*senpai?🫣😜`,
         footer: `*ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*`,
-        buttons: buttons,
+        buttons: buttons1,buttons2, 
         headerType: 4
     }
     
