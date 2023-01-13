@@ -1,13 +1,9 @@
-const fs = require("fs");
-const Jimp = require("jimp");
-require("../../Core.js");
-
 module.exports = {
-  name: "setgcname",
-  alias: ["setnamegc", "changegcname","setgroupname","changegroupname"],
-  desc: "Change the group name",
+  name: "setgcdesc",
+  alias: ["setdescgc", "setdesc","setgroupdesc","setgroupdescription"],
+  desc: "Change the group description",
   category: "Group",
-  usage: `setgcname <New group name>`,
+  usage: `setdesc <New group description>`,
   react: "🍁",
   start: async (
     Miku,
@@ -17,10 +13,9 @@ module.exports = {
     if (!isAdmin && !isBotAdmin)
         return Miku.sendMessage(m.from, { text: `*Bot* and *${pushName}* both must be *Admin* in order to use this Command!` }, { quoted: m });
     if (!args[0])
-        return Miku.sendMessage(m.from, { text: `Please provide a new group name !` }, { quoted: m });
+        return Miku.sendMessage(m.from, { text: `Please provide a new group description !` }, { quoted: m });
     
-    var newGCName = args.join(" ");
-    var oldGCName = metadata.subject;
+    var newGCdesc = args.join(" ");
 
     try {
         ppgc = await Miku.profilePictureUrl(m.from, "image");
@@ -28,11 +23,11 @@ module.exports = {
         ppgc = "https://wallpapercave.com/wp/wp10524580.jpg";
       }
 
-    await Miku.groupUpdateSubject(m.from, newGCName).then((res) => Miku.sendMessage(
+    await Miku.groupUpdateDescription(m.from, newGCdesc).then((res) => Miku.sendMessage(
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
-          caption: `*『 Group Name Changed 』*\n\n_🔶 Old Name:_\n*${oldGCName}*\n\n_🔷 New Name:_\n*${args.join(" ")}*`,
+          caption: `*『 Group Description Changed 』*\n\n_🔷 New Description:_\n*${args.join(" ")}*`,
         },
         { quoted: m }
       )).catch((err) => replay(jsonformat(err)))

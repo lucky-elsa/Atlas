@@ -1,6 +1,6 @@
 require("./config.js")
 
-const { default: MikuConnect, DisconnectReason, delay, fetchLatestBaileysVersion, useSingleFileAuthState,
+const { default: MikuConnect, DisconnectReason, delay, fetchLatestBaileysVersion, useMultiFileAuthState,
     generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID,
     downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys");
 
@@ -73,7 +73,7 @@ async function startMiku() {
 
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
-    const { state, saveState } = await useSingleFileAuthState(`./session.json`);
+    const { state, saveCreds } = await useMultiFileAuthState(`./session/tes.json`);
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -85,7 +85,7 @@ async function startMiku() {
     store.bind(Miku.ev)
 
     Miku.public = true
-    Miku.ev.on('creds.update', saveState)
+    Miku.ev.on('creds.update', saveCreds)
     Miku.serializeM = (m) => smsg(Miku, m, store)
 
     Miku.ev.on('connection.update', async (update) => {
@@ -411,3 +411,6 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
+
+
+//    "@adiwajshing/baileys": "github:adiwajshing/baileys",

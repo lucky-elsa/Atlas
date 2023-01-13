@@ -1,3 +1,7 @@
+require("../../config.js");
+require("../../Core.js");
+const fs = require("fs");
+
 module.exports = {
     name: "miku",
     alias: ["Miku"],
@@ -11,26 +15,26 @@ module.exports = {
        "https://i.ibb.co/pJVqZNy/IMG-20230113-193233.jpg"
        
      
-     let buttons1 = [
+     let buttons = [
               { buttonId: `${prefix}help`, buttonText: { displayText: 'HELP' }, type: 1 }
 ,
          
               { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
-]
-     let buttons2 = [
+,
+      
               { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
        
        ]
        
        let buttonMessage = {
         image: {url:shibam},
-        caption: `What do you want *${pushName}*senpai?🫣😜`,
+        caption: `What do you want ${pushName}senpai?🫣😜`,
         footer: `*ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*`,
-        buttons: ["buttons1","buttons2"], 
+        buttons: buttons,
         headerType: 4
     }
     
-     await Miku.sendMessage(m.from, buttonMessage, { quoted: m })
+     await client.sendMessage(m.from, buttonMessage, { quoted: m })
    
     }
 }
