@@ -6,6 +6,6 @@ module.exports = {
     react: "❤",
     category: "Core",
     start: async(Miku, m,{pushName}) => {
-        await Miku.sendMessage(m.from,{text:`I love u too *${pushName}*`},{quoted:m})
+        await Miku.sendMessage(m.from,{text:`I love you too *${pushName}*`},{quoted:m})
     }
 }
