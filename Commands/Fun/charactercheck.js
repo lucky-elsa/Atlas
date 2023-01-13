@@ -5,7 +5,7 @@ module.exports = {
     cool:3,
     react: "😂",
     category: "fun",
-    start: async(Miku, m,text,{mentionedUser} => {
+    start: async(Miku, m,text) => {
     const pagal = ['Sigma', 'Generous', 'Grumpy', 'Overconfident', 'Obedient', 'Good', 'Simp', 'Kind', 'Patient', 'Pervert', 'Cool', 'Helpful']
     const aurat = pagal[Math.floor(Math.random() * pagal.length)]
     
