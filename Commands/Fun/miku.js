@@ -8,7 +8,7 @@ module.exports = {
     start: async(Miku, m,{pushName}) => {
      
      const shibam = 
-       "https://wallpapercave.com/wp/wp10524604.jpg"
+       "https://i.ibb.co/pJVqZNy/IMG-20230113-193233.jpg"
        
      
      let buttons = [
