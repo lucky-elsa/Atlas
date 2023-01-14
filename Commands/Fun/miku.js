@@ -21,7 +21,8 @@ module.exports = {
          
               { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
 ,
-       { buttonId: `${prefix}group`, buttonText: { displayText: 'OWNER' }, type: 1 }
+             
+              { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
 
               
        ]
