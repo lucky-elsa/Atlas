@@ -13,9 +13,13 @@ module.exports = {
         type: 1,
       },
       {
+
         buttonId: `${prefix}help`,
-        buttonText: { displayText: `${prefix}HELP` },
+
+        buttonText: { displayText: "HELP" },
+
         type: 1,
+
       },
     ];
 
