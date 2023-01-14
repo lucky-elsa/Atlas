@@ -12,6 +12,15 @@ module.exports = {
         buttonText: { displayText: "I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ ♥️" },
         type: 1,
       },
+      {
+
+        buttonId: `${prefix}help`,
+
+        buttonText: { displayText: "HELP♥️" },
+
+        type: 1,
+
+      },
     ];
 
     let buttonMessage = {
