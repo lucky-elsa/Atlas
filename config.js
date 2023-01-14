@@ -1,5 +1,8 @@
 global.prefa = '-'; // Prefix
 global.owner = ['918101187835'];
+global.tenorApiKey = 'AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c';
+global.packname = 'Miku Nakano';
+global.author = 'by: Fantox';
 
 
 global.mess = {

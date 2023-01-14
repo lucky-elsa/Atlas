@@ -18,7 +18,7 @@ const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
 const { smsg, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc');
-
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 
 const prefix = global.prefa;
 
