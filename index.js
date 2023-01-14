@@ -1,4 +1,4 @@
-require("./config.js")
+require("./config.js");
 
 const { default: MikuConnect, DisconnectReason, delay, fetchLatestBaileysVersion, useSingleFileAuthState,
     generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID,
@@ -16,8 +16,8 @@ const CFonts = require('cfonts');
 const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
 const { exec, spawn, execSync } = require("child_process");
-const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-const { smsg, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
+const { smsg, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc');
 
 
 const prefix = global.prefa;
@@ -67,7 +67,7 @@ async function startMiku() {
     }), 'yellow'))
 
     console.log(color('\nHello, I am Fantox, the main developer of this bot.\n\nThanks for using: Miku Bot', 'aqua'))
-    console.log(color('\nYou can follow me on GitHub: FantoX001', 'aqua'))
+    console.log(color('\nYou can follow me on GitHub: FantoX001\n\n', 'aqua'))
 
 
 
