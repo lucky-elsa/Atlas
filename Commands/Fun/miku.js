@@ -9,7 +9,7 @@ module.exports = {
     cool:3,
     react: "🫣",
     category: "fun",
-    start: async(Miku, m,{pushName}) => {
+    start: async(Miku, m,{pushName, prefix}) => {
      
      const shibam = 
        "https://i.ibb.co/pJVqZNy/IMG-20230113-193233.jpg"
@@ -39,5 +39,3 @@ module.exports = {
    
     }
 }
-    
-
