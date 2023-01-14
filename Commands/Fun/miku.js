@@ -24,8 +24,7 @@ module.exports = {
              
               { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
 
-              
-       ]
+             ]
        
        let buttonMessage = {
         image: {url:shibam},
