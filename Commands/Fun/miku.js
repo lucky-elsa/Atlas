@@ -1,7 +1,3 @@
-require("../../config.js");
-require("../../Core.js");
-const fs = require("fs");
-
 module.exports = {
     name: "miku",
     alias: ["Miku"],
