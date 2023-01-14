@@ -20,9 +20,9 @@ module.exports = {
 ,
          
               { buttonId: `${prefix}owner`, buttonText: { displayText: 'OWNER' }, type: 1 }
-,
+]
       
-              { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
+     let button = [   { buttonId: `${prefix}loveu`, buttonText: { displayText: 'I Lᴏᴠᴇ Yᴏᴜ Mɪᴋᴜ♥️' }, type: 1 }
        
        ]
        
@@ -30,7 +30,7 @@ module.exports = {
         image: {url:shibam},
         caption: `What do you want ${pushName}senpai?🫣😜`,
         footer: `*ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*`,
-        buttons: buttons,
+        buttons: ["buttons","button"]
         headerType: 4
     }
     
