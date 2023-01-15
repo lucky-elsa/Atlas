@@ -16,7 +16,7 @@ module.exports = {
     if (!isAdmin)
       return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
-    let message = m.quoted ? m.quoted.msg : args ? args.join(' ') : 'No Message';
+    let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
 
     let mess = `               *『 Attention Here 』*
     
