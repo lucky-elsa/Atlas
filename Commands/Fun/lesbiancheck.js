@@ -3,7 +3,7 @@ module.exports = {
     alias: ["lescheck"],
     desc: "check",
     cool:3,
-    react: "😂",
+    react: "😆",
     category: "Fun",
     start: async(Miku, m,{text, prefix, args,mentionedJid,mentionByTag}) => {
 
@@ -20,7 +20,7 @@ module.exports = {
     
     let mikupic ='';
 
-    let Mikutext = `Character of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}*`
+    let Mikutext = `Lesbian Check : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
