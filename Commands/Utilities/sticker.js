@@ -20,7 +20,7 @@ module.exports = {
                 background: 'transparent'
             });
             const stickerBuffer = await stickerMess.toBuffer()
-             Miku.sendMessage(m.from, stickerBuffer, { quoted: m })
+            Miku.sendMessage(m.from, {sticker:stickerBuffer}, { quoted: m })
         }
         else if (/video/.test(mime)) {
             let mediaMess = await quoted.download();
@@ -31,11 +31,11 @@ module.exports = {
                 type: StickerTypes.FULL,
                 categories: ['🤩', '🎉'],
                 id: '12345',
-                quality: 40,
+                quality: 70,
                 background: 'transparent'
             });
             const stickerBuffer2 = await stickerMess.toBuffer()
-             Miku.sendMessage(m.from, stickerBuffer2, { quoted: m })
+             Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
     }else{
         Miku.sendMessage(m.from,{text:`Please mention an *imade/video* and type *${prefix}s* to create sticker.`},{quoted:m})
     } 
