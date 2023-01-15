@@ -20,7 +20,7 @@ module.exports = {
     
     let mikupic ='';
 
-    let Mikutext = `Lesbian Check : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
+    let Mikutext = `Lesbian Check Of: @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
