@@ -45,7 +45,7 @@ module.exports = {
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} Is Kicking @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} kiched @${user2.split("@")[0]} `;
 
         console.log(recp);
       }

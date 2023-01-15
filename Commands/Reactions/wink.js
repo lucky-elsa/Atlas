@@ -41,11 +41,11 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} wink themselves`;
+        recp = `@${m.sender.split("@")[0]} winked at themselves`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} is winking for @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} winked at @${user2.split("@")[0]} `;
 
         console.log(recp);
       }

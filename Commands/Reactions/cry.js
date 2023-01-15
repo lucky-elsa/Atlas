@@ -41,7 +41,7 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} crying themselves`;
+        recp = `@${m.sender.split("@")[0]} is crying alone`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;

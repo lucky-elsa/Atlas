@@ -41,11 +41,11 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} handhold themselves`;
+        recp = `@${m.sender.split("@")[0]} is holding hands of themselves`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} and @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} and @${user2.split("@")[0]} are holding hands`;
 
         console.log(recp);
       }

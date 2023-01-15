@@ -41,11 +41,11 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} bully themselves`;
+        recp = `@${m.sender.split("@")[0]} is bullying themselves`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} is bullying to @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} is bullying @${user2.split("@")[0]} `;
 
         console.log(recp);
       }

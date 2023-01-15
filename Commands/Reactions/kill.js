@@ -41,11 +41,11 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} kill themselves`;
+        recp = `@${m.sender.split("@")[0]} killed themselves`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} is killing @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} killed @${user2.split("@")[0]} `;
 
         console.log(recp);
       }

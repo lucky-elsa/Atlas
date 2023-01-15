@@ -41,11 +41,11 @@ module.exports = {
         ment = [user1, m.sender];
       }
       if (user2 == "none") {
-        recp = `@${m.sender.split("@")[0]} highfive themselves`;
+        recp = `@${m.sender.split("@")[0]} highfived with themselves`;
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} High-Five With @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} highfived With @${user2.split("@")[0]} `;
 
         console.log(recp);
       }
