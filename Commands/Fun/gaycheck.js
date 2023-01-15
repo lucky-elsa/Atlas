@@ -3,7 +3,7 @@ module.exports = {
     alias: ["gcheck"],
     desc: "check",
     cool:3,
-    react: "😂",
+    react: "😆",
     category: "Fun",
     start: async(Miku, m,{text, prefix, args,mentionedJid,mentionByTag}) => {
 
@@ -21,7 +21,7 @@ module.exports = {
     
     let mikupic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHmi6Dyk_MuDRZRNTC1-PWQoUS9khIckXMQ&usqp=CAU';
 
-    let Mikutext = `Character of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}*`
+    let Mikutext = `Character of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
