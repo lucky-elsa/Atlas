@@ -1,6 +1,6 @@
 module.exports = {
     name: "staminacheck",
-    alias: ["staminachek"],
+    alias: ["staminachek","stamcheck"],
     desc: "check",
     cool:3,
     react: "😆",
