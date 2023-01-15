@@ -15,13 +15,13 @@ module.exports = {
       );
       const mentionedUser = mentionByTag[0];
       
-    const shibam = ['50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100'
+    const shibam = ['50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85 My boy!!','86 My boy!!','87 My boy!!','88 My boy!!','89 My boy!!','90 My boy!!','91 My boy!!','92 My boy!!','93 My boy!!','94 My boy!!','95 My boy!!','96 My boy!!','97 My boy!!','98 My boy!!','99 My boy!!','100 My boy!!'
 ]
     const dey = shibam[Math.floor(Math.random() * shibam.length)]
     
     let mikupic ='https://iili.io/HYbmAN4.jpg';
 
-    let Mikutext = `Character of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}*`
+    let Mikutext = `Pervert Check : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*😂`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
