@@ -15,7 +15,7 @@ module.exports = {
   desc: "To hug any user",
   category: "Reaction",
   usage: `hug @user`,
-  react: "🍁",
+  react: "🫂",
   start: async (Miku, m, { text, prefix, args,mentionByTag }) => {
     var pat = await fetchJson(`https://api.waifu.pics/sfw/hug`);
     try {
@@ -28,7 +28,6 @@ module.exports = {
         else if(m.quoted){
             user2 = m.quoted.sender;
         }else if(mentionByTag){
-            user2 = mentionByTag[0];
         
         }
         else{
