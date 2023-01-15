@@ -45,7 +45,7 @@ module.exports = {
         console.log(recp);
       } else {
         var rcpp = `@${user2.split("@"[0])}`;
-        recp = `@${m.sender.split("@")[0]} highfive with @${user2.split("@")[0]} `;
+        recp = `@${m.sender.split("@")[0]} High-Five With @${user2.split("@")[0]} `;
 
         console.log(recp);
       }
