@@ -21,7 +21,7 @@ module.exports = {
     
     let mikupic ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCHmi6Dyk_MuDRZRNTC1-PWQoUS9khIckXMQ&usqp=CAU';
 
-    let Mikutext = `Horny Check : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
+    let Mikutext = `Horny Check Of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
