@@ -28,7 +28,7 @@ module.exports = {
         else if(m.quoted){
             user2 = m.quoted.sender;
         }else if(mentionByTag){
-        
+        user2 = mentionByTag[0];
         }
         else{
              user2 = m.quoted ? m.quoted.sender : m.mentionedJid[0] ? m.mentionedJid[0] : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net';
