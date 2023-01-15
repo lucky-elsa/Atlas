@@ -21,7 +21,7 @@ module.exports = {
     
     let mikupic ='https://iili.io/HYbmAN4.jpg';
 
-    let Mikutext = `Pervert Check : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*😂`
+    let Mikutext = `Pervert Check Of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*😂`
 
     Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
