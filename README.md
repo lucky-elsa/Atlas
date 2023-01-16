@@ -24,4 +24,3 @@
 - This bot will have our own script.
 <br>
 
-### Go to [Discussions](https://github.com/FantoX001/Miku-Nakano-Full/discussions) and put your `last modification details` so that we can do it in a organisedd manner.
