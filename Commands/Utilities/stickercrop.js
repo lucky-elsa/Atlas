@@ -1,11 +1,11 @@
 const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter')
 
 module.exports = {
-    name: "sticker",
-    alias: ["s"],
-    desc: "To make sticker",
+    name: "stickercrop",
+    alias: ["scrop","squaresticker"],
+    desc: "To make square sized sticker",
     category: "Utilities",
-    usage: "sticker <reply to image>",
+    usage: "scrop <reply to image>",
     react: "🍁",
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
         if (/image/.test(mime)) {
@@ -13,7 +13,7 @@ module.exports = {
             let stickerMess = new Sticker(mediaMess, {
                 pack: packname,
                 author: pushName,
-                type: StickerTypes.FULL,
+                type: StickerTypes.CROPPED,
                 categories: ['🤩', '🎉'],
                 id: '12345',
                 quality: 70,
@@ -28,7 +28,7 @@ module.exports = {
             let stickerMess = new Sticker(mediaMess, {
                 pack: packname,
                 author: pushName,
-                type: StickerTypes.FULL,
+                type: StickerTypes.CROPPED,
                 categories: ['🤩', '🎉'],
                 id: '12345',
                 quality: 70,
@@ -37,6 +37,6 @@ module.exports = {
             const stickerBuffer2 = await stickerMess.toBuffer()
              Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
     }else{
-        Miku.sendMessage(m.from,{text:`Please mention an *image/video* and type *${prefix}s* to create sticker.`},{quoted:m})
+        Miku.sendMessage(m.from,{text:`Please mention an *imade/video* and type *${prefix}s* to create cropped sticker.`},{quoted:m})
     } 
 }}
