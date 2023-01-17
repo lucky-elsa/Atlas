@@ -32,7 +32,7 @@ module.exports = {
 
       
       
-          if (!isCreator&&!modStatus=="true" ) 
+          if (!isCreator&&!modStatus=="true"  ) 
         return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m }); 
       //var TaggedUser = mentionByTag[0];
 
