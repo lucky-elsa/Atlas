@@ -190,6 +190,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             mime,
             isBotAdmin,
             prefix,
+            isCreator,
             command: cmd.name,
             commands,
             Function: Func,
