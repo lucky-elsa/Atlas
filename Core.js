@@ -67,6 +67,13 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = global.owner.includes(m.sender)
 
+        
+        if (!isCreator){
+     let checkban = await mku.findOne({ id: m.sender }) || await new mku({ id: m.sender, name: m.pushName }).save();
+     if (isCmd && checkban.ban !== 'false') return m.reply(mess.banned)
+}
+        
+        
         //////////Database\\\\\\\\\\\\\\\\s
 
         await db.push("userInfo.mods", global.owner)
@@ -117,6 +124,8 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             )
     }
        
+        
+        
         if (m.message) {
           //  addBalance(m.sender, randomNomor(574), balance)
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(m.isGroup ? pushname : 'Private Chat', m.chat))
