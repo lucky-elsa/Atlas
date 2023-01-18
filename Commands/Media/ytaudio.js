@@ -3,7 +3,7 @@ const fs=require("fs")
 
 module.exports = {
   name: "ytad",
-  alias:["mp3"],
+  alias:["mp3","ytmp3","ytmusic"],
   desc: "To download a song as mp4 from YouTube link",
   category: "Media",
   usage: `ytad <song link>`,
@@ -19,7 +19,7 @@ module.exports = {
     if(!args[0].includes("youtube.com"))
         return Miku.sendMessage(
             m.from,
-            { text: `Please provide a valid YouTube Video link baka !` },
+            { text: `Please provide a valid YouTube Video link !\n\nOr use ${prefix}play to play through song name.` },
             { quoted: m }
           );
           const ytaud= await YT.mp3(text);

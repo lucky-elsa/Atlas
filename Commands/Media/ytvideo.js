@@ -2,7 +2,7 @@ const YT = require("../../lib/ytdl-core.js");
 
 module.exports = {
   name: "ytvd",
-  alias:["mp4"],
+  alias:["mp4","ytmp4","ytvideo"],
   desc: "To download a song as mp4 from YouTube link",
   category: "Media",
   usage: `ytvd <song link>`,
@@ -18,7 +18,7 @@ module.exports = {
     if(!args[0].includes("youtube.com"))
         return Miku.sendMessage(
             m.from,
-            { text: `Please provide a valid YouTube Video link baka !` },
+            { text: `Please provide a valid YouTube Video link !\n\nOr use ${prefix}play to play through song name.` },
             { quoted: m }
           );
           const vid= await YT.mp4(text);
