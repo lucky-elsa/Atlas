@@ -11,7 +11,7 @@ module.exports = {
     var Image = await getBuffer(`https://anime-quatoes.onrender.com/`);
     var Button = [
       {
-        buttonId: `${prefix}aniquatoes`,
+        buttonId: `${prefix}animequotes`,
         buttonText: { displayText: `>>` },
         type: 1,
       },
