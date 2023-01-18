@@ -42,7 +42,7 @@ console.log(color('\nDatabase has been connected Successfully !', 'aqua'));
 //const CurrencySystem = require("currency-system");
 //global.cs = new CurrencySystem;
 
-module.exports = async (Miku, m, commands, chatUpdate) => {
+module.exports = async (Miku, m, commands, chatUpdate,store) => {
     try {
         let { type, isGroup, sender, from } = m
         let body = (type == "buttonsResponseMessage") ? m.message[type].selectedButtonId : (type == "listResponseMessage") ? m.message[type].singleSelectReply.selectedRowId : (type == "templateButtonReplyMessage") ? m.message[type].selectedId : m.text
@@ -186,6 +186,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             body,
             args,
             ar,
+            botNumber,
             flags,
             isAdmin,
             groupAdmin,
@@ -196,6 +197,7 @@ module.exports = async (Miku, m, commands, chatUpdate) => {
             isBotAdmin,
             prefix,
             isCreator,
+            store,
             command: cmd.name,
             commands,
             Function: Func,
