@@ -2,9 +2,9 @@ const fs = require("fs");
 
 module.exports = {
   name: "help",
-  alias: ["menu", "h", "helpm", "helpmenu"],
+  alias: ["menu", "commands", "h", "helpm", "helpmenu"],
   desc: "Gives all bot commands list",
-  react: "🍁",
+  react: "✨",
   category: "Core",
   start: async (Miku, m, {prefix,pushName}) => {
    var text = `Konichiwa *${pushName}* Senpai,
