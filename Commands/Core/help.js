@@ -50,15 +50,7 @@ text +=`
 ╚════════════╝
 ╔════⧫⛓️𝑨𝒏𝒕𝒊 𝑳𝒊𝒏𝒌⛓️
 ║
-║ ${prefix}antilinkgc
-║ ${prefix}antilinktg
-║ ${prefix}antilinktt
-║ ${prefix}antilinkytch
-║ ${prefix}antilinkytvid
-║ ${prefix}antilinkig
-║ ${prefix}antilinkfb
-║ ${prefix}antilinktwit
-║ ${prefix}antilinkall
+
 ║
 ╚════════════╝
 ╔════⧫🔎𝑺𝒆𝒂𝒓𝒄𝒉🔍
