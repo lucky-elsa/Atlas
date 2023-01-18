@@ -1,8 +1,8 @@
 const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
-  name: "animequatoes",
-  alias: ["aniquatoe", "aniqua", "aniquatoes"],
+  name: "animequotes",
+  alias: ["aniquotes", "quotesanime"],
   desc: "To get a random Anime Quotes pic",
   category: "Weeb",
   usage: `quatoes`,
@@ -18,7 +18,7 @@ module.exports = {
     ];
     let bmffg = {
       image: Image,
-      caption: `Feel My Quotoes *${pushName}* Senpai♥️😊`,
+      caption: `Feel My Quotes *${pushName}* Senpai ♥️`,
       footer: `Miku Nakano`,
       buttons: Button,
       headerType: 4,
