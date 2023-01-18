@@ -17,9 +17,7 @@ module.exports = {
 text +=`
 ╔════⧫🧧𝑪𝒐𝒓𝒆🧧
 ║
-║ ${prefix}profile
 ║ ${prefix}help
-║ ${prefix}delete
 ║ ${prefix}support
 ║
 ╚════════════╝
@@ -69,15 +67,13 @@ text +=`
 ╚════════════╝
 ╔════⧫⚙️𝑪𝒐𝒏𝒗𝒆𝒓𝒕⚙️
 ║
-║ ${prefix}sticker
+║ ${prefix}quote
 ║ ${prefix}toimg
 ║ ${prefix}tovideo
 ║ ${prefix}togif
 ║ ${prefix}steal
-║ ${prefix}stickermeme
-║ ${prefix}emojimix
-║ ${prefix}tourl
-║ ${prefix}tomp3
+║ ${prefix}sticker
+║ ${prefix}stickercrop
 ║
 ╚════════════╝
 ╔════⧫🔉𝑨𝒖𝒅𝒊𝒐🔉
@@ -132,23 +128,16 @@ text +=`
 ╚════════════╝
 ╔════⧫☄️𝑾𝒆𝒆𝒃☄️
 ║
-║ ${prefix}waifu
-║ ${prefix}loli
-║ ${prefix}neko
-║ ${prefix}ppcouple
-║ ${prefix}feed
-║ ${prefix}foxgirl
-║ ${prefix}awoo
-║ ${prefix}anime
-║ ${prefix}manga
+║ ${prefix}animequote
+║ ${prefix}cosplay
+║ ${prefix}cosplayvideo
+║ ${prefix}narutoamv
 ║
 ╚════════════╝
 
 ╔════⧫📣𝐺𝑎𝑚𝑒📣
 ║
-║ ${prefix}..........
-║ ${prefix}tictactoe
-║ ${prefix}..........
+
 ║
 ╚════════════╝
 ╔════⧫🦋𝑭𝒖𝒏🦋

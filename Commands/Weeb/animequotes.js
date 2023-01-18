@@ -2,7 +2,7 @@ const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
   name: "animequotes",
-  alias: ["aniquotes", "quotesanime"],
+  alias: ["aniquotes", "quotesanime","animequote"],
   desc: "To get a random Anime Quotes pic",
   category: "Weeb",
   usage: `quatoes`,
