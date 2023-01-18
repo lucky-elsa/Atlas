@@ -63,13 +63,16 @@ text +=`
 ╚════════════╝
 ╔════⧫🔎𝑺𝒆𝒂𝒓𝒄𝒉🔍
 ║
-║ ${prefix}play
-║ ${prefix}song
-║ ${prefix}lyrics
-║ ${prefix}gimage
-║ ${prefix}pinterest
-║ ${prefix}wallpaper
-║ ${prefix}ringtone
+║ ${prefix}anime <anime name>
+║ ${prefix}gif <query>
+║ ${prefix}gimage <query>
+║ ${prefix}github <username>
+║ ${prefix}google <query>
+║ ${prefix}lyrics <song name>
+║ ${prefix}pinterest <query>
+║ ${prefix}ringtone <song name>
+║ ${prefix}stickersearch <query>
+║ ${prefix}weather <location>
 ║
 ╚════════════╝
 ╔════⧫⚙️𝑪𝒐𝒏𝒗𝒆𝒓𝒕⚙️
@@ -132,14 +135,7 @@ text +=`
 ╚════════════╝
 ╔════⧫📥𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒆𝒓📥
 ║
-║ ${prefix}ytmp3
-║ ${prefix}ytmp4
-║ ${prefix}instagram
-║ ${prefix}igtv
-║ ${prefix}facebook
-║ ${prefix}fbmp3
-║ ${prefix}tiktok
-║ ${prefix}tiktokaudio
+
 ║
 ╚════════════╝
 ╔════⧫☄️𝑾𝒆𝒆𝒃☄️
