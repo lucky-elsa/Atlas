@@ -67,6 +67,20 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = global.owner.includes(m.sender)
         
+        // - Fetching Added mod details from MongoDB - //
+
+        const modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
+            if (user.addedMods=="true") {
+              return "true";
+            }
+            else{
+              return "false";
+            }
+          }).catch(error => {
+            console.log(error)
+            //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
+          });
+    
 
         //////////Database\\\\\\\\\\\\\\\\s
 
@@ -114,12 +128,23 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
         const flags= args.filter((arg) => arg.startsWith('--'))
        if(body.startsWith(prefix)&&!icmd) {
         //var Mikupic = `https://user-images.githubusercontent.com/105273285/211724702-a46f84a9-1f3d-42fd-bfa4-24baa8e5229d.mp4`;
-        let mikutext =`No such command programmed *${pushname}* senpai! Type *${prefix}help* to get my full command list!` 
-        Miku.sendMessage(m.from,{
-            video:fs.readFileSync('./Assets/miku.mp4'),gifPlayback: true, 
-            caption:mikutext}, 
-            {quoted:m},
-            )
+        let mikutext =`No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n` 
+
+        let Button = [
+            {
+              buttonId: `${prefix}help`,
+              buttonText: { displayText: `${prefix}help` },
+              type: 1,
+            },
+          ];
+        let bmffg = {
+            video: fs.readFileSync('./Assets/miku.mp4'),
+            caption: mikutext,
+            footer: `Miku Nakano`,
+            buttons: Button,
+            headerType: 4,
+          };
+        Miku.sendMessage(m.from, bmffg, {quoted:m},)  
     }
        
         if (m.message) {
@@ -186,6 +211,7 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
             body,
             args,
             ar,
+            modStatus,
             botNumber,
             flags,
             isAdmin,
