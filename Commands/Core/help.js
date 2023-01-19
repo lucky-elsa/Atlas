@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = {
   name: "help",
-  alias: ["menu", "commands", "h", "helpm", "helpmenu"],
+  alias: ["menu", "h", "helpm", "helpmenu"],
   desc: "Gives all bot commands list",
   react: "✨",
   category: "Core",
