@@ -1,6 +1,3 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
 const { mku } = require("../../lib/dataschema.js");
 
 module.exports = { 
@@ -10,11 +7,11 @@ module.exports = {
     desc: "To made an user Mod", 
     category: "Mods", 
     usage: "addmod @user", 
-    react: "🔨", 
+    react: "🎀", 
     start: async ( 
       Miku, 
       m, 
-      { text, prefix, mentionByTag, pushName, isCreator,owner,includes} 
+      { text, prefix, mentionByTag, pushName, isCreator,owner} 
     ) => { 
       var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
         if (user.addedMods=="true") {
@@ -29,8 +26,7 @@ module.exports = {
       });
 
 
-      if (!isCreator&&!modStatus=="true") 
-        return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m }); 
+      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
       //var TaggedUser = mentionByTag[0];
 
       if (!text && !m.quoted) {
@@ -50,6 +46,9 @@ module.exports = {
       try { 
         var ownerlist = global.owner;
          mku.findOne({id:userId}).then(async (user) => {
+
+          if (user.addedMods == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is already a *Mod* !` , mentions: [mentionedUser]  }, { quoted: m });
+
             if (!user && !ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
               await mku.create({id:userId, addedMods: true});
               return Miku.sendMessage( 
@@ -58,7 +57,6 @@ module.exports = {
                 { quoted: m } 
               );
             }else{
-                if (user.addedMods == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is already a *Mod* !` , mentions: [mentionedUser]  }, { quoted: m });
                 await mku.findOneAndUpdate({ id: userId }, { addedMods: true }, { new: true });
                 return Miku.sendMessage( 
                   m.from, 

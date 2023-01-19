@@ -67,20 +67,8 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = global.owner.includes(m.sender)
         
-        // - Fetching Added mod details from MongoDB - //
 
-        const modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
-            if (user.addedMods=="true") {
-              return "true";
-            }
-            else{
-              return "false";
-            }
-          }).catch(error => {
-            console.log(error)
-            //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
-          });
-    
+
 
         //////////Database\\\\\\\\\\\\\\\\s
 
@@ -172,7 +160,15 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
                 buttons: buttonss,
                 headerType: 1
             }
+            let reactionMess = {
+                react: {
+                    text: cmd.react,
+                    key: m.key
+                }
+            }
+            await Miku.sendMessage(m.from, reactionMess).then(() => {
             return Miku.sendMessage(m.from, buttonmess,  {react: "🍁", quoted: m ,  })
+            })
         }
         if (cmd.react) {
             const reactm = {
@@ -211,7 +207,6 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
             body,
             args,
             ar,
-            modStatus,
             botNumber,
             flags,
             isAdmin,

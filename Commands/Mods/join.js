@@ -7,11 +7,11 @@ module.exports = {
     desc: "ask bot to Join a group",
     category: "Mods",
     usage: "join <link>",
-    react: "🍁",
+    react: "🎀",
     start: async (
       Miku,
       m,
-      { args, text,prefix, isCreator, pushName,groupAdmin }
+      { args, text,prefix, isCreator, pushName }
     ) => {
       var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
         if (user.addedMods=="true") {
@@ -26,8 +26,7 @@ module.exports = {
       });
 
       
-      if (!isCreator&&!modStatus=="true"  )
-        return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
+      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
 
         if (!text) return Miku.sendMessage(m.from, { text: 'Please provide a valid WhatsApp group link !' }, { quoted: m });
         if (!args[0].includes('whatsapp.com')) return Miku.sendMessage(m.from, { text: 'Please provide a valid WhatsApp group link !' }, { quoted: m });

@@ -9,7 +9,7 @@ module.exports = {
     desc: "Unban a member", 
     category: "core", 
     usage: "unban @user", 
-    react: "🔨", 
+    react: "🎀", 
     start: async (
       Miku, 
       m, 
@@ -27,8 +27,7 @@ module.exports = {
         //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
       });
 
-      if (!isCreator&&!modStatus=="true") 
-        return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m }); 
+      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
 
         if (!text && !m.quoted) {
           return Miku.sendMessage( 
