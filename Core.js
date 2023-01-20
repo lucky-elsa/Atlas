@@ -13,7 +13,7 @@ const { color } = require('./lib/color')
 const { QuickDB,MySQLDriver } = require("quick.db");
 const { Console } = require("console");
 const cool=new Collection()
-const { mku } = require('./lib/dataschema')
+const { mku } = require('./Database/dataschema.js')
 const prefix = global.prefa;
 
 const db = new QuickDB();

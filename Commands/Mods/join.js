@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { mku } = require("../../lib/dataschema.js");
+const { mku } = require("../../Database/dataschema.js");
 
 module.exports = {
     name: "join",
