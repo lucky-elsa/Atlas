@@ -3,7 +3,7 @@ require("../../config.js");
 require("../../index.js");
 require("../../lib/myfunc.js");
 require("../../Core.js");
-const { mku, mk } = require("../../lib/dataschema.js");
+const { mku, mk } = require("../../Database/dataschema.js");
 const eco = require('discord-mongoose-economy')
 const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
  const fs = require("fs");
