@@ -63,6 +63,8 @@
     "mathjs": "^11.5.0",
     "moment-timezone": "^0.5.40",
     "mongoose": "^6.8.2",
+    "mongo-glob-economy": "^1.0.12",
+    "discord-mongoose-economy": "^1.2.0",
     "mumaker": "^1.0.0",
     "node-cron": "^3.0.2",
     "node-fetch": "^2.6.1",
