@@ -20,7 +20,8 @@ const { exec, spawn, execSync } = require("child_process");
 const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
 const { smsg, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc');
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-
+const express = require("express");
+const qrcode=require('qrcode')
 const prefix = global.prefa;
 
 const welcome = require('./Processes/welcome.js');
@@ -29,8 +30,9 @@ const { serialize, WAConnection } = Simple;
 const Commands = new Collection()
 const { color } = require('./lib/color');
 Commands.prefix = prefa
-///const { Collection } = require("mongoose");
-
+const mongoose = require("mongoose");
+const Auth = require('./Processes/Auth');
+const { clear } = require("console");
 
 const readCommands = () => {
     let dir = path.join(__dirname, "./Commands")
@@ -57,8 +59,17 @@ const readCommands = () => {
 }
 
 readCommands()
+const PORT = port;
+const app = express();
+let QR_GENERATE = "invalid";
 
 async function startMiku() {
+    await mongoose.connect(mongodb)
+
+  const { getAuthFromDatabase } = new Auth(sessionId)
+
+  const { saveState, state, clearState, } = await getAuthFromDatabase()
+
     console.log(color(figlet.textSync('Miku Bot MD', {
         font: 'Pagga',
         horizontalLayout: 'default',
@@ -74,7 +85,6 @@ async function startMiku() {
 
 
     let { version, isLatest } = await fetchLatestBaileysVersion()
-    const { state, saveState } = await useSingleFileAuthState(`./session.json`);
     const Miku = MikuConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -90,19 +100,23 @@ async function startMiku() {
     Miku.serializeM = (m) => smsg(Miku, m, store)
 
     Miku.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect } = update
+        const { connection, lastDisconnect,qr } = update
         if (connection === 'close') {
             let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); process.exit(); }
             else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startMiku(); }
             else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startMiku(); }
             else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); process.exit(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Delete Session and Scan Again.`); process.exit(); }
+            else if (reason === DisconnectReason.loggedOut) { 
+               clearState()
+                console.log(`Device Logged Out, Please Delete Session and Scan Again.`); process.exit(); }
             else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startMiku(); }
             else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startMiku(); }
             else { console.log(`Disconnected: Reason "Probably your WhatsApp account Banned for spamming !"`) }
         }
-        //console.log('Connected...', update)
+        if (qr) {
+            QR_GENERATE = qr;
+          }
     })
 
     //Welcome messages
@@ -403,6 +417,14 @@ async function startMiku() {
 }
 
 startMiku()
+app.get("/", async(req, res) => {
+    res.setHeader("content-type", "image/png");
+    res.end(await qrcode.toBuffer(QR_GENERATE));
+  });
+  
+  app.listen(PORT, () => {
+    console.log(`Server running on PORT ${PORT}`);
+  });
 
 
 let file = require.resolve(__filename)
