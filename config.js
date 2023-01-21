@@ -22,9 +22,7 @@ if (!gg) {
 }
 
 global.owner = gg.split(",");
-global.mongodb =
-  process.env.MONGODB ||
-  "mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority";
+global.mongodb = process.env.MONGODB || "NONE";
 global.sessionId = process.env.SESSION_ID || "ok";
 global.prefa = process.env.PREFIX || "-";
 global.tenorApiKey =
