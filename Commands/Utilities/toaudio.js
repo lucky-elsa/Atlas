@@ -12,6 +12,6 @@ module.exports = {
         if (!m.quoted) return m.reply(`Send/Reply Video/Audio You Want To Convert Into Audio With Caption ${prefix}tomp3`);
         let media = await quoted.download()
         let audio = await toAudio(media, 'mp4')
-        Miku.sendMessage(m.from, {audio: audio, mimetype: 'audio/mpeg', fileName: `Converted By Power MD ${m.id}.mp3`}, { quoted : m })
+        Miku.sendMessage(m.from, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
     }
 }
