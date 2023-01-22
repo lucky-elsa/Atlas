@@ -13,7 +13,7 @@ const { color } = require('./lib/color')
 const { QuickDB,MySQLDriver } = require("quick.db");
 const { Console } = require("console");
 const cool=new Collection()
-const { mku } = require('./Database/dataschema.js')
+const { mk, mku } = require('./Database/dataschema.js')
 const prefix = global.prefa;
 
 const db = new QuickDB();
@@ -112,6 +112,28 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
             let checkban = await mku.findOne({ id: m.sender }) || await new mku({ id: m.sender, name: m.pushName }).save();
             if (isCmd && checkban.ban !== 'false') return m.reply(mess.banned)
        }
+
+       let checkdata = await mk.findOne({ id: m.from })
+       if (checkdata){
+           let mongoschema = checkdata.antilink || "false"
+           if (m.isGroup && mongoschema == "true") {
+           linkgce = await Miku.groupInviteCode(from)
+           if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
+           reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be because you sent this group's link.`)
+           } else if (isUrl(m.text)) {
+           bvl = `\`\`\`「  *Antilink System*  」\`\`\`\n\nAdmin has sent a link so no action is taken.`
+           if (isAdmin) return m.reply(bvl)
+           if (m.key.fromMe) return m.reply(bvl)
+           if (isCreator) return m.reply(bvl)
+           kice = m.sender
+           await Miku.groupParticipantsUpdate(m.from, [kice], 'remove')
+           await mk.updateOne({ id: m.from }, { antilink: "true" })
+           Miku.sendMessage(from, {text:`\`\`\`「  Antilink System  」\`\`\`\n\n@${kice.split("@")[0]} Removed for sending link in this group!`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+           } else {
+           }
+           }
+       }
+
 
         const flags= args.filter((arg) => arg.startsWith('--'))
        if(body.startsWith(prefix)&&!icmd) {
