@@ -5,15 +5,15 @@ module.exports = {
     cool:2,
     react: "🤣",
     category: "Fun",
-    start: async(Miku, m,{text, prefix}) => {
+    start: async(Miku, m,{text,mentionByTag, prefix}) => {
 
     
                       if (!m.isGroup) return m.reply(`${mess.group}`)
                       let member = participants.map(u => u.id)
                       let me = m.sender
-                      let jodoh = member[Math.floor(Math.random() * member.length)]
-                      let jawab = `The Most *${command}* Here Is @${jodoh.split('@')[0]}`
-                      let ments = [me, jodoh]
+                      let random = member[Math.floor(Math.random() * member.length)]
+                      let jawab = `The Most *${command}* Here Is @${random.split('@')[0]}`
+                      let ments = [me, random]
                       let buttons = [
                                   { buttonId: '😂', buttonText: { displayText: 'Wtf😂' }, type: 69 }
                               ]
