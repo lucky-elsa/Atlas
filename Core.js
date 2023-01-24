@@ -119,7 +119,7 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
            if (m.isGroup && mongoschema == "true") {
            linkgce = await Miku.groupInviteCode(from)
            if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-           reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be because you sent this group's link.`)
+           m.reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be because you sent this group's link.`)
            } else if (isUrl(m.text)) {
            bvl = `\`\`\`「  *Antilink System*  」\`\`\`\n\nAdmin has sent a link so no action is taken.`
            if (isAdmin) return m.reply(bvl)
