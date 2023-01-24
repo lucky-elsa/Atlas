@@ -9,17 +9,23 @@ module.exports = {
   react: "🍁",
   start: async (Miku, m, { text, prefix, args, pushName }) => {
     if (!args[0] && !m.quoted)
-      return Miku.sendMessage(
-        m.from,
-        { text: `Please provide a text (Type or mention a message) !` },
-        { quoted: m }
-      );
-
-    try {
-      userPfp = await Miku.profilePictureUrl(m.sender, "image");
-    } catch (e) {
-      userPfp = "https://wallpapercave.com/wp/wp10524580.jpg";
-    }
+      return m.reply(`Please provide a text (Type or mention a message) !`)
+      
+        if (m.quoted){
+          try {
+            userPfp = await Miku.profilePictureUrl(m.quoted.sender, "image");
+          } catch (e) {
+            userPfp = "https://wallpapercave.com/wp/wp10524580.jpg";
+          }
+        }
+        else{
+          try {
+            userPfp = await Miku.profilePictureUrl(m.sender, "image");
+          } catch (e) {
+            userPfp = "https://wallpapercave.com/wp/wp10524580.jpg";
+          }
+        }
+    
 
     var waUserName = pushName;
 
