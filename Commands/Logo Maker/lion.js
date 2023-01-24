@@ -10,7 +10,7 @@ module.exports = {
         if(!text.includes("|")) return m.reply(`Example: *${prefix}lion Atlas Bot | Team Atlas*`);
         teks1 = text.split("|")[0]
         teks2 = text.split("|")[1]
-        maker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
+        maker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
     `${teks1}`,`${teks2}`]).then((data) => Miku.sendMessage(m.from, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
     .catch((err) => m.reply('An Error occued !'));
     }
