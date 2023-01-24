@@ -5,7 +5,7 @@ module.exports = {
     cool:2,
     react: "🤣",
     category: "Fun",
-    start: async(Miku, m,{text,mentionByTag,mentionedJid, prefix}) => {
+    start: async(Miku, m,{text,mentionByTag,mentionedJid,args, prefix}) => {
 
     
                       if (!m.isGroup) return m.reply(`${mess.group}`)
