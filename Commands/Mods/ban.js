@@ -42,6 +42,13 @@ module.exports = {
           { text: `Please tag a user to *Ban*!` }, 
           { quoted: m } 
         )}
+        if (!text.slice(text.indexOf(" ") + 1)) {
+          return Miku.sendMessage(
+            m.from,
+            { text: `Please provides the reason for ban.` },
+            { quoted: m }
+          );
+        }
         else if(m.quoted){
           var mentionedUser = m.quoted.sender;
         }
@@ -49,8 +56,9 @@ module.exports = {
           var mentionedUser = mentionByTag[0];
         }
       //var mentionedUser = mentionByTag; 
-      let banreason = text.slice(text.indexOf(" ") + 1);
-      if (!banreason) return Miku.sendMessage(m.from, { text: `Please provide the reason for ban.` }, { quoted: m });
+      let textArr = text.split(" ");
+let banreason = textArr[1] ? textArr.slice(1).join(" ") : "";
+if (!banreason) return Miku.sendMessage(m.from, { text: `Please provide the reason for ban.` }, { quoted: m });
       var ownerlist = global.owner;
 
       let userId = (await mentionedUser) || m.msg.contextInfo.participant; 
