@@ -1854,7 +1854,7 @@
     "moment-duration-format" "^2.3.2"
     "node-fetch" "2.6.7"
 
-"canvas@^2.5.0":
+"canvas@^2.11.0", "canvas@^2.2.0", "canvas@^2.5.0":
   "integrity" "sha512-bdTjFexjKJEwtIo0oRx8eD4G2yWoUOXP9lj279jmQ2zMnTQhT8C3512OKz3s+ZOaQlLbE7TuVvRDYDB3Llyy5g=="
   "resolved" "https://registry.npmjs.org/canvas/-/canvas-2.11.0.tgz"
   "version" "2.11.0"
@@ -2919,6 +2919,13 @@
   "version" "0.1.7"
   dependencies:
     "assert-plus" "^1.0.0"
+
+"gifencoder@^2.0.1":
+  "integrity" "sha512-x19DcyWY10SkshBpokqFOo/HBht9GB75evRYvaLMbez9p+yB/o+kt0fK9AwW59nFiAMs2UUQsjv1lX/hvu9Ong=="
+  "resolved" "https://registry.npmjs.org/gifencoder/-/gifencoder-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "canvas" "^2.2.0"
 
 "gifwrap@^0.9.2":
   "integrity" "sha512-MDMwbhASQuVeD4JKd1fKgNgCRL3fGqMM4WaqpNhWO0JiMOAjbQdumbs4BbBZEy9/M00EHEjKN3HieVhCUlwjeQ=="
