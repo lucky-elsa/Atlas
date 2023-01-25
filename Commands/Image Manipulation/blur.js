@@ -1,13 +1,13 @@
 const { getBuffer } = require("../../lib/myfunc");
-const fs = require("fs");
-const  Canvacord  = require("canvacord");
+const Jimp = require("jimp");
+
 
 module.exports = {
-  name: "imagecircle2",
-  alias: ["circle2"],
-  desc: "To make circle sized image",
+  name: "blur",
+  alias: ["imageblur"],
+  desc: "To make a blurred image",
   category: "Image Manipulation",
-  usage: "circle <reply to image>",
+  usage: "blur <reply to image>",
   react: "🍁",
   start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
     if (!m.quoted && !/image/.test(mime)) return m.reply('Please tag someone ! or mention a picture !');
@@ -27,9 +27,19 @@ module.exports = {
         return m.reply('Please tag someone ! or mention a picture !');
     }  
 
-    const result = await Canvacord.Canvacord.circle(userPfp, false);
 
-    await Miku.sendMessage(m.from, { image: result, caption:"Here it is...\n" }, { quoted: m });
-
-
-    }}
+      let level = text.split(" ")[1] || 5;
+      const img = await Jimp.read(userPfp);
+      img.blur(isNaN(level) ? 5 : parseInt(level))
+      
+      img.getBuffer(`image/png`, (err, buffer) => {
+            if (!err) {
+                 Miku.sendMessage(m.from, {image:buffer,caption: "_Created by:_ *Miku Nakano*"}, { quoted: m })
+            } else {
+                console.error(err);
+                m.reply("An error occurd !");
+            }
+        });
+    
+    },
+};
