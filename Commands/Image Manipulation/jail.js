@@ -5,7 +5,7 @@ module.exports = {
     alias: ["jailimage"],
     desc: "To make circle sized image",
     category: "Image Manipulation",
-    usage: "circle <reply to image>",
+    usage: "jail <reply to image>",
     react: "🍁",
     start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
         if (!m.quoted && !/image/.test(mime)) return m.reply('Please tag someone ! or mention a picture !');
@@ -18,7 +18,7 @@ module.exports = {
             try {
                 userPfp = await Miku.profilePictureUrl(m.quoted.sender, "image");
               } catch (e) {
-                return m.reply('User profile pic is Private !')
+                return m.reply("User profile pic is Private ! or User doesn't have any profile picture !")
               }
         }
         else{
