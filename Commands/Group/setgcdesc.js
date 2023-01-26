@@ -20,7 +20,7 @@ module.exports = {
     try {
         ppgc = await Miku.profilePictureUrl(m.from, "image");
       } catch {
-        ppgc = "https://wallpapercave.com/wp/wp10524580.jpg";
+        ppgc = botImage1;
       }
 
     await Miku.groupUpdateDescription(m.from, newGCdesc).then((res) => Miku.sendMessage(
