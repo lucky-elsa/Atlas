@@ -126,10 +126,9 @@ var songUrl = match[3];
                 });
                 });
                 let ments = [m.sender]
-                let fot = 'Powered BY LOVE'
                 const listMessage = {
-                footer: fot,
-                text: 'Miku nakano',
+                footer: `${botName}`,
+                text: `*${botName}* powered by *𝙏𝙚𝙖𝙢 𝘼𝙩𝙡𝙖𝙨*`,
                 buttonText: 'Menu ⎙',
                 mentions: ments,
                 sections
