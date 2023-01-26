@@ -30,7 +30,7 @@ module.exports = {
             outputFile
         })
 
-        await Miku.sendMessage(m.from, {image: fs.readFileSync(outputFile),caption:'_Created by: Miku Nakano_'}, {quoted: m}).then (async () => {
+        await Miku.sendMessage(m.from, {image: fs.readFileSync(outputFile),caption:`_Created by: *${botName}*_`}, {quoted: m}).then (async () => {
             await fs.unlinkSync(filename+'.jpg').catch(() => {
                  fs.unlinkSync(filename+'.png')
             });

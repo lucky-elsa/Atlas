@@ -34,7 +34,7 @@ module.exports = {
       
       img.getBuffer(`image/png`, (err, buffer) => {
             if (!err) {
-                 Miku.sendMessage(m.from, {image:buffer,caption: "_Created by:_ *Miku Nakano*"}, { quoted: m })
+                 Miku.sendMessage(m.from, {image:buffer,caption: `_Created by:_ *${botName}*`}, { quoted: m })
             } else {
                 console.error(err);
                 m.reply("An error occurd !");

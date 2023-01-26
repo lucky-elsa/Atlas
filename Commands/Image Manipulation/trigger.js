@@ -68,7 +68,7 @@ module.exports = {
     try {
         const stickerm = new Sticker(await getImage(image), {
             pack: `Triggered`,
-            author: m.sender.username || `Miku Nakano`,
+            author: m.sender.username || `${botName}`,
             type: "full",
             categories: ["💢"],
         })

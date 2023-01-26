@@ -17,7 +17,7 @@ module.exports = {
         .then((image) => {
           return image.circle().getBuffer(Jimp.MIME_JPEG, (err, buffer) => {
             if (!err) {
-                 Miku.sendMessage(m.from, {image:buffer,caption: "_Created by:_ *Miku Nakano*"}, { quoted: m })
+                 Miku.sendMessage(m.from, {image:buffer,caption: `_Created by:_ *${botName}*`}, { quoted: m })
             } else {
                 console.error(err);
             }
