@@ -19,8 +19,8 @@ module.exports = {
     let bmffg = {
       video: narutoVID,
       gifPlayback:true,
-      caption: `Naruto AMV API by *FantoX*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
-      footer: `Miku Nakano`,
+      caption: `Naruto AMV API by *Team Atlas*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
+      footer: `*${botName}*`,
       buttons: cosplayButton,
       headerType: 4,
     };

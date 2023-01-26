@@ -19,7 +19,7 @@ module.exports = {
     let bmffg = {
       image: { url: foxgirl.data.url},
       caption: `Awooo...\n`,
-      footer: `Miku Nakano`,
+      footer: `*${botName}*`,
       buttons: fgbutton,
       headerType: 4,
     };
