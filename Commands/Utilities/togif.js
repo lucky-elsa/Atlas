@@ -13,7 +13,7 @@ module.exports = {
       let mediaMess = await Miku.downloadAndSaveMediaMessage(quoted)
       let webpToMp4 = await webp2mp4File(mediaMess)
 
-        await Miku.sendMessage(m.from, { video: {url:webpToMp4.result}, caption:"_Converted by:_  *Miku Nakano*\n" ,gifPlayback: true}, { quoted: m });
+        await Miku.sendMessage(m.from, { video: {url:webpToMp4.result}, caption:`_Converted by:_  *${botName}*\n` ,gifPlayback: true}, { quoted: m });
         fs.unlinkSync(mediaMess);
     } else {
       Miku.sendMessage(

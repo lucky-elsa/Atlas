@@ -20,7 +20,7 @@ module.exports = {
             return;
         }
         let buffer = fs.readFileSync(ran);
-        Miku.sendMessage(m.from, { image: buffer, caption:"_Converted by:_  *Miku Nakano*\n" }, { quoted: m });
+        Miku.sendMessage(m.from, { image: buffer, caption:`_Converted by:_  *${botName}*\n` }, { quoted: m });
         fs.unlinkSync(ran);
       });
     } else {
