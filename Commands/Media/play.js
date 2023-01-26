@@ -48,7 +48,7 @@ module.exports = {
 *Channel :* _${song.author.name}_
 
 *Url :* _${song.url}_\n`,
-      footer: "Miku Nakano",
+      footer: `*${botName}*`,
       buttons: buttons,
       headerType: 4,
     };
