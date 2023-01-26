@@ -22,7 +22,7 @@ module.exports = {
     try {
       ppgc = await Miku.profilePictureUrl(m.from, "image");
     } catch {
-      ppgc = "https://wallpapercave.com/wp/wp10524580.jpg";
+      ppgc = botImage1;
     }
 
     try {
@@ -30,7 +30,7 @@ module.exports = {
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
-          caption: `_🔶 Group Name:_ *${metadata.subject}*\n\n_🔷 Group Link:_ ${linkcode}`,
+          caption: `\n_🔶 Group Name:_ *${metadata.subject}*\n\n_🔷 Group Link:_\n${linkcode}\n`,
         },
         { quoted: m }
       );
