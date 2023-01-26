@@ -9,7 +9,7 @@ module.exports = {
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text) return m.reply(`Example: *${prefix}neondevil Atlas Bot*`);
         maker.textpro("https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html", [
-`${text}`,]).then((data) => Miku.sendMessage(m.from, { image: { url: data }, caption: `Made by ${global.botname}` }, { quoted: m }))
+`${text}`,]).then((data) => Miku.sendMessage(m.from, { image: { url: data }, caption: `Made by ${botName}` }, { quoted: m }))
     .catch((err) => m.reply('An Error occued !'));
     }
 }
