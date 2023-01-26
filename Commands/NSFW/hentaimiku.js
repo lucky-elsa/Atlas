@@ -5,7 +5,7 @@ module.exports = {
   alias: ["nsfwmiku", "hentaimiku", "henmiku"],
   desc: "Hentai picture of miku",
   category: "Weeb",
-  usage: `cosplay`,
+  usage: `hmiku`,
   react: "🍁",
   start: async (Miku, m, { prefix }) => {
     let Image = await getBuffer(`https://mikuhentai-api.onrender.com/`);
@@ -18,8 +18,8 @@ module.exports = {
     ];
     let bmffg = {
       image: Image,
-      caption: `Hentai-Miku API by *FantoX*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
-      footer: `Miku Nakano`,
+      caption: `Miku Hentai API by *Team Atlas*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
+      footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
     };

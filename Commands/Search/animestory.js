@@ -36,7 +36,7 @@ module.exports = {
                 m.from, 
                 {
                  text: `_🎀 Search Term:_ *${AnimesearchTerm}*\n\n`,
-                 footer: "Miku Nakano",
+                 footer: `*${botName}*`,
                  title: "*『  Anime Story Search  』*\n\n",
                  buttonText: "Search Results",
                  sections

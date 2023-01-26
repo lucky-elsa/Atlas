@@ -30,7 +30,7 @@ module.exports = {
         let buttonMessage = {
           video: { url: gifUrl }, gifPlayback:true,
           caption: `Gif serach result for: *${gifSearchTerm}*\n`,
-          footer: `*Miku Nakano*`,
+          footer: `*${botName}*`,
           buttons: buttons,
           headerType: 4,
         };

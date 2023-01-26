@@ -32,7 +32,7 @@ module.exports = {
               url: images
             },
             caption: resText,
-            footer: `Miku Nakano`,
+            footer: `*${botName}*`,
             buttons: buttons,
             headerType: 4,
           },
