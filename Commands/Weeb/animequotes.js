@@ -19,7 +19,7 @@ module.exports = {
     let bmffg = {
       image: Image,
       caption: `Feel My Quotes *${pushName}* Senpai ♥️`,
-      footer: `Miku Nakano`,
+      footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
     };

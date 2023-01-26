@@ -20,7 +20,7 @@ module.exports = {
       video: VID,
       gifPlayback:true,
       caption: `Cosplayvideo API by *Fantox*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
-      footer: `Miku Nakano`,
+      footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,
     };

@@ -19,7 +19,7 @@ module.exports = {
     let bmffg = {
       image: cosplayImage,
       caption: `Cosplay API by *FantoX*\n\n*API link:* https://shubhapratimbiswas.tech\n`,
-      footer: `Miku Nakano`,
+      footer: `*${botName}*`,
       buttons: cosplayButton,
       headerType: 4,
     };
