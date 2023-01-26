@@ -27,7 +27,7 @@ module.exports = {
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
-          caption: `*『 Group Description Changed 』*\n\n_🔷 New Description:_\n*${args.join(" ")}*`,
+          caption: `*『 Group Description Changed 』*\n\n_🧩 New Description:_\n*${args.join(" ")}*`,
         },
         { quoted: m }
       )).catch((err) => replay(jsonformat(err)))
