@@ -62,7 +62,7 @@ module.exports = {
       .then((res) => {
         const buffer = Buffer.from(res.data.result.image, "base64");
         Miku.sendImageAsSticker(m.from, buffer, m, {
-          packname: "Miku Nakano",
+          packname: `${botName}`,
           author: waUserName,
         });
       });

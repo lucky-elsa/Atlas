@@ -37,7 +37,7 @@ global.animeCharacter = '1'  // Choose an anime character from below list //
 */
 
 
-// ---------------------Only modify links if you want------------------- //
+// ---------------------Only modify links if you want to add/ modify character------------------- //
 
 
 if (global.animeCharacter == 1){
@@ -60,8 +60,8 @@ global.sessionId = process.env.SESSION_ID || "ok";
 global.prefa = process.env.PREFIX || "-";
 global.tenorApiKey =
   process.env.TENOR_API_KEY || "AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c";
-global.packname = process.env.PACKNAME || "Miku Nakano";
-global.author = process.env.AUTHOR || "by: Fantox";
+global.packname = process.env.PACKNAME || `${botName}`;
+global.author = process.env.AUTHOR || "by: Team Atlas";
 global.port = process.env.PORT || "8080";
 
 
