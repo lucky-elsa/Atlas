@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 module.exports = {
   name: "help",
   alias: ["menu", "h", "helpm", "helpmenu"],
@@ -8,15 +6,14 @@ module.exports = {
   category: "Core",
   start: async (Miku, m, {prefix,pushName}) => {
    var text = `Konichiwa *${pushName}* Senpai,
-I am *Miku Nakano*, a bot developed by *FantoX* and his awesome team.
+
+I am *${botName}*, a bot developed by *Team Atlas*.
 
 🔰 My prefix is:  ${prefix}
 
 Here's the list of my Commands.\n
-   `;
-text +=`
+   `
 
-`
 
 let buttons = [
     {
@@ -26,9 +23,9 @@ let buttons = [
     },
   ];
   let buttonMessage = {
-    video: fs.readFileSync('./Assets/miku.mp4'), gifPlayback: true,
+    video: botVideo, gifPlayback: true,
     caption: text,
-    footer: `*Miku Nakano*`,
+    footer: `*${botName}*`,
     buttons: buttons,
     headerType: 4,
   };

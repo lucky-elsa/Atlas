@@ -1,7 +1,7 @@
 module.exports = {
     name: "dare",
-    alias: ["d"],
-    desc: "dare",
+    alias: ["givedare"],
+    desc: "give a dare",
     cool:3,
     react: "🙄",
     category: "Fun",
@@ -91,8 +91,6 @@ module.exports = {
           "put your father name on status for 5hrs",
           "send abusive words in any grup, excepting this grup, and send screenshot proof here"]
     const dey = shibam[Math.floor(Math.random() * shibam.length)]
-    
-
    
     
     let buttons = [
@@ -105,9 +103,9 @@ module.exports = {
     ];
   
 let buttonMessage = {
-      image: { url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1g1PR4zwxh8Bj_0wbRCMHyo481yPhpCD5OQ&usqp=CAU"},
+      image: { url:botImage4},
       caption: dey,
-      footer: `*Miku Nakano*`,
+      footer: `*${botName}*`,
       buttons: buttons,
       headerType: 4,
     };

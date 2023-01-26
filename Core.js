@@ -119,9 +119,9 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
            if (m.isGroup && mongoschema == "true") {
            linkgce = await Miku.groupInviteCode(from)
            if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-           m.reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be because you sent this group's link.`)
+           m.reply(`\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be taken because you sent this group's link.`)
            } else if (isUrl(m.text)) {
-           bvl = `\`\`\`「  *Antilink System*  」\`\`\`\n\nAdmin has sent a link so no action is taken.`
+           bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nAdmin has sent a link so no issues.`
            if (isAdmin) return m.reply(bvl)
            if (m.key.fromMe) return m.reply(bvl)
            if (isCreator) return m.reply(bvl)
@@ -137,7 +137,6 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
 
         const flags= args.filter((arg) => arg.startsWith('--'))
        if(body.startsWith(prefix)&&!icmd) {
-        //var Mikupic = `https://user-images.githubusercontent.com/105273285/211724702-a46f84a9-1f3d-42fd-bfa4-24baa8e5229d.mp4`;
         let mikutext =`No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n` 
 
         let Button = [
@@ -148,9 +147,9 @@ module.exports = async (Miku, m, commands, chatUpdate,store) => {
             },
           ];
         let bmffg = {
-            video: fs.readFileSync('./Assets/miku.mp4'),
+            image: {url: botImage1},
             caption: mikutext,
-            footer: `Miku Nakano`,
+            footer: `*${botName}*`,
             buttons: Button,
             headerType: 4,
           };

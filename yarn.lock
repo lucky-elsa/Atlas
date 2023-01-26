@@ -1468,6 +1468,11 @@
   "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
   "version" "1.1.1"
 
+"array-miner@0.0.1":
+  "integrity" "sha512-qLc2f0U1+UJRJF0+XWN4Gtye6JZPNYrY3VA4lnE8mhFtxS9oi+RYMHtq/aQdcENvohCSDr38LBWmunSfokfDrg=="
+  "resolved" "https://registry.npmjs.org/array-miner/-/array-miner-0.0.1.tgz"
+  "version" "0.0.1"
+
 "array-parallel@~0.1.3":
   "integrity" "sha512-TDPTwSWW5E4oiFiKmz6RGJ/a80Y91GuLgUYuLd49+XBS75tYo8PNgaT2K/OxuQYqkoI852MDGBorg9OcUSTQ8w=="
   "resolved" "https://registry.npmjs.org/array-parallel/-/array-parallel-0.1.3.tgz"
@@ -4175,6 +4180,11 @@
   dependencies:
     "iconv-lite" "0.6.2"
 
+"node-periodic-table@^0.0.6":
+  "integrity" "sha512-zaswyHQTH8duh5dxI45BAwbzJjdn7EcjoOrR8+kCQEBHGfuckHPXwe31y3kAli+0pdu77nDnYnJHqeyx9+77wg=="
+  "resolved" "https://registry.npmjs.org/node-periodic-table/-/node-periodic-table-0.0.6.tgz"
+  "version" "0.0.6"
+
 "node-superfetch@^0.1.11":
   "integrity" "sha512-984lO43EvDtjBOpVXDqnR2L5+pVt+qWfqIE6H7Sl21BoIz26OwSKxBnO9ZmJkYXAimR64MUPiz6tn5hySy1d0Q=="
   "resolved" "https://registry.npmjs.org/node-superfetch/-/node-superfetch-0.1.11.tgz"
@@ -4638,6 +4648,13 @@
   "integrity" "sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag=="
   "resolved" "https://registry.npmjs.org/psl/-/psl-1.9.0.tgz"
   "version" "1.9.0"
+
+"ptable@^0.0.3":
+  "integrity" "sha512-i+oCYm89w9ZYchU+7s/HDp/MPMoGBCjVcDtAvG1dzPx1n8qGekra7DJ2rudye2QVlQyab+rbLqDJuACW5B2nNg=="
+  "resolved" "https://registry.npmjs.org/ptable/-/ptable-0.0.3.tgz"
+  "version" "0.0.3"
+  dependencies:
+    "array-miner" "0.0.1"
 
 "pump@^3.0.0":
   "integrity" "sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww=="

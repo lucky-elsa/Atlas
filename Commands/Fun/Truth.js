@@ -113,9 +113,9 @@ module.exports = {
     ];
   
 let buttonMessage = {
-      image: { url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1g1PR4zwxh8Bj_0wbRCMHyo481yPhpCD5OQ&usqp=CAU"},
+      image: { url:botImage3},
       caption: dey,
-      footer: `*Miku Nakano*`,
+      footer: `*${botName}*`,
       buttons: buttons,
       headerType: 4,
     };

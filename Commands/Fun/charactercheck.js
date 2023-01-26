@@ -18,11 +18,10 @@ module.exports = {
     const userChar = ['Sigma', 'Generous', 'Grumpy', 'Overconfident', 'Obedient', 'Good', 'Simp', 'Kind', 'Patient', 'Pervert', 'Cool', 'Helpful']
     const userCharacterSeletion = userChar[Math.floor(Math.random() * userChar.length)]
     
-    let mikupic ='https://images8.alphacoders.com/114/1140058.png';
 
     let Mikutext = `Character of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${userCharacterSeletion}*`
 
-    Miku.sendMessage(m.from, { image: {url: mikupic},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
+    Miku.sendMessage(m.from, { image: {url: botImage3},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
 
 }
 }

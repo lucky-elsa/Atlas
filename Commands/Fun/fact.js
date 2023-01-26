@@ -12,7 +12,6 @@ module.exports = {
             .get(`https://nekos.life/api/v2/fact`)
             .then((response) => {
                 const tet = `*『  Random Facts  』* \n\n${response.data.fact}`
-                let pic = 'https://wallpapercave.com/wp/wp11287659.png';
 
             let buttons = [
                 {
@@ -25,7 +24,7 @@ module.exports = {
             let buttonMessage = {
                 image: { url: pic },
                 caption: tet +'\n',
-                footer: `Atlas MD`,
+                footer: `*${botName}*`,
                 buttons: buttons,
                 headerType: 4,
               };

@@ -14,12 +14,45 @@
 /    This is a config file for the bot, you can change the prefix, owner, etc.      /
 /                                                                                   /
 /----------------------------------------------------------------------------------*/
+const fs = require("fs");
 
 require("dotenv").config();
 let gg = process.env.MODS;
 if (!gg) {
-  gg = "918101187835";
+  gg = "918101187835";   // You can Change this number //
 }
+
+
+global.animeCharacter = '1'  // Choose an anime character from below list //
+
+/* ---Added Anime Character list---  /
+
+0 --- Atlas MD
+1 --- Power
+2 --- Makima
+3 --- Vermeil
+4 --- Denji
+5 --- Zero Two
+
+*/
+
+
+// ---------------------Only modify links if you want------------------- //
+
+
+if (global.animeCharacter == 1){
+    global.botName = "Power MD"
+    global.botVideo = fs.readFileSync("./assets/power.mp4")
+    global.botImage1 = "https://wallpapercave.com/wp/wp11253614.jpg"
+    global.botImage2 = "https://wallpapercave.com/wp/wp9413488.jpg"
+    global.botImage3 = "https://wallpapercave.com/wp/wp11628561.jpg"
+    global.botImage4 = "https://wallpapercave.com/wp/wp11733443.jpg"
+    global.botImage5 = "https://wallpapercave.com/wp/wp11733435.jpg"
+    global.botImage6 = "https://wallpapercave.com/wp/wp11733458.jpg"
+}
+
+
+// ---------------------Do Not Modify this part------------------- //
 
 global.owner = gg.split(",");
 global.mongodb = process.env.MONGODB || "NONE";
@@ -30,6 +63,11 @@ global.tenorApiKey =
 global.packname = process.env.PACKNAME || "Miku Nakano";
 global.author = process.env.AUTHOR || "by: Fantox";
 global.port = process.env.PORT || "8080";
+
+
+
+// ---------------------Do Not Modify this part------------------- //
+
 global.mess = {
   jobdone: "Job done...",
   useradmin: "Sorry, only *Group Admins* can use this command *Baka*!",
