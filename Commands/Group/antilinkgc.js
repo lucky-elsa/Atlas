@@ -7,7 +7,7 @@ const { mk } = require("../../Database/dataschema.js");
 
 module.exports = {
     name: "antilinkgc",
-    alias: ["alinkgc"],
+    alias: ["alinkgc","antilink"],
     desc: "Enable or disable the antilink feature in a group",
     category: "Group",
     usage: "antilinkgc [on/off]",
@@ -15,7 +15,7 @@ module.exports = {
     start: async (
       Miku,
       m,
-      { args, isBotAdmin, isAdmin, isCreator, reply }
+      { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName }
     ) => {
         if (!isAdmin && !isBotAdmin)
         return Miku.sendMessage(
@@ -98,8 +98,14 @@ module.exports = {
             type: 1,
           },
         ];
-        await Miku.sendButtonText(`m.from, buttonsntilink, Please click the button below On / Off, ${global.BotName}`, m);
-        return m.reply(`*Please provide a valid option, on or off*`);
-        }
-        },
+        let bmffg = {
+          image: {url : botImage6} ,
+          caption: `\nPlease click the button below\n*On / Off*\n`,
+          footer: `*${botName}*`,
+          buttons: buttonsntilink,
+          headerType: 4,
         };
+        await Miku.sendMessage(m.from, bmffg, { quoted: m });
+    }
+  },
+};
