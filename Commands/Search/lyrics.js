@@ -26,7 +26,7 @@ module.exports = {
       m.from,
       {
         image: {
-          url: "https://wallpapercrafter.com/th800/122315-5-toubun-no-Hanayome-Nakano-Miku-Idol-microphone-blue-eyes-anime-anime-girls.jpg",
+          url: botImage3,
         },
         caption: resText,
       },

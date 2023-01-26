@@ -31,7 +31,7 @@ module.exports = {
         let buttonMessage = {
           image: { url: imgnyee },
           caption: txt ,
-          footer: "Miku Nakano",
+          footer: `*${botName}*`,
           buttons: buttons,
           headerType: 4,
         };
