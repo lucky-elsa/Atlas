@@ -56,9 +56,11 @@ module.exports = {
     })
     fs.unlinkSync(quotedimage)
 
+    ppgc = await Miku.profilePictureUrl(m.from, "image");
+
     Miku.sendMessage(
         m.from,
-        { text: `Group Profile Picture has been updated Successfully by *${pushName}* !` },
+        { image: {url: ppgc},caption: `\nGroup Profile Picture has been updated Successfully by *${pushName}* !` },
         { quoted: m }
       )
   },
