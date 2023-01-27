@@ -15,14 +15,14 @@ module.exports = {
           try {
             userPfp = await Miku.profilePictureUrl(m.quoted.sender, "image");
           } catch (e) {
-            userPfp = "https://wallpapercave.com/wp/wp10524580.jpg";
+            userPfp = botImage3;
           }
         }
         else{
           try {
             userPfp = await Miku.profilePictureUrl(m.sender, "image");
           } catch (e) {
-            userPfp = "https://wallpapercave.com/wp/wp10524580.jpg";
+            userPfp = botImage3;
           }
         }
     
