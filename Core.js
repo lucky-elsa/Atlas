@@ -138,7 +138,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     const args = body.trim().split(/ +/).slice(1);
     const ar = args.map((v) => v.toLowerCase());
     let text = (q = args.join(" "));
-
+    const groupName = m.isGroup ? metadata.subject : ''
     const cmdName = prat
       .slice(prefix.length)
       .trim()
@@ -228,6 +228,42 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       }
     }
 
+    if (body === `${prefix}unbangc`) {
+        mku.findOne({id:m.sender}).then(async (user) => {
+            if (user.addedMods=="false" && !isCreator) {
+                m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
+            } else {  
+            if (!checkdata) {
+                try {
+                    await new mk({ id: m.from, bangroup: "false" }).save()
+                    return m.reply(`*${global.botName} IS  UNBANNED ON ${groupName}*`)
+                } catch (err) {
+                    return m.reply(`An error occurred: ${err.message}`)
+                }
+            } else {
+                if (checkdata.bangroup == "false") return m.reply(`ALREADY UNBANNED.`)
+                try {
+                    await mk.updateOne({ id: m.from }, { bangroup: "false" })
+                    return m.reply(`*${global.botName} IS  UNBANNED ON ${groupName}*`)
+                } catch (err) {
+                    return m.reply(`An error occurred: ${err.message}`)
+                 }
+            }
+       }}).catch(err => m.reply(`An error occurred: ${err.message}`))
+    }
+
+    
+       if(m.isGroup && isCmd){
+        if (!checkdata) {
+            await new mk({ id: m.chat, bangroup: "true" }).save()
+                        return reply(`*${global.botName} IS BANNED ON ${groupName}*`)
+        }
+        else {
+            if (checkdata.bangroup == "true") return m.reply(`*${global.botName} IS BANNED ON ${groupName}*`)
+        }     
+    } 
+    
+    
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
       let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n`;
