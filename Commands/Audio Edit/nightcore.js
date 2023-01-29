@@ -12,7 +12,7 @@ module.exports = {
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
 
      let media = await Miku.downloadAndSaveMediaMessage(quoted)
-     let set = '-filter:a atempo=1.16,asetrate=44100*1.20'
+     let set = '-filter:a atempo=1.07,asetrate=44100*1.20'
      let ran = getRandom('.mp3')
      try{
         exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
