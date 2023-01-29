@@ -8,9 +8,9 @@ const { mk, mku } = require("../../Database/dataschema.js");
 module.exports = {
     name: "unbangroup",
     alias: ["unbangc"],
-    desc: "Ban a group",
+    desc: "Un Ban a group",
     category: "core",
-    usage: "bangroup",
+    usage: "unbangroup",
     react: "🎀",
     start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,groupName }) => {
     var modStatus = await mku.findOne({ id: m.sender }).then(async (user) => {
