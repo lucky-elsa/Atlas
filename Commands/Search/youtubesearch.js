@@ -15,12 +15,33 @@ module.exports = {
           { quoted: m }
         );
         let search = await yts(text);
-        var resText = `       *『  YouTube Search Engine  』*\n\n\n_🔍 Search Term:_ *${args.join(" ")}*\n\n\n`
-            let count = 1;
-        for(let num of search.all){
-            resText += `\n_📍 Result:_ *${count}*\n\n_🎀 Title:_ *${num.title}*\n\n_🔶 Views:_ *${num.views}*\n\n_🎗️ Duration:_ *${num.timestamp}*\n\n_🍁 Uploaded on:_ *${num.ago}*\n\n_🔷 Link:_ *${num.url}*\n\n\n`;
-            count++;
-        }
-        await Miku.sendMessage(m.from,{image:{url:search.all[0].thumbnail},caption:resText},{quoted:m})
+          let num =0;
+          let sections = [] 
+        for (let i of search.all) {
+          //console.log(i)
+          const list = {title: `Reseult: ${num++}`,
+          rows: [
+          
+                  {
+                   title: `${i.title}`, 
+                   rowId: `${prefix}play ${i.title}`,
+                   description: `${i.timestamp}`
+                  }
+                  ]
+               }
+                  sections.push(list)
+              }
+              var txt = `     *『  YouTube Search Engine  』*\n\n\n_Search Term:_ *${args.join(" ")}*\n\nChoose a song to play\n`
+
+              let buttonMessage = {
+                //image: { url: randomimage },
+                text: txt,
+                footer: `*${botName}*`,
+                buttonText: "Choose Song",
+                sections,
+              };
+          
+              Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+
 
     }}
