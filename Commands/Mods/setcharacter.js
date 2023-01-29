@@ -8,7 +8,7 @@ const { mku, mkchar } = require("../../Database/dataschema.js");
 module.exports = { 
 
     name: "setcharacter", 
-    alias: ["setchar","setbotcharater","changechar","changecharacter"], 
+    alias: ["setchar","setbotcharater","changechar","changecharacter","botchar","botcharacter"], 
     desc: "Ban a member", 
     category: "core", 
     usage: "setchar 0/1/2/3/4/5/6/7", 
