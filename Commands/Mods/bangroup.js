@@ -12,7 +12,7 @@ module.exports = {
     category: "core",
     usage: "bangroup",
     react: "🎀",
-    start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator }) => {
+    start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator , groupName}) => {
     var modStatus = await mku.findOne({ id: m.sender }).then(async (user) => {
     if (user.addedMods == "true") {
     return "true";
@@ -29,9 +29,9 @@ module.exports = {
     try {
         if (!checkdata) {
             await new mk({ id: m.from, bangroup: "true" }).save()
-            return m.reply(`*This Group Is Banned From Using Bot.*`)
+            return m.reply(`*${groupName}* is now *Banned* from using *${global.botName}*`)
         } else {
-            if (checkdata.bangroup == "true") return m.reply(`*This Group Is Already Banned From Using Bot.*`)
+            if (checkdata.bangroup == "true") return m.reply(`*${groupName}* is *Already Banned* from using *${global.botName}*`)
             await mk.updateOne({ id: m.from }, { bangroup: "true" })
             return m.reply(`*This Group Is Banned From Using Bot.*`)
         }

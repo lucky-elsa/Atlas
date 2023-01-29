@@ -228,39 +228,21 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       }
     }
 
-    if (body === `${prefix}unbangc`) {
-        mku.findOne({id:m.sender}).then(async (user) => {
-            if (user.addedMods=="false" && !isCreator) {
-                m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
-            } else {  
-            if (!checkdata) {
-                try {
-                    await new mk({ id: m.from, bangroup: "false" }).save()
-                    return m.reply(`*${global.botName} IS  UNBANNED ON ${groupName}*`)
-                } catch (err) {
-                    return m.reply(`An error occurred: ${err.message}`)
-                }
-            } else {
-                if (checkdata.bangroup == "false") return m.reply(`ALREADY UNBANNED.`)
-                try {
-                    await mk.updateOne({ id: m.from }, { bangroup: "false" })
-                    return m.reply(`*${global.botName} IS  UNBANNED ON ${groupName}*`)
-                } catch (err) {
-                    return m.reply(`An error occurred: ${err.message}`)
-                 }
-            }
-       }}).catch(err => m.reply(`An error occurred: ${err.message}`))
-    }
 
     
-       if(m.isGroup && isCmd){
-        if (!checkdata) {
-            await new mk({ id: m.chat, bangroup: "true" }).save()
-                        return reply(`*${global.botName} IS BANNED ON ${groupName}*`)
-        }
-        else {
-            if (checkdata.bangroup == "true") return m.reply(`*${global.botName} IS BANNED ON ${groupName}*`)
-        }     
+       if(m.isGroup && isCmd ){
+
+        mku.findOne({id:m.sender}).then(async (user) => {
+          if (user.addedMods=="false" && !isCreator) {
+            if (!checkdata) {
+              await new mk({ id: m.from, bangroup: "true" }).save()
+                          return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`)
+          }
+          else {
+              if (checkdata.bangroup == "true") return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`)
+          } 
+          }
+        })        
     } 
     
     
@@ -385,6 +367,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       body,
       args,
       ar,
+      groupName,
       botNumber,
       flags,
       isAdmin,
