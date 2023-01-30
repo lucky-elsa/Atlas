@@ -10,7 +10,7 @@ module.exports = {
     name: "slot",  
     desc: "play slot game", 
     alias: ["slot"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

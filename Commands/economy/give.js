@@ -15,7 +15,7 @@ const { M } = require("human-readable");
     name: "set-money",  
     desc: "give money to user.", 
     alias: ["give"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

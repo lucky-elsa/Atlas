@@ -11,7 +11,7 @@ module.exports = {
     name: "withdraw",  
     desc: "withdraw money from bank account.", 
     alias: ["withdraw"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

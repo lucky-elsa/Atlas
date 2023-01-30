@@ -12,7 +12,7 @@ module.exports = {
     name: "deposit",  
     desc: "deposit gold.", 
     alias: ["deposit"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -48,8 +48,8 @@ module.exports = {
             },
           ];
           let buttonMessage = {
-            text: `⛩️ Sender: ${m.pushName}\n\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.`,
-            footer: `*Miku Nakano*`,
+            text: `⛩️ Sender: ${m.pushName}\n\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.\n`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };

@@ -15,7 +15,7 @@ const { M } = require("human-readable");
     name: "gamble",  
     desc: "gamble money.", 
     alias: ["gamble"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -63,7 +63,7 @@ const { M } = require("human-readable");
           ];
           let buttonMessage = {
             text: `*📈 You won 🪙${twice}*`,
-            footer: `*Miku Nakano*`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };
@@ -87,7 +87,7 @@ const { M } = require("human-readable");
           ];
           let buttonMessage = {
             text: `*📉 You lost 🪙${texts[0]}*`,
-            footer: `*Miku Nakano*`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };

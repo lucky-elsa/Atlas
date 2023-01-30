@@ -12,7 +12,7 @@ module.exports = {
     name: "daily",  
     desc: "daily gold.", 
     alias: ["daily"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -40,7 +40,7 @@ module.exports = {
               ];
               let buttonMessage = {
                 text: `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`,
-                footer: `*Miku Nakano*`,
+                footer: `*${botName}*`,
                 buttons: buttons,
                 type: 4
               };

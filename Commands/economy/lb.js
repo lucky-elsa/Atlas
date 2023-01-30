@@ -5,7 +5,7 @@ const { mku, mk } = require("../../Database/dataschema.js");
 const eco = require('discord-mongoose-economy')
 const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
  const fs = require("fs");
- const { economy } = require("../../node_modules/discord-mongoose-economy/models/economy");
+ const { economy } = require("discord-mongoose-economy/models/economy.js");
 
  module.exports = { 
     name: "leaderboard", 

@@ -12,7 +12,7 @@ const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mong
     name: "capacity",  
     desc: "update capacity.", 
     alias: ["capacity"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

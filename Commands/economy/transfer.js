@@ -12,7 +12,7 @@ module.exports = {
     name: "transfer",  
     desc: "transfer gold.", 
     alias: ["sharegold"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -52,7 +52,7 @@ module.exports = {
           ];
           let buttonMessage = {
             text: `*📠 Transaction successful of ${word} 💰*`,
-            footer: `*Miku Nakano*`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };

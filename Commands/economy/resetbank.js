@@ -11,7 +11,7 @@ module.exports = {
     name: "reset-bank",  
     desc: "reset wallet of quoted user.", 
     alias: ["reset-bank"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

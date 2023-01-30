@@ -12,7 +12,7 @@ module.exports = {
     name: "wallet",  
     desc: "Shows Wallet.",
     alias: ["wallet"], 
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -37,7 +37,7 @@ module.exports = {
           ];
           let buttonMessage = {
             text: `👛 *${m.pushName}'s Purse:*\n\n_🪙${balance.wallet}_`,
-            footer: `*Miku Nakano*`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };

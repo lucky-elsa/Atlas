@@ -10,7 +10,7 @@ module.exports = {
     name: "rob",  
     desc: "rob bank amount", 
     alias: ["rob"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 

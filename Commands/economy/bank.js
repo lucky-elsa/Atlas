@@ -12,7 +12,7 @@ module.exports = {
     name: "bank",  
     desc: "shows bank amount.", 
     alias: ["bank"],
-    category: "economy",  
+    category: "Economy",  
     react: "💰", 
     start: async ( 
         Miku, 
@@ -51,8 +51,8 @@ module.exports = {
             },
           ];
           let buttonMessage = {
-            text: `🏦 *${pushname}'s Bank*:\n\n🪙${balance.bank}/${balance.bankCapacity}\n\n\n*Wealth: ${role}*`,
-            footer: `*Miku Nakano*`,
+            text: `🏦 *${pushname}'s Bank*:\n\n🪙${balance.bank}/${balance.bankCapacity}\n\n\n*Wealth: ${role}*\n`,
+            footer: `*${botName}*`,
             buttons: buttons,
             type: 4
           };
