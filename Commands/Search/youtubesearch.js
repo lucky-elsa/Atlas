@@ -15,7 +15,7 @@ module.exports = {
           { quoted: m }
         );
         let search = await yts(text);
-          let num =0;
+          let num =1;
           let sections = [] 
         for (let i of search.all) {
           //console.log(i)
@@ -25,7 +25,7 @@ module.exports = {
                   {
                    title: `${i.title}`, 
                    rowId: `${prefix}play ${i.title}`,
-                   description: `${i.timestamp}`
+                   description: `Duration: ${i.timestamp}`
                   }
                   ]
                }

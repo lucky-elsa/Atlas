@@ -41,8 +41,6 @@ module.exports = {
 
 *Duration :* _${song.timestamp}_
 
-*Viewers :* _${song.views}_
-
 *Uploaded :* _${song.ago}_
 
 *Channel :* _${song.author.name}_
