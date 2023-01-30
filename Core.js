@@ -31,29 +31,13 @@ const moment = require("moment-timezone");
 const chalk = require("chalk");
 const { color } = require("./lib/color");
 //const { correct } = require("./lib/Correct")
-const { QuickDB, MySQLDriver } = require("quick.db");
+const { QuickDB } = require("quick.db");
 const { Console } = require("console");
 const cool = new Collection();
 const { mk, mku, mkchar } = require("./Database/dataschema.js");
 const prefix = global.prefa;
 
 const db = new QuickDB();
-/*(async () => {
-    const mysqlDriver = new MySQLDriver({
-        host: "localhost:3306",
-        user: "root",
-        password: "74325252",
-        database: "miku_db",
-    });
-    await mysqlDriver.connect(); // connect to the database **this is important**
-
-    const db = new QuickDB({ driver: mysqlDriver });
-    // Now you can use quick.db as normal
-
-    await db.set("userInfo", { difficulty: "Easy" });
-    // -> { difficulty: 'Easy' }
-})();
-*/
 
 global.Levels = require("discord-xp");
 Levels.setURL(

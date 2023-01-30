@@ -1,12 +1,12 @@
-const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
+const {instagramdl, instagramdlv4, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
 const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
-    name: "igdl",
-    alias:["instagram","instadl","instagramdl","igvid"],
+    name: "igdl2",
+    alias:["instagram2","instadl2","instagramdl2","igvid2"],
     desc: "To download an instagram video",
     category: "Media",
-    usage: `igdl <video link>`,
+    usage: `igdl2 <video link>`,
     react: "🍁",
     start: async (Miku, m, { text, prefix, args }) => {
   
@@ -22,19 +22,11 @@ module.exports = {
               { text: `Please provide a valid Instagram Video link !` },
               { quoted: m }
             );
-            instagramdlv3(`${args.join(" ")}`).then(async (data) => {            
-            //var buf = await getBuffer(data.thumbnail)  
-
-            await Miku.sendMessage(m.from, { video: { url: data[0].url }, caption: `_Downloaded by:_ *${botName}*`}, { quoted: m })
-        }).catch((err) => {
-            Miku.sendMessage(
-                m.from,
-                { text: mess.error },
-                { quoted: m }
-              );
-        })
-          
-              }
-          }
-
-    
+            const results =await instagramdl(args[0]).catch(async _ => await instagramdlv2(args[0]))
+            .catch(async _ => await instagramdlv3(args[0]))
+            .catch(async _ => await instagramdlv4(args[0]))           
+       
+            for (const { url } of results){
+              await Miku.sendMessage(m.from, {video: {url: url}, caption: `Downloaded by: *${botName}*` }, { quoted: m });
+            }
+          }}
