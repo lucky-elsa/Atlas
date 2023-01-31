@@ -183,14 +183,17 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     //----------------------------------------- Bot On/OFF Configuration -------------------------------------------//
 
     let botSwitchGC = await mk.findOne({ id: m.from });
+    if(botSwitchGC){
     let botWrokerGC = botSwitchGC.botSwitch || "true";
     if (m.isGroup && botWrokerGC == "false" && !isAdmin ) {
       return;
+      }
     }
 
     //------------------------------------------- Chatbot Configuration ---------------------------------------------//
 
     let chatbotStatus = await mk.findOne({ id: m.from });
+    if (chatbotStatus){
     let csts = chatbotStatus.chatBot || "false";
     if (m.isGroup && csts == "true" && !icmd) {
       if (m.quoted) {
@@ -203,8 +206,10 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         }
       }
     }
+  }
 
     let PMchatBotStatus = await mkchar.findOne({ id: '1'});
+    if (PMchatBotStatus){
     let PMcsts = PMchatBotStatus.PMchatBot || "false";
 
     if (!m.isGroup && PMcsts == "true" && !icmd) {
@@ -215,6 +220,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                 m.reply(txt)
             }, 2200);
           }
+        }
     //---------------------------------------------------------------------------------------------------------------//
 
 

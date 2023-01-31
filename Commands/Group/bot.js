@@ -34,7 +34,7 @@ module.exports = {
       members.map(async (adm) => {
         mems.push(adm.id.replace("c.us", "s.whatsapp.net"));
       });
-  
+
       if (args[0] === "on") {
         if (!checkdata) {
           await new mk({ id: m.from, botSwitch: "true" }).save();
