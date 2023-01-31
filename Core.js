@@ -188,22 +188,33 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       return;
     }
 
-    //--------------------------------------- Group Chatbot Configuration -------------------------------------------//
+    //------------------------------------------- Chatbot Configuration ---------------------------------------------//
 
     let chatbotStatus = await mk.findOne({ id: m.from });
     let csts = chatbotStatus.chatBot || "false";
-    if (m.isGroup && csts == "true") {
+    if (m.isGroup && csts == "true" && !icmd) {
       if (m.quoted) {
         if (m.quoted.sender == botNumber) {
           const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
             txt = `${botreply.data.cnt}`
             setTimeout(function(){
                 m.reply(txt)
-            }, 2000);
+            }, 2200);
         }
       }
     }
 
+    let PMchatBotStatus = await mkchar.findOne({ id: '1'});
+    let PMcsts = PMchatBotStatus.PMchatBot || "false";
+
+    if (!m.isGroup && PMcsts == "true" && !icmd) {
+      
+          const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
+            txt = `${botreply.data.cnt}`
+            setTimeout(function(){
+                m.reply(txt)
+            }, 2200);
+          }
     //---------------------------------------------------------------------------------------------------------------//
 
 

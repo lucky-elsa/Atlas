@@ -19,7 +19,8 @@ const UserSchema = new mongoose.Schema({
 
 const CharacterSchema = new mongoose.Schema({
   id: {type: String , unique: false, required: true , default: "1" },
-  seletedCharacter: { type: String, default: "0" }
+  seletedCharacter: { type: String, default: "0" },
+  PMchatBot: { type: String, default: "false" }
 });
 
 

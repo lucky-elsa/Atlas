@@ -6,11 +6,11 @@ const { mk } = require("../../Database/dataschema.js");
 
 
 module.exports = {
-    name: "chatbot",
-    alias: ["autochat","autoreply","chatbotgc","chatbotgroup"],
+    name: "chatbotgc",
+    alias: ["autochat","autoreply","chatbotgroup"],
     desc: "Enable or disable the autoreply feature in a group",
     category: "Group",
-    usage: "chatbot [on/off]",
+    usage: "chatbotgc [on/off]",
     react: "🎀",
     start: async (
       Miku,
@@ -41,21 +41,21 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*Group Chatbot Activated! *`,
+              text: `*Group Chatbot Activated! *\n\nTo use it mention bot's meaage with your message.`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot Activated !*` },
+            { text: `*Group Chatbot Activated !*\n\nTo use it mention bot's meaage with your message.` },
             { quoted: m }
           );
         } else {
           if (checkdata.chatBot == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Already activated.*` },
+                { text: `*Already activated.*\n\nTo use it mention bot's meaage with your message.` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { chatBot: "true" });
@@ -89,19 +89,19 @@ module.exports = {
       } else {
         let buttonsntilink = [
           {
-            buttonId: `${prefix}chatbot on`,
+            buttonId: `${prefix}chatbotgc on`,
             buttonText: { displayText: "On" },
             type: 1,
           },
           {
-            buttonId: `${prefix}chatbot off`,
+            buttonId: `${prefix}chatbotgc off`,
             buttonText: { displayText: "Off" },
             type: 1,
           },
         ];
         let bmffg = {
           image: {url : botImage4} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n *「  Group Chatbot configuration  」*\nPlease click the button below\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
