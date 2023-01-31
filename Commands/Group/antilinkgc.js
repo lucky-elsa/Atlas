@@ -100,7 +100,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n*「  Group Chatbot configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,

@@ -216,7 +216,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
               text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
                 kice.split("@")[0]
               } Removed for sending link in this group! Message has been deleted.`,
-              contextInfo: { mentionedJid: [kice] },
+              mentions: [kice] ,
             },
             { quoted: m }
           );
@@ -241,7 +241,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     let chatbotStatus = await mk.findOne({ id: m.from });
     if (chatbotStatus){
     let csts = chatbotStatus.chatBot || "false";
-    if (m.isGroup && csts == "true" && !icmd) {
+    if (m.isGroup && csts == "true" && !icmd  && !isCmd) {
       if (m.quoted) {
         if (m.quoted.sender == botNumber) {
           const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
@@ -258,7 +258,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     if (PMchatBotStatus){
     let PMcsts = PMchatBotStatus.PMchatBot || "false";
 
-    if (!m.isGroup && PMcsts == "true" && !icmd) {
+    if (!m.isGroup && PMcsts == "true" && !icmd && !isCmd) {
       
           const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
             txt = `${botreply.data.cnt}`

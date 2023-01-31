@@ -33,12 +33,12 @@ module.exports = {
           if (modStatus=="false"&&!isCreator)  return m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
   
       let checkdata = await mkchar.findOne({ id: '1' });
-      var groupe = await Miku.groupMetadata(m.from);
+      /*var groupe = await Miku.groupMetadata(m.from);
       var members = groupe["participants"];
       var mems = [];
       members.map(async (adm) => {
         mems.push(adm.id.replace("c.us", "s.whatsapp.net"));
-      });
+      });*/
   
       if (args[0] === "on") {
         if (!checkdata) {
@@ -105,7 +105,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\n *「  PM Chatbot configuration  」*\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n *「  PM Chatbot configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
