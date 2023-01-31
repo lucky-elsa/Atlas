@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
-const { mkchar } = require("../../Database/dataschema.js");
+const { mkchar,mku } = require("../../Database/dataschema.js");
 
 
 
@@ -18,14 +18,19 @@ module.exports = {
       { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName }
     ) => {
       
-        if (!isAdmin)
-        return Miku.sendMessage(
-          m.from,
-          {
-            text: `*${pushName}* must be *Admin* to enable Chatbot !`,
-          },
-          { quoted: m }
-        );
+        var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
+            if (user.addedMods=="true") {
+              return "true";
+            }
+            else{
+              return "false";
+            }
+          }).catch(error => {
+            console.log(error)
+            //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
+          });
+    
+          if (modStatus=="false"&&!isCreator)  return m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
   
       let checkdata = await mkchar.findOne({ id: '1' });
       var groupe = await Miku.groupMetadata(m.from);

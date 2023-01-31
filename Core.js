@@ -179,6 +179,39 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     global.botImage5 = global[idConfig].botImage5;
     global.botImage6 = global[idConfig].botImage6;
 
+    //------------------------------------------- Antilink Configuration --------------------------------------------//
+
+    let checkdata = await mk.findOne({ id: m.from });
+    if (checkdata) {
+      let mongoschema = checkdata.antilink || "false";
+      if (m.isGroup && mongoschema == "true") {
+        linkgce = await Miku.groupInviteCode(from);
+        if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
+          m.reply(
+            `\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be taken because you sent this group's link.`
+          );
+        } else if (isUrl(m.text)) {
+          bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nAdmin has sent a link so no issues.`;
+          if (isAdmin) return m.reply(bvl);
+          if (m.key.fromMe) return m.reply(bvl);
+          if (isCreator) return m.reply(bvl);
+          kice = m.sender;
+          await Miku.groupParticipantsUpdate(m.from, [kice], "remove");
+          await mk.updateOne({ id: m.from }, { antilink: "true" });
+          Miku.sendMessage(
+            from,
+            {
+              text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
+                kice.split("@")[0]
+              } Removed for sending link in this group!`,
+              contextInfo: { mentionedJid: [kice] },
+            },
+            { quoted: m }
+          );
+        } else {
+        }
+      }
+    }
 
     //----------------------------------------- Bot On/OFF Configuration -------------------------------------------//
 
@@ -224,37 +257,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     //---------------------------------------------------------------------------------------------------------------//
 
 
-    let checkdata = await mk.findOne({ id: m.from });
-    if (checkdata) {
-      let mongoschema = checkdata.antilink || "false";
-      if (m.isGroup && mongoschema == "true") {
-        linkgce = await Miku.groupInviteCode(from);
-        if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
-          m.reply(
-            `\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be taken because you sent this group's link.`
-          );
-        } else if (isUrl(m.text)) {
-          bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nAdmin has sent a link so no issues.`;
-          if (isAdmin) return m.reply(bvl);
-          if (m.key.fromMe) return m.reply(bvl);
-          if (isCreator) return m.reply(bvl);
-          kice = m.sender;
-          await Miku.groupParticipantsUpdate(m.from, [kice], "remove");
-          await mk.updateOne({ id: m.from }, { antilink: "true" });
-          Miku.sendMessage(
-            from,
-            {
-              text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
-                kice.split("@")[0]
-              } Removed for sending link in this group!`,
-              contextInfo: { mentionedJid: [kice] },
-            },
-            { quoted: m }
-          );
-        } else {
-        }
-      }
-    }
 
 
     
