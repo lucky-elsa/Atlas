@@ -4,7 +4,9 @@ const GroupSchema = new mongoose.Schema({
   id: { type: String,  unique: true ,required: true },
   antilink: { type: String, default: "false" },
   nsfw: { type: String, default: "false" },
-  bangroup: { type: String, default: "false" }
+  bangroup: { type: String, default: "false" },
+  chatBot: { type: String, default: "false" },
+  botSwitch: { type: String, default: "true" }
   })
 
 const UserSchema = new mongoose.Schema({

@@ -8,6 +8,7 @@ const {
 } = require("@adiwajshing/baileys");
 const { Simple, Collection, Function } = require("./lib");
 const { isUrl, isNumber } = Function;
+const axios = require("axios");
 const {
   smsg,
   formatp,
@@ -155,7 +156,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       if (isCmd && checkban.ban !== "false") return m.reply(mess.banned);
     }
 
-    // --------------- Character Configuration (Do not modify this part) --------------- //
+    // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
 
     let char = "0"; // default one
     let CharacterSelection = "0"; // user selected character
@@ -178,7 +179,33 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     global.botImage5 = global[idConfig].botImage5;
     global.botImage6 = global[idConfig].botImage6;
 
-    //-----------------------------------------------------------------------------------//
+
+    //----------------------------------------- Bot On/OFF Configuration -------------------------------------------//
+
+    let botSwitchGC = await mk.findOne({ id: m.from });
+    let botWrokerGC = botSwitchGC.botSwitch || "true";
+    if (m.isGroup && botWrokerGC == "false" && !isAdmin ) {
+      return;
+    }
+
+    //--------------------------------------- Group Chatbot Configuration -------------------------------------------//
+
+    let chatbotStatus = await mk.findOne({ id: m.from });
+    let csts = chatbotStatus.chatBot || "false";
+    if (m.isGroup && csts == "true") {
+      if (m.quoted) {
+        if (m.quoted.sender == botNumber) {
+          const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
+            txt = `${botreply.data.cnt}`
+            setTimeout(function(){
+                m.reply(txt)
+            }, 2000);
+        }
+      }
+    }
+
+    //---------------------------------------------------------------------------------------------------------------//
+
 
     let checkdata = await mk.findOne({ id: m.from });
     if (checkdata) {

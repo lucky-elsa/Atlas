@@ -30,7 +30,7 @@ module.exports = {
       } 
 
 
-      let triggerd = await fs.readFileSync('./Assets/triggered.png')
+      let triggerd = await fs.readFileSync('./Assets/Img/triggered.png')
 
       const getImage = async (image, timeout = 15) => {
         const img = await Canvas.loadImage(image)
