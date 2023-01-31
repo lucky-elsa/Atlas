@@ -181,7 +181,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     //------------------------------------------- Antilink Configuration --------------------------------------------//
 
-    let checkdata = await mk.findOne({ id: m.from });
+   let checkdata = await mk.findOne({ id: m.from });
     if (checkdata) {
       let mongoschema = checkdata.antilink || "false";
       if (m.isGroup && mongoschema == "true") {
@@ -197,13 +197,25 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           if (isCreator) return m.reply(bvl);
           kice = m.sender;
           await Miku.groupParticipantsUpdate(m.from, [kice], "remove");
+          await Miku.sendMessage(
+            from,
+            {
+              delete: {
+                remoteJid: m.from,
+                fromMe: false,
+                id: m.id,
+                participant: m.sender,
+              },
+            },
+            { quoted: m }
+          );
           await mk.updateOne({ id: m.from }, { antilink: "true" });
           Miku.sendMessage(
             from,
             {
               text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
                 kice.split("@")[0]
-              } Removed for sending link in this group!`,
+              } Removed for sending link in this group! Message has been deleted.`,
               contextInfo: { mentionedJid: [kice] },
             },
             { quoted: m }
@@ -212,6 +224,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         }
       }
     }
+
 
     //----------------------------------------- Bot On/OFF Configuration -------------------------------------------//
 
