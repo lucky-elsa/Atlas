@@ -41,21 +41,21 @@ module.exports = {
           Miku.sendMessage(
             m.from,
             {
-              text: `*Group Chatbot Activated! *\n\nTo use it mention bot's meaage with your message.`,
+              text: `*Group Chatbot Activated! *\n\nTo use it mention bot's message with your message.`,
               contextInfo: { mentionedJid: mems },
             },
             { quoted: m }
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*Group Chatbot Activated !*\n\nTo use it mention bot's meaage with your message.` },
+            { text: `*Group Chatbot Activated !*\n\nTo use it mention bot's message with your message.` },
             { quoted: m }
           );
         } else {
           if (checkdata.chatBot == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*Already activated.*\n\nTo use it mention bot's meaage with your message.` },
+                { text: `*Already activated.*\n\nTo use it mention bot's message with your message.` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { chatBot: "true" });
