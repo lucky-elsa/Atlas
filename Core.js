@@ -159,14 +159,19 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
 
     let char = "0"; // default one
-    let CharacterSelection = "0"; // user selected character
-    await mkchar.findOne({ id: "1" }).then(async (res) => {
-      if (res.seletedCharacter != char) {
-        CharacterSelection = res.seletedCharacter;
+let CharacterSelection = "0"; // user selected character
+
+await mkchar.findOne({ id: "1" })
+  .then(async (res) => {
+    if (selectedCharacter) {
+      if (res.selectedCharacter !== char) {
+        CharacterSelection = res.selectedCharacter;
       } else {
         CharacterSelection = char;
       }
-    });
+    }
+  });
+
 
     let idConfig = "charID" + CharacterSelection;
 
