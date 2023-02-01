@@ -163,7 +163,7 @@ let CharacterSelection = "0"; // user selected character
 
 await mkchar.findOne({ id: "1" })
   .then(async (res) => {
-    if (selectedCharacter) {
+    if (res.selectedCharacter) {
       if (res.selectedCharacter !== char) {
         CharacterSelection = res.selectedCharacter;
       } else {
@@ -171,6 +171,7 @@ await mkchar.findOne({ id: "1" })
       }
     }
   });
+
 
 
     let idConfig = "charID" + CharacterSelection;
