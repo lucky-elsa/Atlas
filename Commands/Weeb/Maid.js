@@ -5,7 +5,7 @@ module.exports = {
     alias: ["safemaid","smd"],
     desc: "Get anime maid girls picture.",
     react: "🍁",
-    category: "Core",
+    category: "Weeb",
     start: async(Miku, m,{pushName,prefix}) => {
         let maids = await fetchJson('https://raw.githubusercontent.com/NekoSenpai69/Database/main/maid.json');
         let randomlink = maids[Math.floor(Math.random() * maids.length)];
