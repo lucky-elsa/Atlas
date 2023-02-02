@@ -7,9 +7,9 @@ module.exports = {
     react: "🍁",
     category: "Core",
     start: async(Miku, m,{pushName,prefix}) => {
-        let anu = await fetchJson('');
+        let anu = await fetchJson('https://raw.githubusercontent.com/NekoSenpai69/Database/main/maid.json');
         let randompplink = anu[Math.floor(Math.random() * anu.length)];
-        Miku.sendMessage(m.from, { image: { url: randompplink.url }, caption: `Here i am Ojousama` }, { quoted: m })
+        Miku.sendMessage(m.from, { image: { url: randompplink.url }, caption: `Here i am Ojou Sama....` }, { quoted: m })
         
 
     }
