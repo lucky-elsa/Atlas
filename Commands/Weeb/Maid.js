@@ -7,10 +7,26 @@ module.exports = {
     react: "🍁",
     category: "Core",
     start: async(Miku, m,{pushName,prefix}) => {
-        let anu = await fetchJson('https://raw.githubusercontent.com/NekoSenpai69/Database/main/maid.json');
-        let randompplink = anu[Math.floor(Math.random() * anu.length)];
-        Miku.sendMessage(m.from, { image: { url: randompplink.url }, caption: `Here i am Ojou Sama....` }, { quoted: m })
-        
+        let maids = await fetchJson('https://raw.githubusercontent.com/NekoSenpai69/Database/main/maid.json');
+        let randomlink = maids[Math.floor(Math.random() * maids.length)];
 
-    }
-}
+
+var Button = [
+      {
+        buttonId: `${prefix}smd`,
+        buttonText: { displayText: `>>` },
+        type: 1,
+      },
+    ];
+    let neko = {
+      image: {url:randomlink.url},
+      caption: `Here I am Oujou...Sama...!!`,
+      footer: `*${botName}*`,
+      buttons: Button,
+      headerType: 4,
+    };
+    await Miku.sendMessage(m.from, neko, { quoted: m }).catch((err) => {
+      return "Error!";
+    });
+}, 
+};
