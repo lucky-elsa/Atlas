@@ -32,6 +32,7 @@
 require("./index.js");
 require("./config.js");
 require("./BotCharacters.js");
+require("./Processes/welcome.js");
 const {
     generateWAMessage,
     areJidsSameUser,
@@ -138,27 +139,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             .includes(m.sender);
         const isOwner = global.owner.includes(m.sender);
 
-        //////////Database\\\\\\\\\\\\\\\\s
-
         await db.push("userInfo.mods", global.owner);
         var mikuModsList = await db.get("userInfo.mods");
-        /*
-            if(mikuModsList.includes(m.sender.num)){
-                console.log("Miku is a mod");
-            }
-            else{
-                console.log("Miku is not a mod");
-            };
-
-            /*
-            const _mods = await db.get('mods')
-            const mods = _mods || []
-            const _ban= await db.get("ban")
-            global.ban=_ban|| []
-            const _nsfw=await db.get("nsfw")
-            global.nsfw=_nsfw||[]
-            let wel= await db.get("events")
-            global.wlc = wel || []*/
 
         const isCmd = body.startsWith(prefix);
         const quoted = m.quoted ? m.quoted : m;
@@ -391,6 +373,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         //----------------------------------------------------------------------------------------------------------------//
 
+    
 
         if (m.isGroup && isCmd) {
 

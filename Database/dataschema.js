@@ -7,7 +7,8 @@ const GroupSchema = new mongoose.Schema({
   bangroup: { type: String, default: "false" },
   chatBot: { type: String, default: "false" },
   botSwitch: { type: String, default: "true" },
-  switchNSFW: { type: String, default: "false" }
+  switchNSFW: { type: String, default: "false" },
+  switchWelcome: { type: String, default: "false" }
   })
 
 const UserSchema = new mongoose.Schema({

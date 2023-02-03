@@ -29,6 +29,7 @@
 /----------------------------------------------------------------------------------*/
 
 require("./config.js");
+require("./Core.js");
 
 const {
     default: MikuConnect,
@@ -90,7 +91,7 @@ const express = require("express");
 const qrcode = require('qrcode')
 const prefix = global.prefa;
 
-const welcome = require('./Processes/welcome.js');
+const welcomeLeft = require('./Processes/welcome.js');
 const {
     Collection,
     Simple
@@ -225,10 +226,9 @@ async function startMiku() {
         }
     })
 
-    //Welcome messages
 
     Miku.ev.on("group-participants.update", async (m) => {
-
+        welcomeLeft(Miku, m);
     });
 
     Miku.ev.on("messages.upsert", async (chatUpdate) => {

@@ -1,52 +1,54 @@
+require("../Core.js");
+const { mk } = require("../Database/dataschema.js");
+
 module.exports = async (Miku, anu) => {
     try {
       let metadata = await Miku.groupMetadata(anu.id);
-      let participants = m.participants;
-  
+      let participants = anu.participants;
+      let desc = metadata.desc;
+      if(desc == undefined) desc = "No Description";
+      let WELstatus = await mk.findOne({
+        id: m.from
+    });
       for (let num of participants) {
         try
          {
           ppuser = await Miku.profilePictureUrl(num, "image");
         } catch {
-          ppuser = "https://wallpapercave.com/wp/wp10753770.jpg";
+          ppuser = botImage4;
         }
   
         if (anu.action == "add") {
           let WAuserName = num;
+          console.log(`+${WAuserName.split("@")[0]} Joined/Got Added in: ${metadata.subject}`);
           mikutext = `
-  ʜᴇʟʟᴏ @${WAuserName.split("@")[0]},
-  ɪ ᴀᴍ *ᴍɪᴋᴜ ɴᴀᴋᴀɴᴏ*, ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ${metadata.subject}.
-  *ɢʀᴏᴜᴘ ᴅᴇѕᴄʀɪᴘᴛɪᴏɴ:*
-  ${metadata.desc}
+Hello @${WAuserName.split("@")[0]} Senpai,
+
+Welcome to *${metadata.subject}*.
+
+*🧣 Group Description 🧣*
+
+${desc}
+
+*Thank You.*
   `;
   
-          let buttonMessage = {
-            image: await getBuffer(ppgroup),
-            mentions: [num],
-            caption: mikutext,
-            footer: `Miku Nakano`,
-            headerType: 4,
-          };
         } else if (anu.action == "remove") {
           let WAuserName = num;
+          console.log(`+${WAuserName.split("@")[0]} Left/Got Removed from: ${metadata.subject}`);
           mikutext = `
-  @${WAuserName.split("@")[0]}ʟᴇғᴛ ᴛʜᴇ ɢʀᴏᴜᴘ,
-  @${WAuserName.split("@")[0]}
-  ᴛʜɪɴᴋѕ ᴡᴇ ᴀʀᴇ ɢᴏɪɴɢ ᴛᴏ ᴍɪѕѕ💔😂 ʜɪᴍ/ʜᴇʀ.
+  @${WAuserName.split("@")[0]} Senpai left the group.
   `;
   
-          let buttonMessage = {
-            image: await getBuffer(ppuser),
-            mentions: [num],
-            caption: mikutext,
-            footer: `Miku Nakano`,
-            headerType: 4,
-          };
         }
-        Miku.sendMessage(anu.id, buttonMessage)
-      }
-                  
-  
+        if (WELstatus.switchWelcome == "true"){
+          await Miku.sendMessage(anu.id,{
+            image: {url: ppuser},
+            caption: mikutext,
+            mentions: [num],
+          })
+        }
+      }           
     } catch (err) {
       console.log(err);
     }
