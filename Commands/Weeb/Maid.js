@@ -17,7 +17,7 @@ var Button = [
       },
     ];
     let neko = {
-      image: {url:maid.data.url},
+      image: {url:maids.data.url},
       caption: `Here I am Oujou...Sama...!!🤫`,
       footer: `*${botName}*`,
       buttons: Button,
