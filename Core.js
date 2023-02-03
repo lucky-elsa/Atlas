@@ -106,7 +106,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             sender,
             from
         } = m;
-        var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
+        let body = (type == "buttonsResponseMessage") ? m.message[type].selectedButtonId : (type == "listResponseMessage") ? m.message[type].singleSelectReply.selectedRowId : (type == "templateButtonReplyMessage") ? m.message[type].selectedId : m.text
         let prat =
             type === "conversation" && body?.startsWith(prefix) ?
             body :
@@ -447,7 +447,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                 chalk.magenta("=> From"),
                 chalk.green(pushname),
                 chalk.yellow(m.sender) + "\n" + chalk.blueBright("=> In"),
-                chalk.green(m.isGroup ? pushname : "Private Chat", m.from)
+                chalk.green(m.isGroup ? pushname : "Private Chat", m.chat)
             );
         }
 
