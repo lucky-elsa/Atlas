@@ -16,7 +16,7 @@ module.exports = {
     start: async ( 
       Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,args} 
     ) => { 
       var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
         if (user.addedMods=="true") {
@@ -42,23 +42,33 @@ module.exports = {
           { text: `Please tag a user to *Ban*!` }, 
           { quoted: m } 
         )}
-        if (!text.slice(text.indexOf(" ") + 1)) {
-          return Miku.sendMessage(
-            m.from,
-            { text: `Please provides the reason for ban.` },
-            { quoted: m }
-          );
-        }
-        else if(m.quoted){
+       
+        if(m.quoted){
           var mentionedUser = m.quoted.sender;
         }
         else{
           var mentionedUser = mentionByTag[0];
         }
       //var mentionedUser = mentionByTag; 
-      let textArr = text.split(" ");
-let banreason = textArr[1] ? textArr.slice(1).join(" ") : "";
-if (!banreason) return Miku.sendMessage(m.from, { text: `Please provide the reason for ban.` }, { quoted: m });
+let banreason = args.join(" ")
+
+if (m.quoted && !args.join(" ")) {
+  banreason = "No reason provided";
+}
+
+if (m.quoted && args.join(" ")) {
+  banreason = text;
+}
+
+if(banreason.includes("@")){
+  banreason = args.join(" ")
+}
+
+
+if(banreason == undefined){
+  banreason = "No reason provided";
+}
+//if (!banreason) return Miku.sendMessage(m.from, { text: `Please provide the reason for ban.\n\n${prefix}ban spamming` }, { quoted: m });
       var ownerlist = global.owner;
 
       let userId = (await mentionedUser) || m.msg.contextInfo.participant; 

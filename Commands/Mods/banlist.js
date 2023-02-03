@@ -22,7 +22,7 @@ module.exports = {
         var banlist = await mku.find({ban: true});
         var banlistString = "";
         banlist.forEach((ban, index) => {
-            banlistString += ban.id ? `\n ${index+1}\n╭─────────────◆\n│ *Name:-* ${ban.name}\n│ *Tag:-* @${ban.id.split("@")[0]}\n│ *Reason*: ${ban.reason}\n╰─────────────◆\n\n` : '';
+            banlistString += ban.id ? `\n ${index+1}\n╭─────────────◆\n│ *Name:* ${ban.name}\n│ *Tag:* @${ban.id.split("@")[0]}\n│ *Reason:* ${ban.reason}\n╰─────────────◆\n\n` : '';
           });
         var mention = banlist.map(ban => ban.id)
         if(banlistString == "") banlistString = "No banned members found.";
