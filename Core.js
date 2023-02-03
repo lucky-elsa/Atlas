@@ -281,10 +281,15 @@ await mkchar.findOne({ id: "1" }).then(async (res) => {
             }, 2200);
           }
         }
-    //---------------------------------------------------------------------------------------------------------------//
+    //--------------------------------------------- NSFW Configuration -----------------------------------------------//
 
+    let nsfwstatus = await mk.findOne({ id: m.from });
+    let NSFWstatus = "false";
+    if (nsfwstatus){
+     NSFWstatus = nsfwstatus.switchNSFW || "false";
+    }
 
-
+    //----------------------------------------------------------------------------------------------------------------//
 
     
        if(m.isGroup && isCmd ){
@@ -361,13 +366,13 @@ await mkchar.findOne({ id: "1" }).then(async (res) => {
       var buttonss = [
         {
           buttonId: `${prefix}help`,
-          buttonText: { displayText: `help` },
+          buttonText: { displayText: `${prefix}help` },
           type: 1,
         },
       ];
       let buttonmess = {
         text: `*Command Info*\n\n${data.join("\n")}`,
-        footer: "Miku-MD",
+        footer: `*${botName}*`,
         buttons: buttonss,
         headerType: 1,
       };
@@ -435,6 +440,7 @@ await mkchar.findOne({ id: "1" }).then(async (res) => {
       mime,
       isBotAdmin,
       prefix,
+      NSFWstatus,
       isCreator,
       store,
       command: cmd.name,

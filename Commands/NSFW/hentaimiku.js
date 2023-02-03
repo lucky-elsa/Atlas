@@ -7,7 +7,9 @@ module.exports = {
   category: "Weeb",
   usage: `hmiku`,
   react: "🍁",
-  start: async (Miku, m, { prefix }) => {
+  start: async (Miku, m, { prefix,NSFWstatus }) => {
+
+    if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
     let Image = await getBuffer(`https://mikuhentai-api.onrender.com/`);
     let Button = [
       {

@@ -15,7 +15,7 @@ module.exports = {
     start: async (
       Miku,
       m,
-      { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName }
+      { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName,participants }
     ) => {
       
         if (!isAdmin)
