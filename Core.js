@@ -240,7 +240,37 @@ await mkchar.findOne({ id: "1" }).then(async (res) => {
     }
 
 
-    //----------------------------------------- Bot On/OFF Configuration -------------------------------------------//
+    //---------------------------------- Self/public/Private mode Configuration ------------------------------------//
+
+    var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
+      if (user.addedMods=="true") {
+        return "true";
+      }
+      else{
+        return "false";
+      }
+    }).catch(error => {
+      console.log(error)
+    });
+
+    let botModeSet = await mkchar.findOne({ id: '1'});
+    let workerMode = botModeSet.privateMode || "false";
+    if (botModeSet) {
+      if (workerMode == "true") { 
+        if(modStatus=="false" &&!isOwner) {
+          console.log("Log/Command Rejected ! Bot is in private mode !");
+          return;
+        }
+      }
+       if (workerMode == "self") { 
+        if(m.sender != botNumber) {
+          console.log("Log/Command Rejected ! Bot is in Self mode !");
+          return;
+        }
+      }
+    }
+
+    //-------------------------------------- Group CMD On/OFF Configuration ----------------------------------------//
 
     let botSwitchGC = await mk.findOne({ id: m.from });
     if(botSwitchGC){
