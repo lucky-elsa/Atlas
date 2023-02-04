@@ -94,7 +94,7 @@ module.exports = {
                 wood: Math.floor(Math.random() * 1),
                 stone: Math.floor(Math.random() * 2) + 2,
                 iron: Math.floor(Math.random() * 2) + 2,
-                diamonds: Math.floor(Math.random() * 3) + 4
+                diamonds: Math.floor(Math.random() * 1001) + 7000
                 }
                 axeUsed = "diamondpickaxe"
                 user.inventory.wood += loot.wood;
