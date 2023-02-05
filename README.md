@@ -40,11 +40,11 @@
 
 <br>
 
-## ✧✧✧ Key Features
+## 🎀 Key Features
 
 <br>
 
-- Changeable between 8 added Characters ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type -charlist to see all characters.
+- Changeable between `8 added Characters` ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type `-charlist` command to get character list.
 - Fully powered by MongoDb ( 3 databases added ).
 - Self / Public / Private mode.
 - Singe prefix ( "-" ).
@@ -57,7 +57,7 @@
 <br>
 
 
-<h2 align="center"> UserLand Deployment Method ( Android no root )
+<h2 align="center">🧩 UserLand Deployment Method ( Android no root ) 🧩
 </h2>
 
 #### ✧ Download `UserLand` application from Google Play Store.
@@ -107,19 +107,19 @@ npm start
 - Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Atlas-MD/fork) this repo and modified `.env` file and `config.js`).
 - This method will work on most other bots too.
 
-#### ✧ To stop a bot in Userland
+#### 📌 To stop a bot in Userland
 - Tap on `CTRL` button then tap on `C` from keyboard
 
-#### ✧ To start bot again ( While you are inside Atlas-MD folder {use `cd Atlas-MD` to get inside the folder} )
+#### 📌 To start bot again ( While you are inside Atlas-MD folder {use `cd Atlas-MD` to get inside the folder} )
 - `npm start` or use `yarn start` to start bot again.
 
 
-#### ✧ Start bot after UserLand session is cleared
+#### 📌 Start bot after UserLand session is cleared
 ```
 cd Atlas-MD
 npm start
 ```
-#### ✧ What to do if you logged out from the WhatsApp linked device section and want to get new qr to login
+#### 📌 What to do if you logged out from the WhatsApp linked device section and want to get new qr to login
 - Go to your GitHub fork of this bot and open `.env` file and change `SESSION_ID` to any random string and save it by clicking on `Commit Changes`.
 - Then open `UserLand` and run these commands one-by-one:
 
@@ -131,7 +131,7 @@ npm start
 ```
 
 
-#### ✧✧ Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works.
+#### 📌📌 Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works.
 <br><br>
 
 
