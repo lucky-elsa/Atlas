@@ -91,11 +91,6 @@
 #### ✧ Install `Debian` terminal in userland.
 #### ✧ After installation follow these commands below `one by one` (try not to miss any command to avoid error).
 
-### ✧✧ Need help or having difficulties?
-Follow this video tutotial for UserLand.
-<p align='left'>
-<a href="https://youtu.be/elZmQiuscik"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="150"></a>
-<br>
 </p>
 
 ### UserLand commands:
@@ -113,10 +108,10 @@ sudo apt install wget
 sudo apt install npm
 sudo apt install imagemagick
 
-git clone https://github.com/FantoX001/Miku-MD
+git clone https://github.com/FantoX001/Atlas-MD
 
 ls
-cd Miku-MD
+cd Atlas-MD
 npm i
 
 
@@ -131,10 +126,10 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
 sudo apt-get install -y nodejs
 yarn add sharp
-cd Miku-MD
+cd Atlas-MD
 npm i
 npm start
 
 ``` 
-- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Miku-MD/fork) this repo and changed owner number in `config.js`).
+- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Atlas-MD/fork) this repo and changed owner number in `config.js`).
 - This method will work on most other bots too.
