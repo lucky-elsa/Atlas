@@ -52,10 +52,6 @@
 8. Highest Commaads and Features.
 9. User Banning / Group Banning.
 
-✧ The main motto of this project is to provide Beginner Devs a base without any limitations 😊.
-✧ Check "Credits" section and Support Them too.
-
--regards FantoX001
 ```
 
 </br>
