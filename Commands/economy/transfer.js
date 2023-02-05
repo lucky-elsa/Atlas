@@ -11,7 +11,7 @@ module.exports = {
 
     name: "transfer",  
     desc: "transfer gold.", 
-    alias: ["sharegold"],
+    alias: ["give"],
     category: "Economy",  
     react: "💰", 
     start: async ( 
