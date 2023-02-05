@@ -26,8 +26,8 @@
   
   
 <p align="center">
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7)
-
+    [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7)
+</p>
 # Notice Guys
 
 - Do not to deploy it now !!
