@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/FantoX001/Atlas-MD/stargazers">
-    <img src="https://i.ibb.co/SRm09TD/Atlas-Logo.jpg">
+    <img src="https://i.imgur.com/MClOeqe.jpeg">
   </a>
 
 <h1 align="center"> Atlas MD
