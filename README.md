@@ -41,26 +41,25 @@
 
 <br>
 
-1. Changeable between 8 added Characters ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type -charlist to see all characters.
-2. Fully powered by MongoDb ( 3 databases added ).
-3. Self / Public / Private mode.
-4. Singe prefix ( "-" ).
-5. RPG and Economy added ( More coming soon ).
-6. Group Chatbot / Dm Chatbot ( Only reply on quoted messages and and be turned off ).
-7. 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
-8. Highest Commaads and Features.
-9. User Banning / Group Banning.
-
+- Changeable between 8 added Characters ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type -charlist to see all characters.
+- Fully powered by MongoDb ( 3 databases added ).
+- Self / Public / Private mode.
+- Singe prefix ( "-" ).
+- RPG and Economy added ( More coming soon ).
+- Group Chatbot / Dm Chatbot ( Only reply on quoted messages and and be turned off ).
+- 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
+- Highest Commaads and Features.
+- User Banning / Group Banning.
 
 <br>
 
 
-<h2 align="center"> UserLand Deployment Method(Android no root)
+<h2 align="center"> UserLand Deployment Method ( Android no root )
 </h2>
 
 #### ✧ Download `UserLand` application from Google Play Store.
 #### ✧ Install `Debian` terminal in userland.
-#### ✧ After installation follow these commands below `one by one` (try not to miss any command to avoid error).
+#### ✧ Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
 </p>
 
@@ -102,9 +101,54 @@ npm i
 npm start
 
 ``` 
-- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Atlas-MD/fork) this repo and changed owner number in `config.js`).
+- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Atlas-MD/fork) this repo and modified `.env` file and `config.js`).
 - This method will work on most other bots too.
 
+#### ✧ To stop a bot in Userland
+- Tap on `CTRL` button then tap on `C` from keyboard
+
+#### ✧ To start bot again ( While you are inside Atlas-MD folder {use `cd Atlas-MD` to get inside the folder} )
+- `npm start` or use `yarn start` to start bot again.
+
+
+#### ✧ Start bot after UserLand session is cleared
+```
+cd Atlas-MD
+npm start
+```
+#### ✧ What to do if you logged out from the WhatsApp linked device section and want to get new qr to login
+```
+cd Atlas-MD
+rm session.json
+npm start
+```
+
+
+#### ✧✧ Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works.
+<br><br>
+
+
+## ✧✧✧ CMD  / VS code Deployment Method (After downloading this code as .zip)
+- Extract the .zip and open Vs code / Cmd in that directory and give thesse following commands one-by-one:
+```
+npm i
+npm start
+```
+
+
+### ✧ Requirements for CMD/VS code istallation:
+- [Node.js](https://nodejs.org/en/download/)
+- [Git](https://github.com/git-guides/install-git)
+- FFmpeg ( [for Windows](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/) or [for Linux](https://www.tecmint.com/install-ffmpeg-in-linux/) or [for Mac](https://ffmpeg.org/download.html) )
+- Libwebp
+
+Note: If you don't pre-install these plugins before CMD / VS code Installation bot will not start!
+</br> 
+
+## ✧ Contribution:
+
+- Project [Contributors](https://github.com/FantoX001/Miku-MD/graphs/contributors)
+- Please feel free to contribute in this project. I will merge your respected contribute if i see it's really necessary.
 
 ## ✧✧✧ Disclaimer
 
@@ -129,8 +173,8 @@ npm start
 
 <br>
 
-1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues.
-2. We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group.
+1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues and we will not and support.
+2. We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
 
 <br>
 
