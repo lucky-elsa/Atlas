@@ -18,13 +18,12 @@
     <img src="https://img.shields.io/github/stars/FantoX001/Atlas-MD?style=social">
   </a>
 
-<p align="center">
-    <a href="https://github.com/FantoX001">
-    <img src="(https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Shikimori-MD.visitor-badge&left_text=Total%20Repo%20Visitors)">
+
+<a href="https://github.com/FantoX001">
+    <img src="(https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20Repo%20Visitors)">
   </a>
-  </p>
   
-<br>
+  
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7)
 
