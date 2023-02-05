@@ -20,17 +20,45 @@
 
 <br>
 
-<a href="https://github.com/FantoX001">
-    <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20Repo%20Visitors">
+<a href="https://github.com/FantoX001/Atlas-MD">
+    <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20People%20Visited">
   </a>
   
   
 <p align="center">
-    [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7)
+    <!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7) -->
     <a href="https://railway.app/new/template/C_B2P7">
     <img src="https://railway.app/button.svg" alt="Deploy on Railway">
     </a>
 </p>
+
+
+
+
+<br>
+
+## ✧✧✧ Key Features ✧✧✧
+
+<br>
+
+```
+1. Changeable between 8 added Characters (Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa) and more can be added by user inside `BotCharacter.js` file. Type -charlist to see all characters.
+2. Fully powered by MongoDb (3 databases added).
+3. Self / Public / Private mode.
+4. Singe prefix ("-").
+5. RPG and Economy added (More coming soon).
+6. Group Chatbot / Dm Chatbot (Only reply on quoted messages and and be turned off).
+7. 100+ NSFW commands (Using my own API). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
+8. Highest Commaads and Features.
+9. User Banning / Group Banning.
+
+✧ The main motto of this project is to provide Beginner Devs a base without any limitations 😊.
+✧ Check "Credits" section and Support Them too.
+
+-regards FantoX001
+```
+
+</br>
 
 # Notice Guys
 
