@@ -14,6 +14,6 @@ module.exports = {
 
     hvid = await hentai()
     res = hvid[Math.floor(Math.random(), hvid.length)]
-    Miku.sendMessage(m.from, { video: { url: res.video_1 }, caption: `\nTitle : ${res.title}\n\nCategory : ${res.category}\n\nMedia Url : ${res.video_1}\n` }, { quoted: m })
+    Miku.sendMessage(m.from, { video: { url: res.video_1 }, caption: `\n*Title :* ${res.title}\n\n*Category :* ${res.category}\n\n*Media Url :* ${res.video_1}\n` }, { quoted: m })
   }
 }
