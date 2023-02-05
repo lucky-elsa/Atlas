@@ -48,11 +48,11 @@
 - Changeable between `8 added Characters` ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type `-charlist` command to get character list.
 - Fully powered by MongoDb ( 3 databases added ).
 - Self / Public / Private mode.
-- Singe prefix ( "-" ).
+- Single prefix ( "-" ).
 - RPG and Economy added ( More coming soon ).
 - Group Chatbot / Dm Chatbot ( Only reply on quoted messages and and be turned off ).
 - 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
-- Highest Commaads and Features.
+- Highest Commands and Features.
 - User Banning / Group Banning.
 - Highest Security.
 
@@ -64,7 +64,7 @@
 
 <br>
 
-- Atlas is a `fully opensource` bot which means `no copyright`.
+- Atlas is a `fully open source` bot which means `no copyright`.
 - Atlas is a `multi character bot` which means you can `change bot's character` to any of the 8 added characters or add more characters by yourself.
 - Atlas is a `multi database bot` which means you can use 3 different databases at the same time.
 - Atlas is a `multi mode` bot which means you can use it in `Self / Public / Private` mode.
@@ -72,7 +72,7 @@
 - Atlas has `Highest NSFW (100+)` which means you can use it as a `nsfw bot`.
 - Atlas has 300+ commands.
 - Atlas doesn't store your `Session File` locally which means it's `safe` and `secure`.
-- Atlas has `RPG and Economy` which means you can use it as a `RPG Bot` or `Cashino Bot`.
+- Atlas has `RPG and Economy` which means you can use it as a `RPG Bot` or `Casino Bot`.
 - Atlas has `User Banning / Group Banning` which means you can use it as a `Anti Spam Bot`.
 - Atlas is a Folder Type bot which represents `Highest Stability`, `Highest Performance` and `Developer / User friendly`.
 - Atlas comes with [MIT](https://github.com/FantoX001/Atlas-MD/blob/main/LICENSE.md) License which means you can use it as a `base for your own bot` and can `modify it as you want` and can `add your own features`.
@@ -202,8 +202,8 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 </h2>
 <br>
 
-- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for my or my team to help everyone in bot Development / Modification. Only modify if you know what you are doing.
-- This bot is made for `Educational / Fun / Group Management` purposes only. I am not responsible for any misuse of this bot.
+- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for me or my team to help everyone in bot Development / Modification. Only modify if you know what you are doing.
+- This bot is made for `Educational / Fun / Group Management` purposes only. I and the team will not be responsible for any misuse of this bot.
 - We will only assist you in `Setup / Deployment` of this bot.
 
 <br>
@@ -214,7 +214,7 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 </h2>
 <br>
 
-- We don't recomment to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide any support`.
+- We don't recommend to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide any support`.
 - We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
 
 <br>
