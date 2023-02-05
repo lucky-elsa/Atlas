@@ -54,6 +54,28 @@
 - 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
 - Highest Commaads and Features.
 - User Banning / Group Banning.
+- Highest Security.
+
+<br>
+
+
+<h2 align="center">〽️ Why Should You Use Atlas as you Base 〽️
+</h2>
+
+<br>
+
+- Atlas is a `fully opensource` bot which means `no copyright`.
+- Atlas is a `multi character bot` which means you can `change bot's character` to any of the 8 added characters or add more characters by yourself.
+- Atlas is a `multi database bot` which means you can use 3 different databases at the same time.
+- Atlas is a `multi mode` bot which means you can use it in `Self / Public / Private` mode.
+- Atlas has a pre install chatbot which means you can use it as a `group chatbot and dm chatbot`.
+- Atlas has `Highest NSFW (100+)` which means you can use it as a `nsfw bot`.
+- Atlas has 300+ commands.
+- Atlas doesn't store your `Session File` locally which means it's `safe` and `secure`.
+- Atlas has `RPG and Economy` which means you can use it as a `RPG Bot` or `Cashino Bot`.
+- Atlas has `User Banning / Group Banning` which means you can use it as a `Anti Spam Bot`.
+- Atlas is a Folder Type bot which represents `Highest Stability`, `Highest Performance` and `Developer / User friendly`.
+- Atlas comes with [MIT](https://github.com/FantoX001/Atlas-MD/blob/main/LICENSE.md) License which means you can use it as a `base for your own bot` and can `modify it as you want` and can `add your own features`.
 
 <br>
 
