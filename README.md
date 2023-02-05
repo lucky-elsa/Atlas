@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/FantoX001/Atlas-MD/stargazers">
+<a href="https://github.com/FantoX001/Atlas-MD">
     <img src="https://i.imgur.com/MClOeqe.jpeg">
   </a>
 
