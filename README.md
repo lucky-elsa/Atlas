@@ -6,8 +6,8 @@
 <p align="center"> 
   Konochiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by [FantoX](https://github.com/FantoX001) and his team "Atlas" to do everything that's possible on WhatsApp with highest features and stability built with Bileys Multi Device support.
 
-<h3 align="center"> Atlas MD - The Future Is Here
-</h3>
+<h4 align="center"> Atlas MD - The Future Is Here
+</h4>
 
 <p align="center">
   <a href="https://github.com/FantoX001/Atlas-MD/fork">
