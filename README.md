@@ -125,7 +125,6 @@ cd Atlas-MD
 git fetch origin
 git merge origin/main
 npm start
-
 ```
 
 
@@ -140,20 +139,20 @@ npm start
 ```
 npm i
 npm start
-
 ```
 
+- To get new QR if you logged out from the WhatsApp linked device section go to `.env` file and change `SESSION_ID` to any random string and save it by clicking on `Commit Changes`.
 
 ### ✧ Requirements for CMD/VS code istallation:
 - [Node.js](https://nodejs.org/en/download/)
 - [Git](https://github.com/git-guides/install-git)
 - FFmpeg ( [for Windows](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/) or [for Linux](https://www.tecmint.com/install-ffmpeg-in-linux/) or [for Mac](https://ffmpeg.org/download.html) )
-- Libwebp (Not necesary for Windows)
+- Libwebp (Not necesary for Windows).
 
 Note: If you don't pre-install these plugins before CMD / VS code Installation bot will not start!
 </br> 
 
-## ✧ Contribution:
+## ✧ Contributors:
 
 - Project [Contributors](https://github.com/FantoX001/Miku-MD/graphs/contributors)
 - Please feel free to contribute in this project. I will merge your respected contribute if i see it's really necessary.
@@ -181,7 +180,7 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 
 <br>
 
-1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues and we will not and support.
+1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues and we will not provide support.
 2. We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
 
 <br>
