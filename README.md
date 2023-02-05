@@ -137,7 +137,8 @@ npm start
 
 <h2 align="center">🧩 CMD / VS Code / Powershell / Terminal Deployment Method 🧩
 </h2>
-- [Download](https://github.com/FantoX001/Atlas-MD/archive/refs/heads/main.zip) Updated code from Main GitHub Repo or Download from your Forked Repo.
+
+- [Download Updated code](https://github.com/FantoX001/Atlas-MD/archive/refs/heads/main.zip) from Main GitHub Repo or Download from your Forked Repo.
 - Extract the `.zip` and open Vs code / Cmd / Powershell / Terminal in that directory and give thesse following commands one-by-one:
 - Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
