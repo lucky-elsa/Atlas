@@ -42,6 +42,15 @@ module.exports = {
             await user.save();
             Miku.sendMessage(m.from, { text: `[ *💰PURCHASE RESULT💰* ]\n\n Successfully purchased a stone pickaxe!`}, { quoted: m });
 }
+else if(item === "gold") {
+    if(user.inventory.goldenApple < 1) {
+        return Miku.sendMessage(m.from, { text:` 😕 You don't have a Golden Apple to purchase 100k Gold.` }, { quoted: m });
+    }
+    const give = await eco.give(m.sender, cara, 100000);
+    user.inventory.goldenApple -= 1;
+    await user.save();
+    Miku.sendMessage(m.from, { text: `[ *💰PURCHASE RESULT💰* ]\n\n Successfully purchased 100k Gold!`}, { quoted: m });
+}
 else if(item === "ironpickaxe") {
 if(balance.wallet < 2000) {
 return Miku.sendMessage(m.from, { text: `😕 You don't have enough coins to purchase an iron pickaxe. `}, { quoted: m });
