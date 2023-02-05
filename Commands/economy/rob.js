@@ -51,7 +51,7 @@ module.exports = {
                 return Miku.sendMessage(m.from, { text: `*🤑 You have stolen ${amount} successfully .🗡️*` }, { quoted: m });
             case 'caught':
                 await eco.deduct(user1, cara, balance1.wallet); 
-                return Miku.sendMessage(m.from, { text: `*Sorry FBI👮 caught up with you, you lost all 💎 in wallet.*` }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: `*Sorry FBI👮 caught up with you, you lost all 🪙 in wallet.*` }, { quoted: m });
                 default:
                 return Miku.sendMessage(m.from, { text: 'What are you trying to do?' }, { quoted: m });
                 }
