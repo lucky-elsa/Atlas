@@ -117,10 +117,15 @@ cd Atlas-MD
 npm start
 ```
 #### ✧ What to do if you logged out from the WhatsApp linked device section and want to get new qr to login
+- Go to your GitHub fork of this bot and open `.env` file and change `SESSION_ID` to any random string and save it by clicking on `Commit Changes`.
+- Then open `UserLand` and run these commands one-by-one:
+
 ```
 cd Atlas-MD
-rm session.json
+git fetch origin
+git merge origin/main
 npm start
+
 ```
 
 
@@ -130,9 +135,12 @@ npm start
 
 ## ✧✧✧ CMD  / VS code Deployment Method (After downloading this code as .zip)
 - Extract the .zip and open Vs code / Cmd in that directory and give thesse following commands one-by-one:
+- Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
+
 ```
 npm i
 npm start
+
 ```
 
 
@@ -140,7 +148,7 @@ npm start
 - [Node.js](https://nodejs.org/en/download/)
 - [Git](https://github.com/git-guides/install-git)
 - FFmpeg ( [for Windows](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/) or [for Linux](https://www.tecmint.com/install-ffmpeg-in-linux/) or [for Mac](https://ffmpeg.org/download.html) )
-- Libwebp
+- Libwebp (Not necesary for Windows)
 
 Note: If you don't pre-install these plugins before CMD / VS code Installation bot will not start!
 </br> 
