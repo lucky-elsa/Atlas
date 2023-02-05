@@ -41,27 +41,17 @@
 
 <br>
 
-1. Changeable between 8 added Characters (Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa) and more can be added by user inside `BotCharacters.js` file. Type -charlist to see all characters.
-2. Fully powered by MongoDb (3 databases added).
+1. Changeable between 8 added Characters ( Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa ) and more can be added by user inside `BotCharacters.js` file. Type -charlist to see all characters.
+2. Fully powered by MongoDb ( 3 databases added ).
 3. Self / Public / Private mode.
-4. Singe prefix ("-").
-5. RPG and Economy added (More coming soon).
-6. Group Chatbot / Dm Chatbot (Only reply on quoted messages and and be turned off).
-7. 100+ NSFW commands (Using my own API). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
+4. Singe prefix ( "-" ).
+5. RPG and Economy added ( More coming soon ).
+6. Group Chatbot / Dm Chatbot ( Only reply on quoted messages and and be turned off ).
+7. 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
 8. Highest Commaads and Features.
 9. User Banning / Group Banning.
 
 
 <br>
 
-# Notice Guys
-
-- Do not to deploy it now !!
-- It's incomplete so it will not connect now !!
-- I will update it time to time !!
-- You can `Fork` it to make a copy and commit changes inside your copy !!
-- Note: copy pasting old Miku Bot commands will not work here. We have to redisign all commands. For a structural rederence checkout [KILLUA bot](https://github.com/zhwzein/Killua-Zoldyck). We are goint to make something that is same in structure like Killua.
-- Do not copy paste from other bot. This bot will have our own script.
-- This bot will have our own script.
-<br>
 
