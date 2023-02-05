@@ -131,7 +131,7 @@ npm start
 ```
 
 
-#### ⚜️ Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works. Otherwise bot will be down. ⚜️
+#### ⚜️ Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works. Otherwise bot will be down.
 <br><br>
 
 
@@ -165,6 +165,16 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 - Feel free to contribute in this project. I will merge your respected contribution after reviewing it.
 
 
+<h2 align="center">⚠️ Warning ⚠️
+</h2>
+
+<br>
+
+- This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
+
+<br>
+
+
 <h2 align="center">🍁 Disclaimer 🍁
 </h2>
 <br>
@@ -175,22 +185,14 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 
 <br>
 
-<h2 align="center">⚠️ Warning ⚠️
-</h2>
 
-<br>
 
-- This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
-
-<br>
-
-## 
 <h2 align="center">📛 Legal Disclaimer 📛
 </h2>
 <br>
 
-1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues and we will not provide support.
-2. We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
+- We don't recomment to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide support`.
+- We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
 
 <br>
 
