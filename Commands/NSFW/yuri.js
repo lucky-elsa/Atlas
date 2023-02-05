@@ -1,17 +1,17 @@
 const axios = require("axios");
 
 module.exports = {
-  name: "erectnipples",
-  alias: ["nsfwerectnipples"],
-  desc: "Hentai picture of waifu with erectnipples", 
+  name: "yuri",
+  alias: ["nsfwyuri"],
+  desc: "Hentai picture of waifu yuri", 
   category: "Nsfw",
-  usage: `erectnipples`,
+  usage: `yuri`,
   react: "🍁",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
     m.reply(mess.waiting)
-    let buff= await axios.get(`https://fantox-apis.vercel.app/erectnipples`)
+    let buff= await axios.get(`https://fantox-apis.vercel.app/yuri`)
     let imgURL = buff.data.url
     
 
@@ -22,7 +22,7 @@ module.exports = {
         type: 1,
       },
       {
-        buttonId: `${prefix}erectnipples`,
+        buttonId: `${prefix}yuri`,
         buttonText: { displayText: `>>` },
         type: 1,
       },
