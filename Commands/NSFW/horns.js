@@ -3,7 +3,7 @@ const axios = require("axios");
 module.exports = {
   name: "horns",
   alias: ["nsfwhorns"],
-  desc: "Hentai picture of waifu horns", 
+  desc: "Hentai picture of waifu with horns", 
   category: "Nsfw",
   usage: `horns`,
   react: "🍁",
