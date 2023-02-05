@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center"> 
-  Konochiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by [FantoX](https://github.com/FantoX001) and his team "Atlas" to do everything that's possible on WhatsApp with highest features and stability built with Bileys Multi Device support.
+  Konochiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by <a href="https://github.com/FantoX001">FantoX</a> and his team "Atlas" to do everything that's possible on WhatsApp with highest features and stability built with Bileys Multi Device support.
 
 <h4 align="center"> Atlas MD - The Future Is Here
 </h4>
