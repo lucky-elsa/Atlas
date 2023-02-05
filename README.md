@@ -1,15 +1,26 @@
 
 
-# Targets in this project:
-- No copy pasting from other bots.
-- No source code encryption.
-- Open source MIT licence.
-- All working and important command. (No Indo commands)
-- Use our own API to avoid APi dead issue.
-- Do not rush. We will make it slowly.
-<br>
+<h1 align="center"> Atlas MD
+</h1>
 
+<p align="center"> 
+  Konochiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by [FantoX](https://github.com/FantoX001) and his team "Atlas" to do everything that's possible on WhatsApp with highest features and stability built with Bileys Multi Device support.
 
+<h3 align="center"> Atlas MD - The Future Is Here
+</h3>
+
+<p align="center">
+  <a href="https://github.com/FantoX001/Atlas-MD/fork">
+    <img src="https://img.shields.io/github/forks/FantoX001/Atlas-MD?label=Fork&style=social">
+    
+    
+  <a href="https://github.com/FantoX001/Atlas-MD/stargazers">
+    <img src="https://img.shields.io/github/stars/FantoX001/Atlas-MD?style=social">
+  </a>
+
+    <a href="https://github.com/FantoX001">
+    <img src="(https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20Repo%20Visitors)">
+  </a>
 
 <br>
 
