@@ -59,7 +59,7 @@
 
 <br>
 
-- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for my or my team to help everyone in bot `Development / Modification`. Only modify if you know what you are doing.
+- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for my or my team to help everyone in bot Development / Modification. Only modify if you know what you are doing.
 - We will only assist you in `Setup / Deployment` of this bot.
 
 <br>
@@ -74,5 +74,67 @@
 
 <br>
 
+## ✧✧✧ Legal Disclaimer
+
+<br>
+
+1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues.
+2. We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group.
+
+<br>
 
 
+<h2 align="center"> UserLand Deployment Method(Android no root)
+</h2>
+
+#### ✧ Download `UserLand` application from Google Play Store.
+#### ✧ Install `Debian` terminal in userland.
+#### ✧ After installation follow these commands below `one by one` (try not to miss any command to avoid error).
+
+### ✧✧ Need help or having difficulties?
+Follow this video tutotial for UserLand.
+<p align='left'>
+<a href="https://youtu.be/elZmQiuscik"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="150"></a>
+<br>
+</p>
+
+### UserLand commands:
+
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install bash
+sudo apt-get install libwebp-dev
+sudo apt install git
+sudo apt install nodejs -y
+sudo apt install ffmpeg -y
+sudo apt install wget
+sudo apt install npm
+sudo apt install imagemagick
+
+git clone https://github.com/FantoX001/Miku-MD
+
+ls
+cd Miku-MD
+npm i
+
+
+cd
+npm install --global yarn
+yarn add sharp
+sudo apt install curl
+
+
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+
+sudo apt-get install -y nodejs
+yarn add sharp
+cd Miku-MD
+npm i
+npm start
+
+``` 
+- Note in `git clone <my bot's repo>` section your can use Your customised bot's github link too (For that make sure you [Forked](https://github.com/FantoX001/Miku-MD/fork) this repo and changed owner number in `config.js`).
+- This method will work on most other bots too.
