@@ -31,7 +31,7 @@ module.exports = {
         const texts = text.trim();
 		const user = m.sender;
 		const cara = 'cara'
-    const deposit = await eco.deposit(m.sender, "cara", d);
+    const deposit = await eco.deposit(m.sender, "cara", texts);
     const balance = await eco.balance(m.sender, "cara")
         if(deposit.noten) return m.reply('You can\'t deposit what you don\'t have.');
         let buttons = [
