@@ -1,4 +1,4 @@
-
+<p align="center">
 <a href="https://github.com/FantoX001/Atlas-MD/stargazers">
     <img src="https://i.ibb.co/SRm09TD/Atlas-Logo.jpg">
   </a>
