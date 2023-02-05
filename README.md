@@ -27,6 +27,7 @@
   
 <p align="center">
     [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7)
+    <img src="https://railway.app/button.svg" href="https://railway.app/new/template/C_B2P7" alt="Deploy on Railway">
 </p>
 # Notice Guys
 
