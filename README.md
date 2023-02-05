@@ -55,3 +55,24 @@
 <br>
 
 
+## ✧✧✧ Disclaimer
+
+<br>
+
+- If you Modify this bot and face any issues, I am not responsible for that because it's not possible for my or my team to help everyone in bot `Development / Modification`. Only modify if you know what you are doing.
+- We will only assist you in `Setup / Deployment` of this bot.
+
+<br>
+
+
+## ✧✧✧ Warning
+
+<br>
+
+1. This bot is made for `Educational / Fun / Group Management` purposes only. I am not responsible for any misuse of this bot.
+2. This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
+
+<br>
+
+
+
