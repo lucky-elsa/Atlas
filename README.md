@@ -41,7 +41,6 @@
 
 <br>
 
-```
 1. Changeable between 8 added Characters (Atlas, Power, Makima, Denji, Zero Two, Chika, Miku, Marin Kitagawa) and more can be added by user inside `BotCharacter.js` file. Type -charlist to see all characters.
 2. Fully powered by MongoDb (3 databases added).
 3. Self / Public / Private mode.
@@ -52,9 +51,8 @@
 8. Highest Commaads and Features.
 9. User Banning / Group Banning.
 
-```
 
-</br>
+<br>
 
 # Notice Guys
 
