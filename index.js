@@ -153,7 +153,7 @@ async function startMiku() {
         clearState,
     } = await getAuthFromDatabase()
 
-    console.log(color(figlet.textSync('Miku Bot MD', {
+    console.log(color(figlet.textSync('Atlas Bot MD', {
         font: 'Pagga',
         horizontalLayout: 'default',
         vertivalLayout: 'default',
@@ -161,7 +161,7 @@ async function startMiku() {
         whitespaceBreak: true
     }), 'yellow'))
 
-    console.log(color('\nHello, I am Fantox, the main developer of this bot.\n\nThanks for using: Miku Bot', 'aqua'))
+    console.log(color('\nHello, I am Fantox, the main developer of this bot.\n\nThanks for using: Atlas MD made by my Team Atlas.', 'aqua'))
     console.log(color('\nYou can follow me on GitHub: FantoX001\n\n', 'aqua'))
 
 
@@ -176,7 +176,7 @@ async function startMiku() {
             level: 'silent'
         }),
         printQRInTerminal: true,
-        browser: ['Miku by: Fantox', 'Safari', '1.0.0'],
+        browser: ['Atlas MD', 'Safari', '1.0.0'],
         auth: state,
         version
     })
@@ -218,7 +218,7 @@ async function startMiku() {
                 console.log("Connection TimedOut, Reconnecting...");
                 startMiku();
             } else {
-                console.log(`Disconnected: Reason "Probably your WhatsApp account Banned for spamming !"`)
+                console.log(`Disconnected: Reason "Probably your WhatsApp account Banned for Spamming !\n\nCheck your WhatsApp !"`)
             }
         }
         if (qr) {
