@@ -7,7 +7,7 @@ module.exports = {
   category: "Weeb",
   usage: `quatoes`,
   react: "🍁",
-  start: async (Miku, m, { prefix }) => {
+  start: async (Miku, m, { prefix,pushName }) => {
     var Image = await getBuffer(`https://anime-quatoes.onrender.com/`);
     var Button = [
       {
