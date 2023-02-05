@@ -60,9 +60,9 @@
 <h2 align="center">🧩 UserLand Deployment Method ( Android no root ) 🧩
 </h2>
 
-#### ✧ Download `UserLand` application from Google Play Store.
-#### ✧ Install `Debian` terminal in userland.
-#### ✧ Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
+#### ⚜️ Download `UserLand` application from Google Play Store.
+#### ⚜️ Install `Debian` terminal in userland.
+#### ⚜️ Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
 </p>
 
@@ -131,11 +131,12 @@ npm start
 ```
 
 
-#### 📌📌 Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works.
+#### ⚜️ Note as UserLand is a physical server so you must keep on your internet connection active to make sure bot works. Otherwise bot will be down. ⚜️
 <br><br>
 
 
-## ✧✧✧ CMD  / VS code Deployment Method (After downloading this code as .zip)
+<h2 align="center">🧩 CMD  / VS code Deployment Method (After downloading this code as .zip) 🧩
+</h2>
 - Extract the .zip and open Vs code / Cmd in that directory and give thesse following commands one-by-one:
 - Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
