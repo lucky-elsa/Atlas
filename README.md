@@ -40,7 +40,8 @@
 
 <br>
 
-## 🎀 Key Features
+<h2 align="center">🎀 Key Features 🎀
+</h2>
 
 <br>
 
@@ -191,7 +192,7 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 </h2>
 <br>
 
-- We don't recomment to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide support`.
+- We don't recomment to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide any support`.
 - We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
 
 <br>
