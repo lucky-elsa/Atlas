@@ -12,15 +12,18 @@ module.exports = {
     name: "mine",
     alias: ["hunt", "dig", "chop"],
     desc: "Gives all bot commands list",
-    react: "✨",
+    react: "🔨",
     category: "Core",
     start: async (Miku, m, {prefix,pushName}) => {
      var text = `Konichiwa *${pushName}* Senpai,
   
   I am *${botName}*, a bot developed by *Team Atlas*.`
   let user = await player.findOne({id:m.sender});
+  if(!user) {
+    return Miku.sendMessage(m.from, { text:` 😕 You don't have an inventory. Use ${prefix}reg-inv to register.` }, { quoted: m });
+  }
   let inventory = user.inventory;
-
+  
 const sections = [{
     "title": "🔖１． ＷＯＯＤＥＮＡＸＥ",
     "rows": [
