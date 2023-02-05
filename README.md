@@ -157,32 +157,35 @@ npm start
 Note: If you don't pre-install these plugins before CMD / VS code Installation bot will not start!
 </br> 
 
-## ✧ Contributors:
+<h2 align="center">🧣 Contributors 🧣
+</h2>
 
-- Project [Contributors](https://github.com/FantoX001/Miku-MD/graphs/contributors)
-- Please feel free to contribute in this project. I will merge your respected contribute if i see it's really necessary.
+- Check [Project Contributors](https://github.com/FantoX001/Miku-MD/graphs/contributors)
+- Feel free to contribute in this project. I will merge your respected contribution after reviewing it.
 
-## ✧✧✧ Disclaimer
 
+<h2 align="center">🍁 Disclaimer 🍁
+</h2>
 <br>
 
 - If you Modify this bot and face any issues, I am not responsible for that because it's not possible for my or my team to help everyone in bot Development / Modification. Only modify if you know what you are doing.
+- This bot is made for `Educational / Fun / Group Management` purposes only. I am not responsible for any misuse of this bot.
 - We will only assist you in `Setup / Deployment` of this bot.
 
 <br>
 
-
-## ✧✧✧ Warning
-
-<br>
-
-1. This bot is made for `Educational / Fun / Group Management` purposes only. I am not responsible for any misuse of this bot.
-2. This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
+<h2 align="center">⚠️ Warning ⚠️
+</h2>
 
 <br>
 
-## ✧✧✧ Legal Disclaimer
+- This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
 
+<br>
+
+## 
+<h2 align="center">📛 Legal Disclaimer 📛
+</h2>
 <br>
 
 1. We don't recomment to change the database we are providing. If you do so, you will be responsible for any issues and we will not provide support.
