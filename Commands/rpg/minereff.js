@@ -84,19 +84,14 @@ module.exports = {
                 iron: Math.floor(Math.random() * 1) + 4,
                 diamonds: Math.floor(Math.random() * 1001) + 7000
                 };
-                if (Math.random() <= 0.05) {
-                  loot.goldenApple = 1;
-                  user.inventory.goldenApple += 1;
-                }
+               
                 user.inventory.wood += loot.wood;
                 user.inventory.stone += loot.stone;
                 user.inventory.iron += loot.iron;
                 user.inventory.diamonds += loot.diamonds;
                 await user.save();
                 let lootMessage = `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`;
-                if (loot.goldenApple) {
-                  lootMessage += `\n\n🍎You found a Golden Apple!🍎`;
-                }
+        
                 Miku.sendMessage(message.from, { text: lootMessage }, { quoted: message });
                 break;
                 default:
