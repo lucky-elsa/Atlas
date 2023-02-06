@@ -394,7 +394,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             })
         }*/
 
-if (!isGroup && cmd && !iscreator)
+if (!isGroup && isCmd && !isCreator)
       return m.reply("*You can't use commands in dm*");
         
         const flags = args.filter((arg) => arg.startsWith("--"));
