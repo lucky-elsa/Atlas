@@ -651,10 +651,6 @@ async function startMiku() {
 }
 
 startMiku();
-app.get("/", async (req, res) => {
-    res.setHeader("content-type", "image/png");
-    res.end(await qrcode.toBuffer(QR_GENERATE));
-});
 
 app.use("/", express.static(join(__dirname, "Page")));
 app.get("/qr", async (req, res) => {
