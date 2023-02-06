@@ -249,6 +249,24 @@ async function startMiku() {
         require("./Core.js")(Miku, m, Commands, chatUpdate)
     })
 
+    
+     Miku.getName = (jid, withoutContact  = false) => {
+        id = Miku.decodeJid(jid)
+        withoutContact = Miku.withoutContact || withoutContact 
+        let v
+        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
+            v = store.contacts[id] || {}
+            if (!(v.name || v.subject)) v = Miku.groupMetadata(id) || {}
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+        })
+        else v = id === '0@s.whatsapp.net' ? {
+            id,
+            name: 'WhatsApp'
+        } : id === Miku.decodeJid(Miku.user.id) ?
+            Miku.user :
+            (store.contacts[id] || {})
+            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+    }
 
     Miku.decodeJid = (jid) => {
         if (!jid) return jid
