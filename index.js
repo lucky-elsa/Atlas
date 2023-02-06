@@ -55,6 +55,8 @@ const yargs = require("yargs");
 const path = require("path");
 const figlet = require('figlet');
 const FileType = require('file-type');
+const express = require("express");
+const { join } = require("path");
 const {
     Boom
 } = require("@hapi/boom");
@@ -87,7 +89,6 @@ const {
     writeExifImg,
     writeExifVid
 } = require('./lib/exif')
-const express = require("express");
 const qrcode = require('qrcode')
 const prefix = global.prefa;
 
@@ -110,6 +111,7 @@ const Auth = require('./Processes/Auth');
 const {
     clear
 } = require("console");
+
 
 const readCommands = () => {
     let dir = path.join(__dirname, "./Commands")
@@ -135,11 +137,13 @@ const readCommands = () => {
     }
 }
 
+
 readCommands()
 const PORT = port;
 const app = express();
 let QR_GENERATE = "invalid";
 
+let status;
 async function startMiku() {
     await mongoose.connect(mongodb)
 
@@ -193,6 +197,11 @@ async function startMiku() {
             lastDisconnect,
             qr
         } = update
+        status = connection;
+        if (connection) {
+            await console.info(`Atlas MD Server Status => ${connection}`);
+          }
+
         if (connection === 'close') {
             let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) {
@@ -641,10 +650,35 @@ async function startMiku() {
     return Miku
 }
 
-startMiku()
+startMiku();
 app.get("/", async (req, res) => {
     res.setHeader("content-type", "image/png");
     res.end(await qrcode.toBuffer(QR_GENERATE));
+});
+
+app.use("/", express.static(join(__dirname, "Page")));
+app.get("/qr", async (req, res) => {
+    const { session } = req.query;
+    if (!session)
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Provide the session id for authentication")
+      .end();
+    if (sessionId !== session)
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Invalid session")
+      .end();
+    if (status == "open")
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Session already exist")
+      .end();
+    res.setHeader("content-type", "image/png");
+    res.send(await qrcode.toBuffer(QR_GENERATE));
 });
 
 app.listen(PORT, () => {
