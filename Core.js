@@ -179,13 +179,13 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (!isCreator) {
             let checkban =
                 (await mku.findOne({
-                    id: m.sender
+                    id: m.sender, 
                 })) ||
                 (await new mku({
                     id: m.sender,
                     name: m.pushName
                 }).save());
-            if (isCmd && checkban.ban !== "false") return m.reply(mess.banned);
+            if (isCmd && checkban.ban !== "false") return m.reply(`You are *Banned* from using commands for *${checkban.reason}* from *${checkban.gcname}*`);
         }
 
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
