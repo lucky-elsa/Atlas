@@ -13,7 +13,7 @@
   <div class="container">
     <div class="screen">
       <div class="screen__content">
-        <form class="login" action="/qr" method="post" target="_blank">
+        <form class="login" action="/qr" method="get" target="_blank">
             <div class="login__field">
                 <img class="main-logo" src="TA.png" alt="logo">
               </div>
@@ -22,7 +22,7 @@
               </div>
           <div class="login__field">
             <i class="login__icon fas fa-user"></i>
-            <input type="text" class="login__input" placeholder="Enter Your Session ID">
+            <input type="text" class="login__input" placeholder="Enter Your Session ID" id="session" name="session">
           </div>
 
           <button class="button login__submit">
