@@ -34,7 +34,7 @@ module.exports = {
     let buttonMessage = {
       image: { url: song.thumbnail },
       caption: `
-           *『  Miku Media Player  』*
+           *『  ${botName} Media Player  』*
 
 
 *Song name :* _${song.title}_

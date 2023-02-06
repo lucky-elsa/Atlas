@@ -25,7 +25,7 @@ module.exports = {
         const vidname = vid.title;
         await Miku.sendMessage(m.from,{
             video: {url:vid.videoUrl},
-            caption: vidname + " By: *Miku Nakano*"
+            caption: vidname + ` By: *${botName}*`
         },{quoted:m})
         
             }
