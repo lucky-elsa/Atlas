@@ -394,7 +394,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             })
         }*/
 
-
+if (!isGroup && cmd && !iscreator)
+      return m.reply("*You can't use commands in dm*");
+        
         const flags = args.filter((arg) => arg.startsWith("--"));
         if (body.startsWith(prefix) && !icmd) {
             let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n`;
