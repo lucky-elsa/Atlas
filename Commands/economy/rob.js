@@ -17,22 +17,22 @@ module.exports = {
         m, 
         { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
+        if (!text && !m.quoted) {
+        return Miku.sendMessage( 
+          m.from, 
+          { text: `Please tag a user to *Ban*!` }, 
+          { quoted: m } 
+        )}
+       
         if(m.quoted){
-        var mentionedUser = m.quoted.sender;
-        }else{
-          var mentionedUser = mentionByTag[0];
+          var mentionedUser = m.quoted.sender;
         }
-        let users = mentionByTag[0];
-        if(!text && !users)  {
-            return Miku.sendMessage( 
-                m.from, 
-                { text: `Please give me user to rob.` }, 
-                { quoted: m } 
-            );
+        else{
+          var mentionedUser = mentionByTag[0];
         }
         const cara = "cara";
         const user1 = m.sender;
-        const user2 = users;
+        const user2 = mentionedUser;
         const k = 100;
         const amount = Math.floor(Math.random() * 200) + 1;
         const balance1 = await eco.balance(user1, cara);
