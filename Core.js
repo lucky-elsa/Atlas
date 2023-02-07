@@ -188,6 +188,12 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             if (isCmd && checkban.ban !== "false") return m.reply(`You are *Banned* from using commands for *${checkban.reason}* from *${checkban.gcname}*`);
         }
 
+        let smallinput = budy.toLowerCase()
+        if (smallinput.includes('test')) {
+          m.reply (`Everything is working fine, I guess`);
+        } 
+        
+        
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
 
         let char = "0"; // default one
