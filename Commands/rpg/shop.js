@@ -11,7 +11,7 @@ module.exports = {
     name: "shop",
     desc: "To view the list of items available in the shop",
     alias: ["store"],
-    category: "Shop",
+    category: "RPG",
     usage: "shop",
     react: "🛍",
     start: async (Miku, m, { text, prefix, botName}) => {

@@ -375,7 +375,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     
 
-        /*if (m.isGroup && isCmd) {
+        if (m.isGroup && isCmd) {
 
             mku.findOne({
                 id: m.sender
@@ -392,7 +392,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     }
                 }
             })
-        }*/
+        }
 
 if (!isGroup && isCmd && !isCreator)
       return m.reply("*You can't use commands in dm*");

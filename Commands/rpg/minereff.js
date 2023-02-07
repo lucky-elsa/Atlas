@@ -12,7 +12,7 @@ module.exports = {
     name: "hunt2",
     desc: "Hunt, mine, dig or chop for resources.",
     alias: ["hunt3"],
-    category: "Mine",
+    category: "RPG",
     usage: "hunt/mine/dig/chop [axe]",
     react: "🔨",
     start: async (Miku, message, { text, prefix, args }) => {
