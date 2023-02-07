@@ -11,8 +11,9 @@ module.exports = {
     name: "inventory",
     desc: "View your mine inventory.",
     alias: ["inv", "items"],
-    category: "Mine",
+    category: "RPG",
     usage: "inventory",
+    react: "💹",
     start: async (Miku, m) => {
         let user = await player.findOne({id:m.sender});
         if(!user) {

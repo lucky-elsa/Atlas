@@ -13,11 +13,10 @@ module.exports = {
     alias: ["hunt", "dig", "chop"],
     desc: "Gives all bot commands list",
     react: "🔨",
-    category: "Core",
+    category: "RPG",
+    usage: "mine",
     start: async (Miku, m, {prefix,pushName}) => {
-     var text = `Konichiwa *${pushName}* Senpai,
   
-  I am *${botName}*, a bot developed by *Team Atlas*.`
   let user = await player.findOne({id:m.sender});
   if(!user) {
     return Miku.sendMessage(m.from, { text:` 😕 You don't have an inventory. Use ${prefix}reg-inv to register.` }, { quoted: m });
@@ -70,14 +69,13 @@ Hello,
 1 | Please select an axe you want to use for mining.
 `
 let ments = [m.sender]
-let fot = `Powered BY LOVE
-`
+
 const listMessage = {
 video: botVideo, gifPlayback: true,
-footer: fot,
-text: 'Made By TEAM ATLAS',
+footer: `*${botName}*`,
+caption: 'Powered By TEAM ATLAS',
 title: con,
-buttonText: `🅲🅻🅸🅲🅺 🅷🅴🆁🅴 ⎙`,
+buttonText: `CLICK HERE ⎙`,
 mentions: ments, 
 headerType: 4,
 sections

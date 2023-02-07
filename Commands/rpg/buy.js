@@ -10,7 +10,7 @@ module.exports = {
     name: "buy",
     desc: "Buy mining equipment.",
     alias: ["buy", "purchase"],
-    category: "Mine",
+    category: "RPG",
     usage: "buy <item>",
     react: "💰",
     start: async (Miku, m, { text, prefix }) => {

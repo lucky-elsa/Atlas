@@ -64,7 +64,7 @@ module.exports = {
         if (anu1 == '401' || anu1.status.length == 0) {
         nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
         } else {
-        nomerny += `🎀 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}}\n\n`
+        nomerny += `🎀 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n🔹 *Bio :* ${anu1.status}\n\n`
         }
         } catch {
         nowhatsapp += `${number0}${i}${number1}\n`

@@ -7,7 +7,7 @@ module.exports = {
     name: "reg-inv",
     desc: "Register your inventory.",
     alias: ["register-inv"],
-    category: "Inventory",
+    category: "RPG",
     usage: "register",
     start: async (Miku, m, { text, prefix }) => {
         let user = await player.findOne({id:m.sender});
