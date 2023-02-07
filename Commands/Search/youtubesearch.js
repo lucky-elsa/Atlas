@@ -31,7 +31,7 @@ module.exports = {
                }
                   sections.push(list)
               }
-              var txt = `     *『  YouTube Search Engine  』*\n\n\n_Search Term:_ *${args.join(" ")}*\n\nChoose a song to play\n`
+              var txt = `     *『  YouTube Search Engine  』*\n\n\n_Search Term:_ *${args.join(" ")}*\n\nChoose an item to play\n`
 
               let buttonMessage = {
                 //image: { url: randomimage },
