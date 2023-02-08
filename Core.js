@@ -140,7 +140,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         const isOwner = global.owner.includes(m.sender);
 
         await db.push("userInfo.mods", global.owner);
-        var mikuModsList = await db.get("userInfo.mods");
 
         const isCmd = body.startsWith(prefix);
         const quoted = m.quoted ? m.quoted : m;
@@ -174,7 +173,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             m.message.extendedTextMessage.contextInfo != null ?
             m.message.extendedTextMessage.contextInfo.mentionedJid :
             [];
-        //if (body.startsWith(prefix) && !icmd) return Miku.sendMessage(m.from, { text: "Baka no such command" },{quoted:m})
+    
 
         if (!isCreator) {
             let checkban =
@@ -371,28 +370,22 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             NSFWstatus = nsfwstatus.switchNSFW || "false";
         }
 
+        //---------------------------------------------- Group Banning Configuration --------------------------------------//
+
+        let banGCStatus = await mk.findOne({ id: m.from });
+        var BANGCSTATUS = "false";
+        if (banGCStatus) {
+            BANGCSTATUS = banGCStatus.bangroup || "false";
+        }
+        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc` && body.startsWith(prefix)) {
+            if(m.isGroup  && !isOwner  && modStatus == "false"){
+                return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`);
+            }
+        }
+
         //----------------------------------------------------------------------------------------------------------------//
 
-    
 
-        if (m.isGroup && isCmd) {
-
-            mku.findOne({
-                id: m.sender
-            }).then(async (user) => {
-                if (user.addedMods == "false" && !isCreator) {
-                    if (!checkdata) {
-                        await new mk({
-                            id: m.from,
-                            bangroup: "true"
-                        }).save()
-                        return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`)
-                    } else {
-                        if (checkdata.bangroup == "true") return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`)
-                    }
-                }
-            })
-        }
 
 
         const flags = args.filter((arg) => arg.startsWith("--"));
