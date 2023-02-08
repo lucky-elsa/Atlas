@@ -138,6 +138,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
             .includes(m.sender);
         const isOwner = global.owner.includes(m.sender);
+        global.suppL = 'https://cutt.ly/AtlasMDSupport';
 
         await db.push("userInfo.mods", global.owner);
 
@@ -184,7 +185,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     id: m.sender,
                     name: m.pushName
                 }).save());
-            if (isCmd && checkban.ban !== "false") return m.reply(mess.banned);
+            if (isCmd && checkban.ban !== "false" && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) return m.reply(mess.banned);
         }
 
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
@@ -380,9 +381,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (banGCStatus) {
             BANGCSTATUS = banGCStatus.bangroup || "false";
         }
-        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc`&& budy != `${prefix}unbangroup`&& body.startsWith(prefix)) {
+        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc`&& budy != `${prefix}unbangroup`&& body.startsWith(prefix) && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) {
             if(m.isGroup  && !isOwner  && modStatus == "false"){
-                return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`);
+                return m.reply(`*${global.botName}* is *Banned* on *${groupName}* group! \n\nType *${prefix}owner* or *${prefix}support* to submit a request to unban the group!`);
             }
         }
 

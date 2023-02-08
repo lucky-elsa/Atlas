@@ -30,7 +30,7 @@
 
 const fs = require("fs");
 const { mkchar } = require("./Database/dataschema.js");
-require("./BotCharacters.js")
+require("./BotCharacters.js");
 
 require("dotenv").config();
 let gg = process.env.MODS;
@@ -67,7 +67,7 @@ global.mess = {
   waiting: "Chotto Matte...",
   nolink: "Please provide me *link*, Baka!",
   error: "An error occurd!",
-  banned: "You are *Banned* fron using commands!",
+  banned: `You are *Banned* fron using commands!  \n\nType *${prefa}owner* or *${prefa}support* to submit a request to unban yourself !`,
   bangc: "This Group is *Banned* from using Commands!",
   nonsfw: "Dont be a pervert Baka! This is not a NSFW enabled group!",
 };

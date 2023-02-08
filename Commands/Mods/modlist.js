@@ -7,7 +7,7 @@ module.exports = {
 
     name: "modlist", 
     desc: "To view the list of current Mods", 
-    alias: ["listmod"],
+    alias: ["owner","mods","mod"],
     category: "Mods", 
     usage: "modlist", 
     react: "🔨", 
@@ -40,12 +40,25 @@ module.exports = {
               modlistString += `\n@${mod.id.split("@")[0]}\n`
             });
             var mention = modlist.map(mod => mod.id);
-            if(modlistString == "") modlistString = "No Mods found.";
+            let textM = `             🧣  *${botName} Mods*  🧣\n\n`;
+            if(modlistString == ""){
+              textM = "*No Mods Added !*";
+            } 
+            else{
+              for (var i = 0; i < modlist.length; i++) {
+                textM += `\n🔰 @${modlist[i].id.split("@")[0]}\n`
+              }
+            }
+            if(modlistString != ""){
+               textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}support* and ask in group.\n\n*💫 Thanks for using ${botName}. 💫*\n`
+            }
+            
             return Miku.sendMessage( 
               m.from, 
-              { text: `Current Mods: \n${modlistString}`, mentions: mention }, 
+              { text: textM, mentions: mention }, 
               { quoted: m } 
             );
+
           } catch (err) { 
             console.log(err);
             return Miku.sendMessage(m.from, { text: `An internal error occurred while fetching the mod list.` }, { quoted: m });
