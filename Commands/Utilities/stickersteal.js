@@ -9,7 +9,7 @@ module.exports = {
     react: "🍁",
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,args }) => {
         if(!args.join(" ")){
-            var packName = `${botName}`;
+            var packName = pushName;
             var authorName = pushName;
         }
         else if(args.join(" ").includes("|")){
