@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
             stone: { type: Number, required: true },
             iron: { type: Number, required: true },
             diamonds: { type: Number, required: true },
+              goldenApple: { type: Number, required: true },
             diamondpickaxe: { type: Number, required: true },
         ironpickaxe: { type: Number, required: true },
         stonepickaxe: { type: Number, required: true },
