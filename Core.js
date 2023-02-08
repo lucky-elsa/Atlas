@@ -377,7 +377,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (banGCStatus) {
             BANGCSTATUS = banGCStatus.bangroup || "false";
         }
-        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc` && body.startsWith(prefix)) {
+        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc`&& budy != `${prefix}unbangroup`&& body.startsWith(prefix)) {
             if(m.isGroup  && !isOwner  && modStatus == "false"){
                 return m.reply(`*${global.botName}* is *Banned* on *${groupName}*`);
             }
