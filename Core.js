@@ -179,15 +179,20 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (!isCreator) {
             let checkban =
                 (await mku.findOne({
-                    id: m.sender
+                    id: m.sender, 
                 })) ||
                 (await new mku({
                     id: m.sender,
                     name: m.pushName
                 }).save());
-            if (isCmd && checkban.ban !== "false" && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) return m.reply(mess.banned);
+
+            if (isCmd && checkban.ban !== "false" && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) return m.reply(`You are *Banned* from using commands for *${checkban.reason}* from *${checkban.gcname}*`);
+
         }
 
+        
+        
+        
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
 
         let char = "0"; // default one
@@ -392,6 +397,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
 
 
+        
         const flags = args.filter((arg) => arg.startsWith("--"));
         if (body.startsWith(prefix) && !icmd) {
             let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n`;

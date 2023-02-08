@@ -41,8 +41,12 @@ module.exports = {
 💡 Item: Diamond-Pickaxe
 💰 Cost: 5000 Gold
 💻 Usage: ${prefix}buy diamondpickaxe
-💬 Description: The ultimate mining experience awaits!\nUsing this axe you can get a *🍎GoldenApple🍎*(very rare) 💎💰` }, { quoted: m });
+💬 Description: The ultimate mining experience awaits!\nUsing this axe you can get a *🍎GoldenApple🍎*(very rare) 💎💰
 
-
+#5
+💡 Item: 100k GOLD
+💰 Cost: 1 GOLDEN APPLE
+💻 Usage: ${prefix}buy gold
+💬 Description: Only few can get hands on a *🍎GoldenApple🍎*(very rare)` }, { quoted: m });
     }
 }

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
-const { player, axe } = require("../../Database/rpgschema.js");
+const { player } = require("../../Database/rpgschema.js");
 const eco = require('discord-mongoose-economy')
 const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
 const fs = require("fs");
@@ -13,17 +13,20 @@ module.exports = {
     alias: ["hunt", "dig", "chop"],
     desc: "Gives all bot commands list",
     react: "🔨",
-    category: "RPG",
+    category: "rpg",
     usage: "mine",
     start: async (Miku, m, {prefix,pushName}) => {
   
+  console.log("Fetching user inventory from database...");
   let user = await player.findOne({id:m.sender});
   if(!user) {
+    console.log("User not found in database, sending error message...");
     return Miku.sendMessage(m.from, { text:` 😕 You don't have an inventory. Use ${prefix}reg-inv to register.` }, { quoted: m });
   }
+  console.log("User inventory retrieved successfully.");
   let inventory = user.inventory;
   
-const sections = [{
+  const sections = [{
     "title": "🔖１． ＷＯＯＤＥＮＡＸＥ",
     "rows": [
         {
@@ -71,16 +74,19 @@ Hello,
 let ments = [m.sender]
 
 const listMessage = {
-video: botVideo, gifPlayback: true,
 footer: `*${botName}*`,
-caption: 'Powered By TEAM ATLAS',
+text: 'Powered By TEAM ATLAS',
 title: con,
 buttonText: `CLICK HERE ⎙`,
-mentions: ments, 
+mentions: ments,
 headerType: 4,
 sections
 }
-const sendMsg = await Miku.sendMessage(m.from, listMessage,{ quoted:m })
+await Miku.sendMessage(m.from, listMessage,{ quoted:m })
 
-    }
 }
+}
+
+
+
+
