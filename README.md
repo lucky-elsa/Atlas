@@ -35,7 +35,7 @@
     </a>
 </p>
 <p align="center">
-    <a href="https://app.koyeb.com/deploy?type=git&repository=github.com/FantoX001/Atlas-MD&branch=master&name=Atlas-MD">
+    <a href="https://app.koyeb.com/deploy?type=git&repository=github.com/FantoX001/Atlas-MD&branch=main&name=atlas-bot-deploy">
     <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy on Koyeb">
     </a>
 </p>
