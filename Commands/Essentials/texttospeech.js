@@ -7,7 +7,7 @@ module.exports = {
     usage: "say <text>",
     react: "🍁",
     category: "Essentials",
-    start: async(Miku, m,{pushName,prefix,args,text}) => {
+    start: async(Miku, m,{pushName,prefix,args,text,mime}) => {
         //if(!args[0] && !m.quoted) return m.reply(`Please provide me a text to say!`);
         
         if (!text && m.quoted) {

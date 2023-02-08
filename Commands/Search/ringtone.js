@@ -7,7 +7,7 @@ module.exports = {
   category: "Search",
   usage: `ringtone <search term>`,
   react: "🍁",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Miku, m, { text, prefix, args,mime }) => {
     if (!args[0])
       return Miku.sendMessage(
         m.from,

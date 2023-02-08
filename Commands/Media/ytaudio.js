@@ -8,7 +8,7 @@ module.exports = {
   category: "Media",
   usage: `ytad <song link>`,
   react: "🍁",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Miku, m, { text, prefix, args,mime }) => {
 
     if (!args[0])
         return Miku.sendMessage(

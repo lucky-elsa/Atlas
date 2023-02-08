@@ -10,7 +10,7 @@ module.exports = {
     start: async (
       Miku,
       m,
-      { text, prefix, isBotAdmin, isAdmin, pushName, metadata, args }
+      { text, prefix, isBotAdmin, isAdmin, pushName, metadata, args,mime }
     ) => {
         try {
             ppgc = await Miku.profilePictureUrl(m.from, "image");

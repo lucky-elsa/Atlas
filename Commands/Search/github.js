@@ -6,7 +6,7 @@ module.exports = {
   category: "Search",
   usage: `gh <github username>`,
   react: "🍁",
-  start: async (Miku, m, { text, prefix, pushName, args }) => {
+  start: async (Miku, m, { text, prefix, pushName, args,mime }) => {
     if (!args[0])
       return Miku.sendMessage(
         m.from,
