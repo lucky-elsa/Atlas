@@ -35,7 +35,7 @@
     </a>
 </p>
 <p align="center">
-    <a href="https://app.koyeb.com/deploy?type=git&repository=github.com/elrebelde21/The-LoliBot-MD&branch=master&name=the-lolibot-md">
+    <a href="https://app.koyeb.com/deploy?type=git&repository=github.com/FantoX001/Atlas-MD&branch=master&name=Atlas-MD">
     <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy on Koyeb">
     </a>
 </p>
