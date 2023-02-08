@@ -4,7 +4,7 @@ module.exports = {
     name: "couplepp",
     alias: ["ppcouple"],
     desc: "Get matching couple profile picture.",
-    react: "🍁",
+    react: "💞",
     category: "Core",
     start: async(Miku, m,{pushName,prefix}) => {
         let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json');
