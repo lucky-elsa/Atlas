@@ -190,10 +190,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         }
 
-        let smallinput = budy.toLowerCase()
-        if (smallinput.includes('test')) {
-          m.reply (`Everything is working fine, I guess`);
-        } 
+        
         
         
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
