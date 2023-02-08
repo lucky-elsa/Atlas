@@ -33,6 +33,8 @@
     <a href="https://railway.app/new/template/C_B2P7">
     <img src="https://railway.app/button.svg" alt="Deploy on Railway">
     </a>
+
+    [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/elrebelde21/The-LoliBot-MD&branch=master&name=the-lolibot-md)
 </p>
 
 
