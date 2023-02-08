@@ -13,17 +13,22 @@ module.exports = {
     m,
     { text, prefix, isBotAdmin, isAdmin, mentionByTag,pushName}
   ) => {
-    if (!text)
+    if (!text && !m.quoted) return m.reply(`Please tag a user to *Remove* from group!`)
+    if (!isAdmin) return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+
+    if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag a user to *Remove* from group!` },
+        { text: `Please tag a user to *Remove* !` },
         { quoted: m }
       );
-    if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+    } else if (m.quoted) {
+      var mentionedUser = m.quoted.sender;
+    } else {
+      var mentionedUser = mentionByTag[0];
+    }
 
-    const mentionedUser = mentionByTag;
-    let users = (await mentionedUser[0]) || m.msg.contextInfo.participant;
+    let users = (await mentionedUser) || m.msg.contextInfo.participant;
 
     try {
       await Miku.groupParticipantsUpdate(m.from, [users], "remove").then(
