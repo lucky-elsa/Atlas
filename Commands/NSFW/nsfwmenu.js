@@ -9,7 +9,7 @@ module.exports = {
   
       if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
 
-      let ntext = `╭────ꕥ NSFW Menu ꕥ────╮
+      let ntext = `\n╭────ꕥ NSFW Menu ꕥ────╮
 ├
 ├・ 💦 ᴘᴜꜱꜱʏ, ꜱᴘʀᴇᴀᴅᴘᴜꜱꜱʏ,
 ├・ 💦 ɢᴇɴꜱʜɪɴ, ꜱQᴜɪʀᴛ,
