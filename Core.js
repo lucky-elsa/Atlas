@@ -300,14 +300,14 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let workerMode = botModeSet.privateMode || "false";
         if (botModeSet) {
             if (workerMode == "true") {
-                if (modStatus == "false" && !isOwner) {
-                    console.log("Log/Command Rejected ! Bot is in private mode !");
+                if (modStatus == "false" && !isOwner && isCmd) {
+                    console.log("\nCommand Rejected ! Bot is in private mode !\n");
                     return;
                 }
             }
             if (workerMode == "self") {
-                if (m.sender != botNumber) {
-                    console.log("Log/Command Rejected ! Bot is in Self mode !");
+                if (m.sender != botNumber && isCmd) {
+                    console.log("\nCommand Rejected ! Bot is in Self mode !\n");
                     return;
                 }
             }
@@ -318,10 +318,11 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let botSwitchGC = await mk.findOne({
             id: m.from
         });
+        var botWrokerGC = "true"
         if (botSwitchGC) {
-            let botWrokerGC = botSwitchGC.botSwitch || "true";
-            if (m.isGroup && botWrokerGC == "false" && !isAdmin) {
-                return;
+            botWrokerGC = botSwitchGC.botSwitch || "true";
+            if (m.isGroup && botWrokerGC == "false" && !isAdmin && !isOwner  && modStatus == "false" && isCmd) {
+                return console.log(`\nCommand Rejected ! Bot is turned off in ${groupName} !\n`);
             }
         }
 
@@ -330,8 +331,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let chatbotStatus = await mk.findOne({
             id: m.from
         });
+        var csts = "false"
         if (chatbotStatus) {
-            let csts = chatbotStatus.chatBot || "false";
+            csts = chatbotStatus.chatBot || "false";
             if (m.isGroup && csts == "true" && !icmd && !isCmd) {
                 if (m.quoted) {
                     if (m.quoted.sender == botNumber) {
@@ -348,8 +350,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let PMchatBotStatus = await mkchar.findOne({
             id: '1'
         });
+        var PMcsts = "false";
         if (PMchatBotStatus) {
-            let PMcsts = PMchatBotStatus.PMchatBot || "false";
+            PMcsts = PMchatBotStatus.PMchatBot || "false";
 
             if (!m.isGroup && PMcsts == "true" && !icmd && !isCmd) {
 
