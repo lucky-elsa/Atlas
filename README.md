@@ -12,6 +12,8 @@
 <h4 align="center"> Atlas MD - The Future Is Here
 </h4>
 
+<br>
+
 <p align="center">
   <a href="https://github.com/FantoX001/Atlas-MD/fork">
     <img src="https://img.shields.io/github/forks/FantoX001/Atlas-MD?label=Fork&style=social">
