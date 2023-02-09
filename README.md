@@ -64,7 +64,7 @@
 <br>
 
 
-<h2 align="center">〽️ Why Should You Use Atlas as you Base 〽️
+<h2 align="center">〽️ Why Should You Use Atlas as your Base 〽️
 </h2>
 
 <br>
