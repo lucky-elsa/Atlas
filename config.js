@@ -71,3 +71,4 @@ global.mess = {
   bangc: "This Group is *Banned* from using Commands!",
   nonsfw: "Dont be a pervert Baka! This is not a NSFW enabled group!",
 };
+

@@ -2,10 +2,8 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
-
+const fs = require("fs");
+require("../../Database/dataschema.js");
 
 module.exports = { 
 
@@ -13,11 +11,11 @@ module.exports = {
     desc: "daily gold.", 
     alias: ["daily"],
     category: "Economy",  
-    react: "💰", 
+    react: "💷", 
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
          if (!m.isGroup) return Miku.sendMessage(m.from, { text: '*Group command ' }, { quoted: m });
          let user = m.sender 
@@ -28,18 +26,19 @@ module.exports = {
             let buttons = [
                 {
                   buttonId: `${prefix}wallet`,
-                  buttonText: { displayText: "Wallet👛" },
+                  buttonText: { displayText: "Wallet 💳" },
                   type: 1,
                 },
                 {
                     buttonId: `${prefix}Bank`,
-                  buttonText: { displayText: "Bank🏦" },
+                  buttonText: { displayText: "Bank 🏦" },
                   type: 1,
 
                 },
               ];
               let buttonMessage = {
-                text: `🧧 You already claimed daily for today, come back in ${daily.cdL}🫡`,
+                image: fs.readFileSync("./Assets/Img/card.png"), 
+                caption: `\n🧧 You already claimed your daily revenue today, Come back in ${daily.cdL} to claim again 🫡`,
                 footer: `*${botName}*`,
                 buttons: buttons,
                 type: 4
@@ -51,7 +50,7 @@ module.exports = {
    
               return Miku.sendMessage( 
                 m.from, 
-                { text: `you claimed daily ${daily.amount} 🪙 for today🎉.` }, 
+                { text: `You have successfully claimed your daily revenue ${daily.amount} 💴 today 🎉.` }, 
                 { quoted: m } 
             )}
       }

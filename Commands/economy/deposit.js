@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
+const fs = require("fs");
 
 
 module.exports = { 
@@ -13,11 +11,11 @@ module.exports = {
     desc: "deposit gold.", 
     alias: ["deposit"],
     category: "Economy",  
-    react: "💰", 
+    react: "💵", 
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         if(!text)  {
             return Miku.sendMessage( 
@@ -37,18 +35,19 @@ module.exports = {
         let buttons = [
             {
               buttonId: `${prefix}wallet`,
-              buttonText: { displayText: "Wallet👛" },
+              buttonText: { displayText: "Wallet 💳" },
               type: 1,
             },
             {
                 buttonId: `${prefix}Bank`,
-              buttonText: { displayText: "Bank🏦" },
+              buttonText: { displayText: "Bank 🏦" },
               type: 1,
 
             },
           ];
           let buttonMessage = {
-            text: `⛩️ Sender: ${m.pushName}\n\n🍀Successfully 💰Deposited 🪙${deposit.amount} to your bank.\n`,
+            image: fs.readFileSync("./Assets/Img/card.png"), 
+            caption: `\n⛩️ Sender: ${m.pushName}\n\n🍀Successfully Deposited 💴 ${deposit.amount} to your bank.\n`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4

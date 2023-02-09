@@ -1,13 +1,9 @@
 const mongoose = require("mongoose");
 require("../../config.js");
-require("../../index.js");
-require("../../lib/myfunc.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
-const { M } = require("human-readable");
+const fs = require("fs");
+
 
 
  module.exports = { 
@@ -16,11 +12,11 @@ const { M } = require("human-readable");
     desc: "gamble money.", 
     alias: ["gamble"],
     category: "Economy",  
-    react: "💰", 
+    react: "💸", 
     start: async ( 
         Miku, 
         m, 
-        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         const user = m.sender
 	
@@ -37,7 +33,7 @@ const { M } = require("human-readable");
      const f = ["up", "right", "left", "down", "up", "left", "down", "right", "up", "down", "right", "left"]
      const r = f[Math.floor(Math.random () * f.length)]
      if (!text) return m.reply(
-				`Example:  ${prefix}gamble 100 direction(left,right,up,down)`
+				`Usage:  *${prefix}gamble 100 left/right/up/down*\n\nExample:  *${prefix}gamble 100 left*`
 			);
 
             if (!value) return m.reply("*Please, specify the amount you are gambling with!*");
@@ -50,18 +46,19 @@ const { M } = require("human-readable");
            let buttons = [
             {
               buttonId: `${prefix}slot`,
-              buttonText: { displayText: "Slot🎰" },
+              buttonText: { displayText: "Slot 🎰" },
               type: 1,
             },
             {
                 buttonId: `${prefix}wallet`,
-              buttonText: { displayText: "Wallet👛" },
+              buttonText: { displayText: "Wallet 💳" },
               type: 1,
 
             },
           ];
           let buttonMessage = {
-            text: `*📈 You won 🪙${twice}*`,
+            image: fs.readFileSync("./Assets/Img/card.png"), 
+            caption: `*📈 You won 💴 ${twice}*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4
@@ -74,18 +71,18 @@ const { M } = require("human-readable");
          let buttons = [
             {
               buttonId: `${prefix}slot`,
-              buttonText: { displayText: "Slot🎰" },
+              buttonText: { displayText: "Slot 🎰" },
               type: 1,
             },
             {
                 buttonId: `${prefix}wallet`,
-              buttonText: { displayText: "Wallet👛" },
+              buttonText: { displayText: "Wallet 💳" },
               type: 1,
 
             },
           ];
           let buttonMessage = {
-            text: `*📉 You lost 🪙${texts[0]}*`,
+            text: `*📉 You lost 💴 ${texts[0]}*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4

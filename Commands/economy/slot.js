@@ -2,20 +2,19 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy');
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
 const fs = require("fs");
+
 
 module.exports = { 
     name: "slot",  
     desc: "play slot game", 
     alias: ["slot"],
     category: "Economy",  
-    react: "💰", 
+    react: "🎰", 
     start: async ( 
         Miku, 
         m, 
-        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
       var today = new Date();
       if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){

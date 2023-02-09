@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
+const fs = require("fs");
 
 
 module.exports = { 
@@ -12,11 +10,11 @@ module.exports = {
     desc: "withdraw money from bank account.", 
     alias: ["withdraw"],
     category: "Economy",  
-    react: "💰", 
+    react: "💳", 
     start: async ( 
         Miku, 
         m, 
-        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         if(!text)  {
             return Miku.sendMessage( 
@@ -31,7 +29,7 @@ module.exports = {
         const withdraw = await eco.withdraw(user, cara, query);
         if(withdraw.noten) Miku.sendMessage(m.from, { text: '*🏧 Insufficient fund in bank*' }, { quoted: m });
         const add = eco.give(user, cara, query);
-        Miku.sendMessage(m.from, { text: `*🏧 ALERT*  __🪙${withdraw.amount} has been added in your wallet._*` }, { quoted: m });
+        Miku.sendMessage(m.from, { image: fs.readFileSync("./Assets/Img/card.png"), caption: `*🏧 ALERT*  _💶 ${withdraw.amount} has been added in your wallet._*` }, { quoted: m });
         
 }
 }

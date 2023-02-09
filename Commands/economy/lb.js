@@ -2,19 +2,18 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
- const { economy } = require("discord-mongoose-economy/models/economy.js");
+const fs = require("fs");
+const { economy } = require("discord-mongoose-economy/models/economy.js");
 
+ 
  module.exports = { 
     name: "leaderboard", 
     desc: "To view the leaderboard of current users", 
     alias: ["lb"],
     category: "Economy", 
     usage: "leaderboard", 
-    react: "💰", 
-    start: async (Miku, m) => { 
+    react: "📈", 
+    start: async (Miku, m,{ text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} ) => { 
         try { 
             let h = await eco.lb('cara', 10);
             if(h.length === 0) {
@@ -30,7 +29,7 @@ const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mong
                 } else {
                     tname = Miku.getName(h[i].userID);
                 }
-                str += `*${i+1}*\n╭─────────────◆\n│ *Name:-* _${tname}_\n│ *User:-* _@${h[i].userID.split('@')[0]}_\n│ *Wallet:-* _${h[i].wallet}_\n│ *Bank Amount:-* _${h[i].bank}_\n│ *Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
+                str += `*${i+1}*\n╭─────────────◆\n│ *🎀 Name:-* _${tname}_\n│ *⚜️ User:-* _@${h[i].userID.split('@')[0]}_\n│ *💳 Wallet:-* _${h[i].wallet}_\n│ *📄 Bank Amount:-* _${h[i].bank}_\n│ *📊 Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
                 arr.push(h[i].userID);
             }
             Miku.sendMessage(m.from, { text: str, mentions: arr }, { quoted: m });

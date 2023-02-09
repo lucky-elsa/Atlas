@@ -72,10 +72,7 @@ const chalk = require("chalk");
 const {
     color
 } = require("./lib/color");
-//const { correct } = require("./lib/Correct")
-const {
-    QuickDB
-} = require("quick.db");
+
 const {
     Console
 } = require("console");
@@ -87,17 +84,15 @@ const {
 } = require("./Database/dataschema.js");
 const prefix = global.prefa;
 
-const db = new QuickDB();
 
 global.Levels = require("discord-xp");
-Levels.setURL(
-    "mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority"
-);
+Levels.setURL("mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority");
 
-console.log(color("\nDatabase has been connected Successfully !", "aqua"));
+console.log(color("\nDatabase 1 has been connected Successfully !\n", "aqua"));
 
-//const CurrencySystem = require("currency-system");
-//global.cs = new CurrencySystem;
+console.log(color("\nDatabase 2 has been connected Successfully !\n", "aqua"));
+
+
 
 module.exports = async (Miku, m, commands, chatUpdate, store) => {
     try {
@@ -139,8 +134,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             .includes(m.sender);
         const isOwner = global.owner.includes(m.sender);
         global.suppL = 'https://cutt.ly/AtlasMDSupport';
+        const eco = require('discord-mongoose-economy')
+        const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
 
-        await db.push("userInfo.mods", global.owner);
 
         const isCmd = body.startsWith(prefix);
         const quoted = m.quoted ? m.quoted : m;
@@ -530,6 +526,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             isAdmin,
             groupAdmin,
             text,
+            eco,
+            ty,
             quoted,
             mentionByTag,
             mime,

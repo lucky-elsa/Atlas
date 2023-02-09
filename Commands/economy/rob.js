@@ -2,20 +2,19 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy');
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
 const fs = require("fs");
+
 
 module.exports = { 
     name: "rob",  
     desc: "rob bank amount", 
     alias: ["rob"],
     category: "Economy",  
-    react: "💰", 
+    react: "💶", 
     start: async ( 
         Miku, 
         m, 
-        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         if (!text && !m.quoted) {
         return Miku.sendMessage( 
@@ -39,12 +38,12 @@ module.exports = {
         const balance2 = await eco.balance(user2, cara);
         const typ = ['ran','rob','caught'];
         const random = typ[Math.floor(Math.random() * typ.length)];
-        if (k > balance1.wallet) return Miku.sendMessage(m.from, { text: '*☹️ You don\'t have enough money to pay incase you get caught*' }, { quoted: m }); 
+        if (k > balance1.wallet) return Miku.sendMessage(m.from, { text: '*☹️ You don\'t have enough money to pay fine incase you get caught*' }, { quoted: m }); 
         if (k > balance2.wallet) return Miku.sendMessage(m.from, { text: '*Sorry, your victim is too poor 🤷🏽‍♂️ let go.*' }, { quoted: m }); 
 
         switch (random) {
             case 'ran':
-                return Miku.sendMessage(m.from, { text: `*Lets leave this poor soul alone.*` }, { quoted: m });
+                return Miku.sendMessage(m.from, { text: `*Lets leave this poor soul alone.*\n\nHe's toooo poor.` }, { quoted: m });
             case 'rob':
                 await eco.deduct(user2, cara, amount);
                 await eco.give(user1, cara, amount); 

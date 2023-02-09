@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
-const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
+const fs = require("fs");
 
 
 module.exports = { 
@@ -13,16 +11,29 @@ module.exports = {
     desc: "transfer gold.", 
     alias: ["give"],
     category: "Economy",  
-    react: "💰", 
+    react: "💴", 
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         let value = text.trim().split(" ");
     if (value[0] === "") return m.reply(`Use ${prefix}transfer 100 @user`);
-    let user = mentionByTag[0];
-    if(!user) return m.reply('Please give me any user🤦‍♂️.');
+    if (!text && !m.quoted) {
+      return Miku.sendMessage(
+        m.from,
+        { text: `Please tag any user ${pushName} senpai 🤦‍♂️ !` },
+        { quoted: m }
+      );
+    } else if (m.quoted) {
+      var mentionedUser = m.quoted.sender;
+    } else {
+      var mentionedUser = mentionByTag[0];
+    }
+
+    let user = (await mentionedUser) || m.msg.contextInfo.participant;
+    //let user = mentionByTag[0];
+    
     const cara = "cara"
         const user1 = m.sender
         const user2 = user
@@ -40,18 +51,19 @@ module.exports = {
         let buttons = [
             {
               buttonId: `${prefix}wallet`,
-              buttonText: { displayText: "Wallet👛" },
+              buttonText: { displayText: "Wallet 💳" },
               type: 1,
             },
             {
                 buttonId: `${prefix}Bank`,
-              buttonText: { displayText: "Bank🏦" },
+              buttonText: { displayText: "Bank 🏦" },
               type: 1,
 
             },
           ];
           let buttonMessage = {
-            text: `*📠 Transaction successful of ${word} 💰*`,
+            image: fs.readFileSync("./Assets/Img/card.png"), 
+            caption: `*📠 Transaction successful of ${word} 💷*`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4

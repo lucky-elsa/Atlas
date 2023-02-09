@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
-const eco = require('discord-mongoose-economy')
- const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
- const fs = require("fs");
+const fs = require("fs");
 
 
 module.exports = { 
@@ -13,11 +11,11 @@ module.exports = {
     desc: "shows bank amount.", 
     alias: ["bank"],
     category: "Economy",  
-    react: "💰", 
+    react: "🏦", 
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
     ) => {
         const pushname = m.pushName //|| 'NO name'
         const user = m.sender
@@ -40,18 +38,19 @@ module.exports = {
         let buttons = [
             {
               buttonId: `${prefix}slot`,
-              buttonText: { displayText: "Slot🎰" },
+              buttonText: { displayText: "Slot 🎰" },
               type: 1,
             },
             {
                 buttonId: `${prefix}wallet`,
-              buttonText: { displayText: "Wallet👛" },
+              buttonText: { displayText: "Wallet 💳" },
               type: 1,
 
             },
           ];
           let buttonMessage = {
-            text: `🏦 *${pushname}'s Bank*:\n\n🪙${balance.bank}/${balance.bankCapacity}\n\n\n*Wealth: ${role}*\n`,
+            image: fs.readFileSync("./Assets/Img/card2.png"), 
+            caption: `\n🏦 *${pushname}'s Bank*:\n\n🪙 Balance: ${balance.bank}/${balance.bankCapacity}\n\n\n*Wealth: ${role}*\n`,
             footer: `*${botName}*`,
             buttons: buttons,
             type: 4

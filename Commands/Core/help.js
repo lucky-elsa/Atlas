@@ -9,7 +9,7 @@ module.exports = {
 
 I am *${botName}*, a bot developed by *Team Atlas*.
 
-
+My prefix is: *${prefix}*
 
 Here's the list of my Commands.\n
    
@@ -236,10 +236,10 @@ if (NSFWstatus == "true"){
 }
 
 textHelpMenu +=`*🔰  ${botName}  🔰*
-_〽️ Powered By:_ *Team ATLAS*
+_Powered By:_ *Team ATLAS*
 
 🎀 To use any of these commands type 
-" *${prefix}<Command name>* ".
+" *${prefix}Command name* ".
 
 🏮 To get Support Group link type " *${prefix}support* ".
 
