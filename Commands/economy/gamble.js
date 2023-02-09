@@ -23,12 +23,11 @@ const { M } = require("human-readable");
         { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
         const user = m.sender
-	//	if(citel.chat!=="120363043857093839@g.us") return citel.reply('This is not a economy group.')
+	
         var texts = text.split(" ");
      var opp = texts[1];// your value
      var value = texts[0].toLowerCase();
      var gg = parseInt(value)
- ///.mentionedJid[0] ? m.mentionedJid[0] : m.sender
      const cara = "cara"
      const balance = await eco.balance(user, cara);
      const g = (balance.wallet) > parseInt(value)
