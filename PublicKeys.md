@@ -26,7 +26,7 @@ AUTHOR=FantoX
 ```
 mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority
 ```
-- Public database is to store user levels, and other data.
+- Public database is to store user levels, banning, bot mode and other important data.
 
 <br>
 
