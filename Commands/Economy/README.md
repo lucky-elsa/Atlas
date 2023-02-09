@@ -8,5 +8,6 @@
 - You are not allowed to change the public database added for Economy.
 
 <br>
+
 ### Economy is a game and you should play fare and without cheating.
 ### If you break these rules you will not get any support from us.
