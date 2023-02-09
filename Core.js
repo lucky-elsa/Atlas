@@ -298,19 +298,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             modStatus = modSTATUS.addedMods || "false";
         }
 
-        /*await mku.findOne({
-            id: m.sender
-        }).then(async (user) => {
-            if (user.addedMods == "true") {
-                return "true";
-            } else {
-                return "false";
-            }
-        }).catch(error => {
-            console.log(error)
-        });*/
-
-
         var workerMode = "false";
         let botModeSet = await mkchar.findOne({
             id: '1'
