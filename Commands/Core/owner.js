@@ -26,6 +26,10 @@ module.exports = {
               modlistString += `\n@${mod.id.split("@")[0]}\n`
             });
             var mention = await modlist.map(mod => mod.id);
+            let xy = modlist.map(mod => mod.id);
+            let yz = ownerList.map(owner => owner+"@s.whatsapp.net");
+            let xyz = xy.concat(yz);
+
             ment = [ownerList.map(owner => owner+"@s.whatsapp.net"), mention];
             let textM = `             🧣  *${botName} Mods*  🧣\n\n`;
 
@@ -49,7 +53,7 @@ module.exports = {
             
             return Miku.sendMessage( 
               m.from, 
-              { text: textM, mentions: mention }, 
+              { text: textM, mentions: xyz }, 
               { quoted: m } 
             );
 
