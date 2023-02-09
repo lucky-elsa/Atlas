@@ -40,9 +40,6 @@
     </a>
 </p>
 
-
-
-
 <br>
 
 <h2 align="center">🎀 Key Features 🎀
