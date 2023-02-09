@@ -5,7 +5,7 @@ module.exports = {
   category: "Mods",
   usage: "setchar 0/1/2/3/4/5/6/7",
   react: "🎀",
-  start: async (Miku, m, { text, prefix }) => {
+  start: async (Miku, m, { text, prefix ,modStatus}) => {
     let txt = `       『  *Bot Character list*  』\n\n\n_0 - Atlas MD_\n\n_1 - Power MD_\n\n_2 - Makima MD_\n\n_3 - Denji MD_\n\n_4 - Zero Two_\n\n_5 - Chika MD_\n\n_6 - Miku MD_\n\n_7 - Marin Kitagawa_\n\n\nExample: *${prefix}setchar 0*\n`;
 
     let botLogos = [

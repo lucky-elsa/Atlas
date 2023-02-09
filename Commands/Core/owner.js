@@ -9,53 +9,47 @@ module.exports = {
     desc: "To view the list of current Mods", 
     alias: ["modlist","mods","mod"],
     category: "Core", 
-    usage: "modlist", 
+    usage: "owner", 
     react: "🏅", 
     start: async (
       Miku, 
       m, 
-      { text, prefix, mentionByTag, pushName, isCreator,owner,includes} 
+      { text, prefix, mentionByTag, pushName, isCreator,owner,includes,modStatus} 
     ) => { 
-      var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
-        if (user.addedMods=="true") {
-          return "true";
-        }
-        else{
-          return "false";
-        }
-      }).catch(error => {
-        console.log(error)
-        //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
-      });
-
-
-      if (!isCreator&&!modStatus=="true") 
-        return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
 
         try { 
         
             var modlist = await mku.find({addedMods: "true"});
             var modlistString = "";
+            var ownerList = global.owner;
             modlist.forEach(mod => {
               modlistString += `\n@${mod.id.split("@")[0]}\n`
             });
-            var mention = modlist.map(mod => mod.id);
+            var mention = await modlist.map(mod => mod.id);
+            ment = [ownerList.map(owner => owner+"@s.whatsapp.net"), mention];
             let textM = `             🧣  *${botName} Mods*  🧣\n\n`;
-            if(modlistString == ""){
+
+            if(ownerList.length == 0){
               textM = "*No Mods Added !*";
-            } 
-            else{
-              for (var i = 0; i < modlist.length; i++) {
-                textM += `\n🔰 @${modlist[i].id.split("@")[0]}\n`
-              }
             }
+
+            for (var i = 0; i < ownerList.length; i++) {
+              textM += `\n〽️ @${ownerList[i]}\n`
+            }
+
             if(modlistString != ""){
+              for (var i = 0; i < modlist.length; i++) {
+                textM += `\n🎀 @${modlist[i].id.split("@")[0]}\n`
+              }
+            } 
+            
+            if(modlistString != "" || ownerList.length != 0){
                textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}support* and ask in group.\n\n*💫 Thanks for using ${botName}. 💫*\n`
             }
             
             return Miku.sendMessage( 
               m.from, 
-              { text: textM, mentions: mention }, 
+              { text: textM, mentions: [ownerList.map(owner => owner+"@s.whatsapp.net") , modlist.map(mod => mod.id)]}, 
               { quoted: m } 
             );
 
