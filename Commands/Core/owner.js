@@ -49,7 +49,7 @@ module.exports = {
             
             return Miku.sendMessage( 
               m.from, 
-              { text: textM, mentions: [ownerList.map(owner => owner+"@s.whatsapp.net") , modlist.map(mod => mod.id)]}, 
+              { text: textM, mentions: mention }, 
               { quoted: m } 
             );
 
