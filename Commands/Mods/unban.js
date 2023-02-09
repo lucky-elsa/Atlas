@@ -13,18 +13,9 @@ module.exports = {
     start: async (
       Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,modStatus} 
     ) => { 
-       var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
-        if (user.addedMods=="true") {
-          return "true";
-        }
-        else{
-          return "false";
-        }
-      }).catch(error => {
-        console.log(error)
-      });
+      
 
       if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
 

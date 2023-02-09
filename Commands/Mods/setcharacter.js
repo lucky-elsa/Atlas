@@ -16,19 +16,8 @@ module.exports = {
     start: async ( 
       Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,modStatus} 
     ) => { 
-      var modStatus = await mku.findOne({id:m.sender}).then(async (user) => {
-        if (user.addedMods=="true") {
-          return "true";
-        }
-        else{
-          return "false";
-        }
-      }).catch(error => {
-        console.log(error)
-        //return Miku.sendMessage(m.from, { text: `An internal error occurred while checking your mod status.` }, { quoted: m });
-      });
 
       if (modStatus=="false"&&!isCreator)  return m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
       if (!text) return m.reply(`Please provide a character number to set (0/1/2/3/4/5/6/7).\n\nExample: ${prefix}setchar 0`);

@@ -288,7 +288,17 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         //---------------------------------- Self/public/Private mode Configuration ------------------------------------//
 
-        var modStatus = await mku.findOne({
+        
+
+        let modSTATUS = await mku.findOne({
+            id: m.sender
+        });
+        var modStatus = "false"
+        if (modSTATUS) {
+            modStatus = modSTATUS.addedMods || "false";
+        }
+
+        /*await mku.findOne({
             id: m.sender
         }).then(async (user) => {
             if (user.addedMods == "true") {
@@ -298,13 +308,16 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             }
         }).catch(error => {
             console.log(error)
-        });
+        });*/
 
+
+        var workerMode = "false";
         let botModeSet = await mkchar.findOne({
             id: '1'
         });
-        let workerMode = botModeSet.privateMode || "false";
+
         if (botModeSet) {
+            workerMode = botModeSet.privateMode || "false";
             if (workerMode == "true") {
                 if (modStatus == "false" && !isOwner && isCmd) {
                     console.log("\nCommand Rejected ! Bot is in private mode !\n");
@@ -538,6 +551,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             isBotAdmin,
             prefix,
             NSFWstatus,
+            modStatus,
             isCreator,
             store,
             command: cmd.name,
