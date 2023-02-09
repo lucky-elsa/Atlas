@@ -189,7 +189,7 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 <h2 align="center">🧣 Contributors 🧣
 </h2>
 
-- Check [Project Contributors](https://github.com/FantoX001/Miku-MD/graphs/contributors)
+- Check [Project Contributors](https://github.com/FantoX001/Atlas-MD/graphs/contributors)
 - Feel free to contribute in this project. I will merge your respected contribution after reviewing it.
 
 
