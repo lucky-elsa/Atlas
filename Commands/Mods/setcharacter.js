@@ -126,7 +126,6 @@ module.exports = {
             await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true })
             //global.animeCharacter = "1";
             return await Miku.sendMessage(m.from, { image: {url:botImage1},caption: `Character number ${charNum} - ${botName} is now the default character.\n` }, { quoted: m });
-
         }
         else if (charNum == '2') {
             await await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true })
@@ -156,13 +155,11 @@ module.exports = {
             await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true })
             //global.animeCharacter = "0";
             return await Miku.sendMessage(m.from, { image: {url:botImage1},caption: `Character number ${charNum} - ${botName} is now the default character.\n` }, { quoted: m });
-
         }
         else {
             await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true })
             //global.animeCharacter = "7";
             return await Miku.sendMessage(m.from, { image: {url:botImage1},caption: `Character number ${charNum} - ${botName} is now the default character.\n` }, { quoted: m });
-
         }
         */
 

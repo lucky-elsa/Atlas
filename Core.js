@@ -288,7 +288,14 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         //---------------------------------- Self/public/Private mode Configuration ------------------------------------//
 
-        
+        /*
+        let nsfwstatus = await mk.findOne({
+            id: m.from
+        });
+        let NSFWstatus = "false";
+        if (nsfwstatus) {
+            NSFWstatus = nsfwstatus.switchNSFW || "false";
+        }*/ 
 
         let modSTATUS = await mku.findOne({
             id: m.sender
@@ -297,6 +304,19 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (modSTATUS) {
             modStatus = modSTATUS.addedMods || "false";
         }
+
+        /*await mku.findOne({
+            id: m.sender
+        }).then(async (user) => {
+            if (user.addedMods == "true") {
+                return "true";
+            } else {
+                return "false";
+            }
+        }).catch(error => {
+            console.log(error)
+        });*/
+
 
         var workerMode = "false";
         let botModeSet = await mkchar.findOne({
@@ -538,7 +558,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             isBotAdmin,
             prefix,
             NSFWstatus,
-            modStatus,
             isCreator,
             store,
             command: cmd.name,
