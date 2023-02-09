@@ -1,4 +1,6 @@
-### 🧩 How to add keys in .env file
+### 🧩 How to add keys in `.env` file
+
+- Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
 ```
 MODS=918101187835,923045204414
