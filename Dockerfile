@@ -15,4 +15,4 @@ RUN yarn install
 
 COPY . .
 
-CMD ["node", "koyeb.js"]
+CMD ["pm2-runtime", "."]
