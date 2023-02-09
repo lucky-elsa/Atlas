@@ -1,18 +1,16 @@
-FROM node:lts-buster
+FROM fedora:37
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  npm i pm2 -g && \
-  rm -rf /var/lib/apt/lists/*
+RUN sudo dnf -y update &&\
+    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm &&\
+    sudo dnf install -y git ffmpeg ImageMagick nodejs yarnpkg libwebp &&\
+    sudo dnf clean all -y
 
-COPY package.json .
+RUN sudo npm install forever -g
+
+WORKDIR /atlas
+
+COPY . /atlas
 
 RUN yarn install
 
-COPY . .
-
-CMD ["pm2-runtime", "."]
+CMD ["node", "koyeb.js"]
