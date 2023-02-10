@@ -16,7 +16,7 @@ module.exports = {
           { text: `Please provide a YouTube Video link !` },
           { quoted: m }
         );
-    if(!args[0].includes("youtube.com"))
+    if(!args[0].includes("youtube."))
         return Miku.sendMessage(
             m.from,
             { text: `Please provide a valid YouTube Video link !\n\nOr use ${prefix}play to play through song name.` },
