@@ -31,6 +31,7 @@
 require("./config.js");
 require("./Core.js");
 
+const pino = require('pino');
 const {
     default: MikuConnect,
     DisconnectReason,
@@ -50,7 +51,6 @@ const {
 const fs = require("fs");
 const chalk = require("chalk");
 const Jimp = require('jimp');
-const pino = require("pino");
 const yargs = require("yargs");
 const path = require("path");
 const figlet = require('figlet');
