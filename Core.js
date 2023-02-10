@@ -17,7 +17,7 @@
 /             Meet Team ATLAS who holds all rights to this repository:              /
 /                                                                                   /
 / 1. Pratyush - https://github.com/pratyush4932                                     /
-/ 2. Ahmii - https://github.com/kirito2355                                          /               
+/ 2. Ahmii - https://github.com/Ahmii-kun                                          /               
 / 3. Kai - https://github.com/Kai0071                                               /                    
 / 4. Devime - https://github.com/Devime69                                           /
 / 5. Jay JayOps - https://github.com/jayjay-ops                                     /
