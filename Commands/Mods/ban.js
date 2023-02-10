@@ -64,7 +64,7 @@ if(banreason == undefined){
       try { 
          mku.findOne({id:userId}).then(async (user) => {
             if (!user) {
-              if (user.addedMods == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !` , mentions: [mentionedUser]  }, { quoted: m });
+              if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !` , mentions: [mentionedUser]  }, { quoted: m });
               await mku.create({id:userId, ban: true, reason: banreason, gcname: GroupName });
               return Miku.sendMessage( 
                 m.from, 
@@ -72,7 +72,7 @@ if(banreason == undefined){
                 { quoted: m } 
               );
             }else{
-              if (user.addedMods == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !` , mentions: [mentionedUser]  }, { quoted: m });
+              if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !` , mentions: [mentionedUser]  }, { quoted: m });
                 if (user.ban == "true") return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is already *Banned* !` , mentions: [mentionedUser]  }, { quoted: m });
                 await mku.findOneAndUpdate({ id: userId }, { $set: { ban: true, reason: banreason, gcname: GroupName } }, { new: true });
                 return Miku.sendMessage( 

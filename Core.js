@@ -288,19 +288,27 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             id: m.sender
         });
         var modStatus = "false"
+        if(!modSTATUS){
+
+            await mku.create({id:m.sender, addedMods: "false"});
+            modStatus = modSTATUS.addedMods || "false";
+        }
         if (modSTATUS) {
             modStatus = modSTATUS.addedMods || "false";
         }
+        
+
 
 
 
         let botModeSet = await mkchar.findOne({
             id: '1'
         });
-        let workerMode = botModeSet.privateMode || "false";
+        var workerMode = "false";
         if (botModeSet) {
+            workerMode = botModeSet.privateMode || "false";
             if (workerMode == "true") {
-                if (modStatus == "false" && !isOwner && isCmd) {
+                if (!global.owner.includes(`${m.sender.split("@")[0]}`) && modStatus == "false"  && isCmd) {
                     console.log("\nCommand Rejected ! Bot is in private mode !\n");
                     return;
                 }
