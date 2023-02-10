@@ -1,5 +1,5 @@
 {
-  "name": "miku",
+  "name": "atlas",
   "version": "2.0.0",
   "description": "set",
   "main": "index.js",
@@ -67,7 +67,7 @@
     "mathjs": "^11.5.0",
     "moment-timezone": "^0.5.40",
     "mongo-glob-economy": "^1.0.12",
-    "mongoose": "^6.8.2",
+    "mongoose": "^6.9.1",
     "mumaker": "^1.0.0",
     "node-cron": "^3.0.2",
     "node-fetch": "^2.6.1",

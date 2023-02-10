@@ -23,7 +23,6 @@
     <img src="https://img.shields.io/github/stars/FantoX001/Atlas-MD?style=social">
   </a>
 
-<br>
 
 <a href="https://github.com/FantoX001/Atlas-MD">
     <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20People%20Visited">
