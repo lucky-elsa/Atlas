@@ -41,6 +41,11 @@
     <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy on Koyeb">
     </a>
 </p>
+<p align="center">
+    <a href="https://heroku.com/deploy?template=https://github.com/FantoX001/Atlas-MD">
+    <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy on Heroku">
+    </a>
+</p>
 
 <br>
 
