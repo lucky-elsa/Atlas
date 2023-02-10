@@ -1,1 +1,1 @@
-worker: forever index.js
+web: npm start

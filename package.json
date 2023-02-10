@@ -47,7 +47,6 @@
     "figlet": "^1.5.2",
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
-    "forever": "^4.0.3",
     "forever-monitor": "^1.5.2",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
