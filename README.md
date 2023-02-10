@@ -64,7 +64,7 @@
 - 100+ NSFW commands ( Using my own API ). Visit: [My API Page](https://fantox-api.vercel.app) for more info. 
 - Highest Commands and Features.
 - User Banning / Group Banning.
-- Highest Security.
+- Highest Security compared to most other public bots.
 
 <br>
 
