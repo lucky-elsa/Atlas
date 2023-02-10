@@ -43,7 +43,7 @@
 </p>
 <p align="center">
     <a href="https://heroku.com/deploy?template=https://github.com/FantoX001/Atlas-MD">
-    <img src="https://www.herokucdn.com/deploy/button.png" width="100px" alt="Deploy on Heroku">
+    <img src="https://www.herokucdn.com/deploy/button.png" width="170px" alt="Deploy on Heroku">
     </a>
 </p>
 
