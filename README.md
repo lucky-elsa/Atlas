@@ -64,7 +64,7 @@
 <br>
 
 
-<h2 align="center">〽️ Why Should You Use Atlas as you Base 〽️
+<h2 align="center">〽️ Why Should You Use Atlas as your Base 〽️
 </h2>
 
 <br>
@@ -73,7 +73,7 @@
 - Atlas is a `multi character bot` which means you can `change bot's character` to any of the 8 added characters or add more characters by yourself.
 - Atlas is a `multi database bot` which means you can use 3 different databases at the same time.
 - Atlas is a `multi mode` bot which means you can use it in `Self / Public / Private` mode.
-- Atlas has a pre install chatbot which means you can use it as a `group chatbot and dm chatbot`.
+- Atlas has a pre installed chatbot which means you can use it as a `group chatbot and dm chatbot`.
 - Atlas has `Highest NSFW (100+)` which means you can use it as a `nsfw bot`.
 - Atlas has 300+ commands.
 - Atlas doesn't store your `Session File` locally which means it's `safe` and `secure`.
