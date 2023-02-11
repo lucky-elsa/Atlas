@@ -230,29 +230,21 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 
 <br>
 
-- This bot is not made by WhatsApp.inc so overusing this bot may result in account ban.
-
-<br>
-
-
-<h2 align="center">🍁 Disclaimer 🍁
-</h2>
-<br>
-
+- This bot is not made by WhatsApp.inc so overusing this bot may result in WhatsApp account ban.
+- We will only assist you in `Bot Deployment ( Installation or Hosting )`. Not in `Bot Development`.
 - If you Modify this bot and face any issues, I am not responsible for that because it's not possible for me or my team to help everyone in bot Development / Modification. Only modify if you know what you are doing.
 - This bot is made for `Educational / Fun / Group Management` purposes only. I and the team will not be responsible for any misuse of this bot.
 - We will only assist you in `Setup / Deployment` of this bot.
 
 <br>
 
-
-
 <h2 align="center">📛 Legal Disclaimer 📛
 </h2>
 <br>
 
-- We don't recommend to change the database we are providing. `If you do so, you will be responsible for any issues and we will not provide any support`.
-- We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group (So don't make someone Group Admin who you don't know just because they are hosting the Bot).
+- We suggest you to use your `Own MongoDB URL` while deploying inside `.env` or `Environment Variables`. That will increase your Privacy and Security.
+- We don't recommend to change the `Economy database` we have added inside script. `If you do so, you will be responsible for any issues and we will not provide any support`.
+- We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group `(So don't make someone Group Admin who you don't know just because they are hosting the Bot)`.
 
 <br>
 
