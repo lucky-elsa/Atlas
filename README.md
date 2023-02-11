@@ -29,23 +29,44 @@
     <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/FantoX001/Atlas-MD.visitor-badge&left_text=Total%20People%20Visited">
   </a>
   
+      
+<h4 align="center"> Deploy on Railway ( YouTube Tutorial Included )
+</h4>
   
 <p align="center">
     <!--[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/C_B2P7) -->
     <a href="https://railway.app/new/template/Gts2Zx?referralCode=f3gg2m">
     <img src="https://railway.app/button.svg" alt="Deploy on Railway">
     </a>
+    <br>
+    <a href="https://youtu.be/Qs6ryWnEtu8"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="115">
+    </a>
 </p>
+<br>
+      
+<h4 align="center"> Deploy on Koyeb ( YouTube Tutorial Included )
+</h4>
+      
 <p align="center">
     <a href="https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/fantox001/atlas-md:main&env[PORT]=8000&env[PREFIX]=-&&env[MONGODB]=mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority&&env[SESSION_ID]=enterYourSession&&env[MODS]=918101187835,919735940276&&env[TENOR_API_KEY]=AIzaSyCyouca1_KKy4W_MG1xsPzuku5oa8W358c&&env[PACKNAME]=Miku-Nakano&&env[AUTHOR]=FantoX&&name=atlas">
-    <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy on Koyeb">
+    <img src="https://www.koyeb.com/static/images/deploy/button.svg" alt="Deploy on Koyeb" >
+    </a>
+   <br>     
+    <a href="https://youtu.be/OvNnpK1Gx6Y"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="115">
     </a>
 </p>
-<p align="center">
+<br>
+      
+<h4 align="center"> Deploy on Heroku ( Isn't Working it will be fixed soon ! )
+</h4>
+      
+</p>
+<p align="center" >
     <a href="https://heroku.com/deploy?template=https://github.com/FantoX001/Atlas-MD">
-    <img src="https://www.herokucdn.com/deploy/button.png" width="180px" alt="Deploy on Heroku">
+    <img src="https://www.herokucdn.com/deploy/button.png" width="180px" alt="Deploy on Heroku" >
     </a>
 </p>
+
 
 <br>
 
