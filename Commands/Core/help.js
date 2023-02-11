@@ -4,16 +4,34 @@ module.exports = {
   desc: "Gives all bot commands list",
   react: "✨",
   category: "Core",
-  start: async (Miku, m, {prefix,pushName,NSFWstatus}) => {
-   let textHelpMenu = `Konichiwa *${pushName}* Senpai,
+  start: async (Miku, m, {prefix,pushName,NSFWstatus,args,commands,text}) => {
 
+if (args[0]) {
+            let data = []
+            let name = args[0].toLowerCase()
+            let cmd = commands.get(name) || Array.from(commands.values()).find((v) => v.alias.includes(name))
+            if (!cmd || cmd.type == "hide") return m.reply("No Command Found")
+            else data.push(`🍁Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
+            if (cmd.alias) data.push(`👾Alias : ${cmd.alias.join(", ")}`) 
+            if(cmd.cool) data.push(`⏱️Cooldown: ${cmd.cool}`)       
+            if (cmd.desc) data.push(`🧾Description : ${cmd.desc}`)
+            if (cmd.usage) data.push(`💡Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
+            var buttonss = [
+				{buttonId: `${prefix}help`, buttonText: {displayText: `help`}, type: 1},]
+            let buth={
+                text:`ℹ️Command Info\n\n${data.join("\n")}`,
+                footer: `${botName}`,
+                buttons:buttonss,
+                headerType:1
+            }    
+            return Miku.sendMessage(m.from,buth,{quoted:m})
+        } else {
+
+let textHelpMenu = `Konichiwa *${pushName}* Senpai,
 I am *${botName}*, a bot developed by *Team Atlas*.
-
 My prefix is: *${prefix}*
-
 Here's the list of my Commands.\n
-   
-
+             
 ╭────ꕥ Core ꕥ────╮
 ├
 ├・🎐 ʜɪ, ʜᴇʟᴘ, 
@@ -22,7 +40,6 @@ Here's the list of my Commands.\n
 ├・🎐 ꜱᴜᴘᴘᴏʀᴛ, ʀᴀɴᴋ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Group ꕥ────╮
 ├
 ├・🏮 ᴀᴅᴍɪɴꜱ, ᴀɴɴᴏᴜɴᴄᴇ,
@@ -38,7 +55,6 @@ Here's the list of my Commands.\n
 ├・🏮 ᴛᴀɢᴀʟʟ, ᴡᴇʟᴄᴏᴍᴇ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Mods ꕥ────╮
 ├
 ├・🎀 ᴀᴅᴅᴍᴏᴅ, ᴅᴇʟᴇᴛᴇᴍᴏᴅ, 
@@ -50,8 +66,7 @@ Here's the list of my Commands.\n
 ├・🎀 ᴘᴍᴄʜᴀᴛʙᴏᴛ, ᴄʜᴀʀʟɪꜱᴛ, 
 ├・🎀 ꜱᴇᴛᴄʜᴀʀᴀᴄᴛᴇʀ
 ├
-╰──────────────────╯
-
+╰──────────────────╯          
 ╭────ꕥ Media ꕥ────╮
 ├
 ├・💫 ɪɢᴅʟ, ɪɢᴅʟ2, 
@@ -60,7 +75,6 @@ Here's the list of my Commands.\n
 ├・💫 ʏᴛꜱ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Search ꕥ────╮
 ├
 ├・🔎 ᴀɴɪᴍᴇ, ɢɪꜰꜱᴇᴀʀᴄʜ, 
@@ -71,7 +85,6 @@ Here's the list of my Commands.\n
 ├・🔎 ʏᴏᴜᴛᴜʙᴇꜱᴇᴀʀᴄʜ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Utilities ꕥ────╮
 ├
 ├・🎗 ᴇᴍᴏᴊɪᴍɪx, Q / Qᴜᴏᴛᴇ, 
@@ -81,7 +94,6 @@ Here's the list of my Commands.\n
 ├・🎗 ᴛᴏᴜʀʟ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Image Edit ꕥ────╮
 ├
 ├・💠 ʙʟᴜʀ, ᴄɪʀᴄʟᴇ, 
@@ -89,7 +101,6 @@ Here's the list of my Commands.\n
 ├・💠 ᴛʀɪɢɢᴇʀ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Audio Edit ꕥ────╮
 ├
 ├・🎧 ʙᴀꜱꜱ, ʙʟᴏᴡɴ, 
@@ -97,9 +108,7 @@ Here's the list of my Commands.\n
 ├・🎧 ɴɪɢʜᴛᴄᴏʀᴇ, ʀᴇᴠᴇʀꜱᴇ, 
 ├・🎧 ʀᴏʙᴏᴛ, ꜱʟᴏᴡ, 
 ├・🎧 ꜱᴍᴏᴏᴛʜ, ᴛᴇᴍᴘᴏ
-├
 ╰──────────────────╯
-
 ╭────ꕥ Essentials ꕥ────╮
 ├
 ├・🧩 ᴇʟᴇᴍᴇɴᴛ, ɪɢᴜꜱᴇʀ, 
@@ -108,7 +117,6 @@ Here's the list of my Commands.\n
 ├・🧩 ᴜᴅɪᴄᴛɪᴏɴᴀʀʏ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Weeb ꕥ────╮
 ├
 ├・ 🧧 ᴀɴɪᴍᴇQᴜᴏᴛᴇ, ᴄᴏꜱᴘʟᴀʏ, 
@@ -117,7 +125,6 @@ Here's the list of my Commands.\n
 ├・ 🧧 ᴡᴀɪꜰᴜ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Reactions ꕥ────╮
 ├
 ├・ 🎋 ʙᴇʜᴀᴘᴘʏ, ʙɪᴛᴇ, 
@@ -132,7 +139,6 @@ Here's the list of my Commands.\n
 ├・ 🎋 ʏᴇᴇᴛ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ Logo Maker ꕥ────╮
 ├
 ├・ 🎄 3ᴅᴄʜʀɪꜱᴛᴍᴀꜱ, 3ᴅɴᴇᴏɴ, 
@@ -157,7 +163,6 @@ Here's the list of my Commands.\n
 ├・ 🎄 ᴡᴏʟꜰ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ RPG ꕥ────╮
 ├
 ├・ 🎒 ʙᴜʏ, ɪɴᴠᴇɴᴛᴏʀʏ, 
@@ -165,7 +170,6 @@ Here's the list of my Commands.\n
 ├・ 🎒 ʀᴇɢ-ɪɴᴠ, ꜱʜᴏᴘ
 ├
 ╰──────────────────╯
-
 ╭────ꕥ ECONOMY ꕥ────╮
 ├
 ├・ 🔖 ʙᴀɴᴋ, ᴄᴀᴘᴀᴄɪᴛʏ, 
@@ -176,9 +180,9 @@ Here's the list of my Commands.\n
 ├・ 🔖 ᴡɪᴛʜᴅʀᴀᴡ
 ├
 ╰──────────────────╯\n\n`
-
+          
 if (NSFWstatus == "true"){
-  textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
+textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 ├
 ├・ 💦 ᴘᴜꜱꜱʏ, ꜱᴘʀᴇᴀᴅᴘᴜꜱꜱʏ,
 ├・ 💦 ɢᴇɴꜱʜɪɴ, ꜱQᴜɪʀᴛ,
@@ -235,15 +239,12 @@ if (NSFWstatus == "true"){
 ├
 ╰──────────────────╯\n\n`
 }
-
+          
 textHelpMenu +=`*🔰  ${botName}  🔰*
-_Powered By:_ *Team ATLAS*
-
+ _Powered By:_ *Team ATLAS*
 🎀 To use any of these commands type 
 " *${prefix}Command name* ".
-
 🏮 To get Support Group link type " *${prefix}support* ".
-
 🧩 To report any issues to Developer type " *${prefix}report <describe issue>* ".\n`
 
 let buttons = [
@@ -256,12 +257,11 @@ let buttons = [
   let buttonMessage = {
     video: botVideo, gifPlayback: true,
     caption: textHelpMenu,
-    footer: `*${botName}*`,
     buttons: buttons,
     headerType: 4,
   };
 
   await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
-
-  },
-};
+}
+  }
+}
