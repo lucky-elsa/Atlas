@@ -116,6 +116,15 @@
 
 <br>
 
+<h2>💫 Project Dependencies :
+</h2>
+<br>
+
+- [Baileys Library](https://github.com/adiwajshing/Baileys)
+- [Insta-Fetcher](https://github.com/Gimenz/insta-fetcher)
+- [FantoX APIs](https://fantox-api.vercel.app/)
+
+<br>
 
 <h2 align="center">🧩 UserLand Deployment Method ( Android no root ) 🧩
 </h2>
@@ -247,6 +256,7 @@ Note: If you don't pre-install these plugins before CMD / VS code Installation b
 - We will not be responsible for any issues caused by any individual hosting this bot and cause any harm to any Group `(So don't make someone Group Admin who you don't know just because they are hosting the Bot)`.
 
 <br>
+
 
 
 <h2 align="center">🔰 Meet Team Atlas 🔰
