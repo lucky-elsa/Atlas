@@ -2,11 +2,11 @@ const {instagramdl, instagramdlv4, instagramdlv2, instagramdlv3 } = require('@bo
 const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
-    name: "igdl2",
-    alias:["instagram2","instadl2","instagramdl2","igvid2"],
+    name: "igdl",
+    alias:["instagram","instadl","instagramdl","igvid"],
     desc: "To download an instagram video",
     category: "Media",
-    usage: `igdl2 <video link>`,
+    usage: `igdl <video link>`,
     react: "🍁",
     start: async (Miku, m, { text, prefix, args }) => {
   
