@@ -327,14 +327,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             id: '1'
         });
         var workerMode = "false";
-        if (!botModeSet) {
-            await mkchar.create({
-                id: '1',
-                seletedCharacter: '0',
-                privateMode: 'false'
-            });
-            workerMode = botModeSet.privateMode || "false";
-        }
         if (botModeSet) {
             workerMode = botModeSet.privateMode || "false";
             if (workerMode == "true") {
