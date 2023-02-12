@@ -107,12 +107,12 @@ module.exports = {
         let buttonsntilink = [
           {
             buttonId: `${prefix}mode public`,
-            buttonText: { displayText: "Public" },
+            buttonText: { displayText: "Public Mode" },
             type: 1,
           },
           {
             buttonId: `${prefix}mode private`,
-            buttonText: { displayText: "Private" },
+            buttonText: { displayText: "Private Mode" },
             type: 1,
           },
           {
@@ -123,7 +123,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\nPlease click the button below\n*Public / Private*\n`,
+          caption: `\n*「  Mode configuration  」*\nPlease click the button below\n*Self / Public / Private*\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,

@@ -13,7 +13,8 @@ module.exports = {
     m,
     { prefix, isBotAdmin, isAdmin}
   ) => {
-  
+    if (m.from == '120363040838753957@g.us') return m.reply('Sorry, this command is not allowed in *Atlas Support Group* !\n\nYou are not allowed to change suuport group link !' );
+    
     if (!isAdmin)
       return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
