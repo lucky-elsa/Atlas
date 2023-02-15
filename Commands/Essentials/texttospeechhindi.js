@@ -1,10 +1,10 @@
 const ttt = require('google-tts-api');
 
 module.exports = {
-    name: "saybengali",
-    alias: ["speakbengali","saybengali" ,"sayinbengali","saybangla","speakbangla","sayinbangla"],
-    desc: "Say somethong using bot in Bengali accent.",
-    usage: "saybengali <text>",
+    name: "sayhindi",
+    alias: ["speakhindi","sayhindi" ,"sayinhindi"],
+    desc: "Say somethong using bot in Hindi accent.",
+    usage: "sayhindi <text>",
     react: "🍁",
     category: "Essentials",
     start: async(Miku, m,{pushName,prefix,args,text,mime}) => {
@@ -17,10 +17,10 @@ module.exports = {
             message = args.join(' ');
           }
           else{
-            message = `Amay bolar jonno kono text dao ${pushName} senpai !`;
+            message = `Mujhe bolne ke liye kuch text do ${pushName} senpai !`;
           }
 
-        const texttospeechurl = ttt.getAudioUrl(message, {lang: "bn", slow: false, host: "https://translate.google.com",});
+        const texttospeechurl = ttt.getAudioUrl(message, {lang: "hi", slow: false, host: "https://translate.google.com",});
         
             Miku.sendMessage(m.from, { audio: {url: texttospeechurl} ,mimetype: 'audio/mpeg' }, { quoted: m }).catch(e => {
                 m.reply(`An error Occurd !`);
