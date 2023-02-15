@@ -109,7 +109,12 @@ module.exports = {
         buttonText: { displayText: "Dare" },
         type: 1,
       },
-      
+
+      {
+        buttonId: `${prefix}t`,
+        buttonText: { displayText: ">>" },
+        type: 1,
+      },
     ];
   
 let buttonMessage = {
