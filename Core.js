@@ -330,7 +330,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (botModeSet) {
             workerMode = botModeSet.privateMode || "false";
             if (workerMode == "true") {
-                if (!global.owner.includes(`${m.sender.split("@")[0]}`) && modStatus == "false"  && isCmd) {
+                if (!global.owner.includes(`${m.sender.split("@")[0]}`) && modStatus == "false"  && isCmd && m.sender != botNumber) {
                     console.log("\nCommand Rejected ! Bot is in private mode !\n");
                     return;
                 }
