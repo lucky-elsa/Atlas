@@ -1,6 +1,6 @@
 module.exports = {
     name: "dare",
-    alias: ["givedare"],
+    alias: ["givedare","d"],
     desc: "give a dare",
     cool:3,
     react: "🙄",
@@ -95,11 +95,15 @@ module.exports = {
     
     let buttons = [
       {
-        buttonId: `${prefix}d`,
-        buttonText: { displayText: "Dare" },
+        buttonId: `${prefix}t`,
+        buttonText: { displayText: "Truth" },
         type: 1,
       },
-      
+      {
+        buttonId: `${prefix}d`,
+        buttonText: { displayText: ">>" },
+        type: 1,
+      },
     ];
   
 let buttonMessage = {
