@@ -11,7 +11,7 @@ module.exports = {
 
      
       
-    const shibam = axios.get('https://dull-plum-panda-gear.cyclic.app/dare')
+    const shibam = await axios.get('https://dull-plum-panda-gear.cyclic.app/dare')
     let buttons = [
       {
         buttonId: `${prefix}t`,
