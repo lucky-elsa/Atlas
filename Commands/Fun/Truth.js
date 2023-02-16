@@ -8,15 +8,15 @@ module.exports = {
     react: '🙄',
     category: 'Fun',
     start: async (Miku, m, { text, prefix }) => {
-        const list = await axios.get('https://pastebin.com/raw/KbJ918SV')
-        const dey = list.data[Math.floor(Math.random() * list.data.length)]
+        const shibam = await axios.get('https://dull-plum-panda-gear.cyclic.app/truth')
+        
         const buttons = [
             { buttonId: `${prefix}dare`, buttonText: { displayText: 'Dare 🤔' }, type: 1 },
             { buttonId: `${prefix}truth`, buttonText: { displayText: 'Truth 😶' }, type: 2 }
         ]
         const buttonMessage = {
             image: { url: botImage3 },
-            caption: dey,
+            caption: *shibam*,
             footer: `*${botName}*`,
             buttons: buttons,
             headerType: 4
