@@ -16,7 +16,7 @@ module.exports = {
         ]
         const buttonMessage = {
             image: { url: botImage3 },
-            caption: *shibam*,
+            caption: `*${shibam.data}*`,
             footer: `*${botName}*`,
             buttons: buttons,
             headerType: 4
