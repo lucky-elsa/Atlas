@@ -12,7 +12,7 @@ module.exports = {
         
         const buttons = [
             { buttonId: `${prefix}dare`, buttonText: { displayText: 'Dare 🤔' }, type: 1 },
-            { buttonId: `${prefix}truth`, buttonText: { displayText: '>>' }, type: 2 }
+            { buttonId: `${prefix}truth`, buttonText: { displayText: '>>' }, type: 1 }
         ]
         const buttonMessage = {
             image: { url: botImage3 },
