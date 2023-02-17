@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center"> 
- Konnichiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by <a href="https://github.com/FantoX001">FantoX</a> and his team "Atlas" to do everything that's beyond imagination with highest features and stability built with Baileys Multi Device support.
+ Konnichiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by <a href="https://github.com/FantoX001">FantoX</a> and his team "Atlas" to do everything that's beyond imagination with highest <b>Features</b> and <b>Stability</b> and <b>Compatibility</b> built with Baileys Multi Device support.
 
 <h3 align="center"> Atlas MD - The Future Is Here
 </h4>
@@ -30,6 +30,27 @@
   </a>
   <br><br>
   
+      
+ 
+<h4 align="center"> Deploy on Repl.it - ( YouTube Tutorial Included & Highly Recommended )
+</h4>
+
+<p align="center" >
+    <a href="https://repl.it/github/FantoX001/Atlas-MD">
+    <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on Heroku" >
+    </a>
+    <br>     
+    <a href="https://youtu.be/R-_DU73UH8Q"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="105">
+    </a>
+</p>
+
+<p align="center" >
+    <br>
+    __________________________
+    <br>
+</p>   
+      
+      
       
 <h4 align="center"> Deploy on Railway - ( YouTube Tutorial Included )
 </h4>
@@ -81,23 +102,10 @@
     <a href="https://heroku.com/deploy?template=https://github.com/FantoX001/Atlas-MD">
     <img src="https://www.herokucdn.com/deploy/button.png" width="160px" alt="Deploy on Heroku" >
     </a>
+
+https://youtu.be/R-_DU73UH8Q
 </p> -->
 
-
-<h4 align="center"> Deploy on Repl.it - ( YouTube Tutorial Coming Today )
-</h4>
-
-<p align="center" >
-    <a href="https://repl.it/github/FantoX001/Atlas-MD">
-    <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on Heroku" >
-    </a>
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
 
 
 
@@ -161,10 +169,10 @@
 
 <br>
 
-<h2 align="center">🧩 UserLand Deployment Method ( Android no root ) 🧩
+<h2 align="center">🧩 UserLand Deployment Method ( Not Recommented! Use Repl.it insted! ) 🧩
 </h2>
 
-#### ⚜️ Download `UserLand` application from Google Play Store.
+#### ⚜️ Download `UserLand` application old version ( 3.1.2 ) from [Here](https://m.apkpure.com/userland-linux-on-android/tech.ula/variant/3.1.2-APK).
 #### ⚜️ Install `Debian` terminal in userland.
 #### ⚜️ Rename `.env.example` to `.env` and fill in the required details in `.env` file and `config.js` (Mandatory).
 
