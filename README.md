@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center"> 
- Konnichiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by <a href="https://github.com/FantoX001">FantoX</a> and his team "Atlas" to do everything that's possible on WhatsApp with highest features and stability built with Baileys Multi Device support.
+ Konnichiwa Senpai, I am "Atlas" an Opensource WhatsApp bot made by <a href="https://github.com/FantoX001">FantoX</a> and his team "Atlas" to do everything that's beyond imagination with highest features and stability built with Baileys Multi Device support.
 
 <h3 align="center"> Atlas MD - The Future Is Here
 </h4>
@@ -42,6 +42,13 @@
     <a href="https://youtu.be/Qs6ryWnEtu8"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="105">
     </a>
 </p>
+
+<p align="center" >
+    <br>
+    __________________________
+    <br>
+</p>
+
 <br>
       
 <h4 align="center"> Deploy on Koyeb - ( YouTube Tutorial Included )
@@ -55,19 +62,47 @@
     <a href="https://youtu.be/OvNnpK1Gx6Y"><img src="https://i.ibb.co/71mYRh4/116-1161192-podcast-subscribe-listen-button-youtube-sign-hd-png.png" alt="Watch tutorial on YouTube" border="0"  width="105">
     </a>
 </p>
+
+<p align="center" >
+    <br>
+    __________________________
+    <br>
+</p>
+
+
 <br>
-      
+ <!--   
 <h4 align="center"> Deploy on Heroku ( Isn't Working it will be fixed soon ! )
 </h4>
-      
+
 </p>
+
 <p align="center" >
     <a href="https://heroku.com/deploy?template=https://github.com/FantoX001/Atlas-MD">
     <img src="https://www.herokucdn.com/deploy/button.png" width="160px" alt="Deploy on Heroku" >
     </a>
+</p> -->
+
+
+<h4 align="center"> Deploy on Repl.it - ( YouTube Tutorial Coming Today )
+</h4>
+
+<p align="center" >
+    <a href="https://repl.it/github/FantoX001/Atlas-MD">
+    <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on Heroku" >
+    </a>
 </p>
+
+<p align="center" >
+    <br>
+    __________________________
+    <br>
+</p>
+
+
+
 <br>
-<h4 align="center"> Facing Trouble? Join my Whatsapp group for Support
+<h4 align="center"> Facing Trouble? Join my WhatsApp Group fro any Support
 </h4>
 
 <p align="center" >
