@@ -110,7 +110,7 @@ https://youtu.be/R-_DU73UH8Q
 
 
 <br>
-<h4 align="center"> Facing Trouble? Join my WhatsApp Group fro any Support
+<h4 align="center"> Facing Trouble? Join my WhatsApp Group for Support.
 </h4>
 
 <p align="center" >
