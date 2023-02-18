@@ -118,7 +118,13 @@ https://youtu.be/R-_DU73UH8Q
 </a>
 </p>
 <br>
-
+      
+<p align="center" >
+    <br>
+    __________________________
+    <br>
+</p>  
+<br>
 
 <h2 align="center">⚡️ Atlas MD Platform Compatibility ⚡️
 </h2>
