@@ -1,7 +1,7 @@
 const maker = require('mumaker')
 
 module.exports = {
-    name: "ldemon",
+    name: "demon",
     alias: ["evil"],
     desc: "Make text logo.",
     react: "🍁",
