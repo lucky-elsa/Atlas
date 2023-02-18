@@ -11,7 +11,7 @@ module.exports = {
         const shibam = await axios.get('https://dull-plum-panda-gear.cyclic.app/truth')
         
         const buttons = [
-            { buttonId: `${prefix}dare`, buttonText: { displayText: 'Dare 🤔' }, type: 1 },
+            { buttonId: `${prefix}dare`, buttonText: { displayText: 'Dare' }, type: 1 },
             { buttonId: `${prefix}truth`, buttonText: { displayText: '>>' }, type: 1 }
         ]
         const buttonMessage = {
