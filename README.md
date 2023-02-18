@@ -137,7 +137,7 @@ https://youtu.be/R-_DU73UH8Q
       
 |    Platform      | :white_check_mark: Pros          |:x: Cons  |
 | ----------- | ------------------ |-------|
-| <b>Repl.it<b>   | - <b><i>Fastest Deloy.<br> - Faster than Railway / Koyeb. <br> - 24*7 work. <br> - Less Crash and auto reboot.<br> - 99.99% Commands work.<b><i> | <b><i>No Cons, Only Quotely (q) command doesn't work.<b><i>
+| <b>Repl.it<b>   | - <b><i>Fastest Deloy.<br> - Faster than Railway / Koyeb. <br> - 24*7 work. <br> - No Crash and auto reboot.<br> - 100% Commands work.<b><i> | <b><i> - No Cons. Just Deploy and Have fun.<b><i>
 | <b>Railway<b>    | - <b><i>Fast Deloy.<br> - Faster than Koyeb. <br> - 24*7 work. <br> - Auto Reboot on Crash.<br> - 100% Commands work.<b><i>    | <b><i> - Requires a 6 months old GitHub Account to verify.<br> - 500 hours per month usage.<br> - Crashing Due to 500 mb limited RAM. <br> - Not suitable for newly joined users.<b><i>
 | <b>Koyeb<b>   | - <b><i>24*7 work. <br> - Less Crash and auto reboot.<br> - 100% Commands work<b><i> | <b><i> - Now Credit Card required to create account.<br> - Slowest deploy ( Takes Upto 7-8 minutes ).<br> - Slowest work compared to Repl.it / Railway.<br> - Not suitable for newly joined users.<b><i>
 | <b>UserLand<b>   | <b><i>No Pros to mention, Only 100% Commands work.<b><i> | <b><i> - Very hard Installation process.<br> - Time consuming deploy process (upto >30 minutes).<br> - Speed depend on your internet.<br> - Will consume too much data.<br> - Nightmare for Beginners.<br> - Prone to error if steps are not followed correctly.<br><b><i>
