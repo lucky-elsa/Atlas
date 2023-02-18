@@ -1,4 +1,6 @@
 const axios = require("axios");
+const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter')
+const fs = require("fs");
 
 module.exports = {
   name: "quote",
@@ -59,12 +61,25 @@ module.exports = {
       .post("https://bot.lyo.su/quote/generate", quoteJson, {
         headers: { "Content-Type": "application/json" },
       })
-      .then((res) => {
-        const buffer = Buffer.from(res.data.result.image, "base64");
-        Miku.sendImageAsSticker(m.from, buffer, m, {
-          packname: `${botName}`,
-          author: waUserName,
-        });
-      });
+
+      fs.writeFileSync("quote.png", quoteResponse.data.result.image, "base64");
+
+
+      let stickerMess = new Sticker("quote.png", {
+        pack: packname,
+        author: pushName,
+        type: StickerTypes.FULL,
+        categories: ['🤩', '🎉'],
+        id: '12345',
+        quality: 70,
+        background: 'transparent'
+    });
+
+    const stickerBuffer2 = await stickerMess.toBuffer()
+    await Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m }).then((result) => {
+      fs.unlinkSync("quote.png");
+    }).catch((err) => {
+      m.reply("An error occurd!")
+    });
   },
 };
