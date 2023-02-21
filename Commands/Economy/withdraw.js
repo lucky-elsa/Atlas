@@ -3,6 +3,10 @@ require("../../config.js");
 require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
 const fs = require("fs");
+const config = require('../../config');
+const eco = require('discord-mongoose-economy')
+const ty = eco.connect(config.mongodb);
+
 
 
 module.exports = { 
@@ -14,7 +18,7 @@ module.exports = {
     start: async ( 
         Miku, 
         m, 
-        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
+        { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
         if(!text)  {
             return Miku.sendMessage( 

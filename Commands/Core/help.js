@@ -246,15 +246,22 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
           
 textHelpMenu +=`*🔰  ${botName}  🔰*
  _Powered By:_ *Team ATLAS*
-🎀 To use any of these commands type 
-" *${prefix}Command name* ".
+
+🎀 To use any of these commands type " *${prefix}Command name* ".
+
 🏮 To get Support Group link type " *${prefix}support* ".
+
 🧩 To report any issues to Developer type " *${prefix}report <describe issue>* ".\n`
 
 let buttons = [
     {
       buttonId: `${prefix}repo`,
       buttonText: { displayText: "Source Code" },
+      type: 1,
+    },
+    {
+      buttonId: `${prefix}owner`,
+      buttonText: { displayText: "Owner(s)" },
       type: 1,
     },
   ];

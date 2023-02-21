@@ -28,9 +28,6 @@
 /                                                                                   / 
 /----------------------------------------------------------------------------------*/
 
-const fs = require("fs");
-const { mkchar } = require("./Database/dataschema.js");
-require("./BotCharacters.js");
 
 require("dotenv").config();
 let gg = process.env.MODS;
@@ -42,7 +39,7 @@ if (!gg) {
 
 
 global.owner = gg.split(",");
-global.mongodb = process.env.MONGODB || "NONE";
+global.mongodb = process.env.MONGODB || "mongodb+srv://fantox:xrto71r@cluster0.dnlowts.mongodb.net/?retryWrites=true&w=majority";
 global.sessionId = process.env.SESSION_ID || "ok";
 global.prefa = process.env.PREFIX || "-";
 global.tenorApiKey =
@@ -51,7 +48,9 @@ global.packname = process.env.PACKNAME || `Atlas MD`;
 global.author = process.env.AUTHOR || "by: Team Atlas";
 global.port = process.env.PORT || "8000";
 
-
+module.exports = {
+  mongodb: global.mongodb,
+};
 
 // ---------------------Do Not Modify this part------------------- //
 

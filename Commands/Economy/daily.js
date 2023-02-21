@@ -4,6 +4,11 @@ require("../../Core.js");
 const { mku, mk } = require("../../Database/dataschema.js");
 const fs = require("fs");
 require("../../Database/dataschema.js");
+const config = require('../../config');
+const eco = require('discord-mongoose-economy')
+const ty = eco.connect(config.mongodb);
+
+
 
 module.exports = { 
 
@@ -15,7 +20,7 @@ module.exports = {
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,eco,ty} 
+      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
          if (!m.isGroup) return Miku.sendMessage(m.from, { text: '*Group command ' }, { quoted: m });
          let user = m.sender 

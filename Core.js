@@ -86,7 +86,7 @@ const prefix = global.prefa;
 
 
 global.Levels = require("discord-xp");
-Levels.setURL("mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority");
+Levels.setURL(mongodb);
 
 console.log(color("\nDatabase 1 has been connected Successfully !\n", "aqua"));
 
@@ -105,20 +105,20 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let body = (type == "buttonsResponseMessage") ? m.message[type].selectedButtonId : (type == "listResponseMessage") ? m.message[type].singleSelectReply.selectedRowId : (type == "templateButtonReplyMessage") ? m.message[type].selectedId : m.text
         let prat =
             type === "conversation" && body?.startsWith(prefix) ?
-            body :
-            (type === "imageMessage" || type === "videoMessage") &&
-            body &&
-            body?.startsWith(prefix) ?
-            body :
-            type === "extendedTextMessage" && body?.startsWith(prefix) ?
-            body :
-            type === "buttonsResponseMessage" && body?.startsWith(prefix) ?
-            body :
-            type === "listResponseMessage" && body?.startsWith(prefix) ?
-            body :
-            type === "templateButtonReplyMessage" && body?.startsWith(prefix) ?
-            body :
-            "";
+                body :
+                (type === "imageMessage" || type === "videoMessage") &&
+                    body &&
+                    body?.startsWith(prefix) ?
+                    body :
+                    type === "extendedTextMessage" && body?.startsWith(prefix) ?
+                        body :
+                        type === "buttonsResponseMessage" && body?.startsWith(prefix) ?
+                            body :
+                            type === "listResponseMessage" && body?.startsWith(prefix) ?
+                                body :
+                                type === "templateButtonReplyMessage" && body?.startsWith(prefix) ?
+                                    body :
+                                    "";
 
         const metadata = isGroup ? await Miku.groupMetadata(from) : {};
         const pushname = m.pushName; //|| 'NO name'
@@ -134,9 +134,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             .includes(m.sender);
         const isOwner = global.owner.includes(m.sender);
         global.suppL = 'https://cutt.ly/AtlasBotSupport';
-        const eco = require('discord-mongoose-economy')
-        const ty = eco.connect('mongodb+srv://fantox001:zjmbvgwr52@cluster0.qh05pl9.mongodb.net/?retryWrites=true&w=majority');
-
 
         const isCmd = body.startsWith(prefix);
         const quoted = m.quoted ? m.quoted : m;
@@ -167,15 +164,15 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             );
         const mentionByTag =
             type == "extendedTextMessage" &&
-            m.message.extendedTextMessage.contextInfo != null ?
-            m.message.extendedTextMessage.contextInfo.mentionedJid :
-            [];
-    
+                m.message.extendedTextMessage.contextInfo != null ?
+                m.message.extendedTextMessage.contextInfo.mentionedJid :
+                [];
+
 
         if (!isCreator) {
             let checkban =
                 (await mku.findOne({
-                    id: m.sender, 
+                    id: m.sender,
                 })) ||
                 (await new mku({
                     id: m.sender,
@@ -186,9 +183,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         }
 
-        
-        
-        
+
+
+
         // ------------------------ Character Configuration (Do not modify this part) ------------------------ //
 
         let char = "0"; // default one
@@ -235,7 +232,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         let checkdata = await mk.findOne({
             id: m.from
         });
-        if(!checkdata) {
+        if (!checkdata) {
             let newdata = new mk({
                 id: m.from,
                 antilink: "false",
@@ -258,15 +255,15 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     await Miku.groupParticipantsUpdate(m.from, [kice], "remove");
                     await Miku.sendMessage(
                         from, {
-                            delete: {
-                                remoteJid: m.from,
-                                fromMe: false,
-                                id: m.id,
-                                participant: m.sender,
-                            },
-                        }, {
-                            quoted: m
-                        }
+                        delete: {
+                            remoteJid: m.from,
+                            fromMe: false,
+                            id: m.id,
+                            participant: m.sender,
+                        },
+                    }, {
+                        quoted: m
+                    }
                     );
                     await mk.updateOne({
                         id: m.from
@@ -275,50 +272,49 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     });
                     Miku.sendMessage(
                         from, {
-                            text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
-                kice.split("@")[0]
-              } Removed for sending WhatsApp group link in this group! Message has been deleted.`,
-                            mentions: [kice],
-                        }, {
-                            quoted: m
-                        }
+                        text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${kice.split("@")[0]
+                            } Removed for sending WhatsApp group link in this group! Message has been deleted.`,
+                        mentions: [kice],
+                    }, {
+                        quoted: m
+                    }
                     );
-                }else if(isUrl(m.text) && !icmd && !isAdmin && !isCreator) {
+                } else if (isUrl(m.text) && !icmd && !isAdmin && !isCreator) {
                     await Miku.sendMessage(
                         from, {
-                            delete: {
-                                remoteJid: m.from,
-                                fromMe: false,
-                                id: m.id,
-                                participant: m.sender,
-                            },
-                        }, {
-                            quoted: m
-                        }
+                        delete: {
+                            remoteJid: m.from,
+                            fromMe: false,
+                            id: m.id,
+                            participant: m.sender,
+                        },
+                    }, {
+                        quoted: m
+                    }
                     );
                     m.reply(`Antilink is on ! To use any link related commands use my actual prefix ( ${prefix} ) ! \n\nExample : ${prefix}igdl <link>`);
                 }
-                
-                else {}
+
+                else { }
             }
         }
 
 
         //---------------------------------- Self/public/Private mode Configuration ------------------------------------//
-        
+
         let modSTATUS = await mku.findOne({
             id: m.sender
         });
         var modStatus = "false"
-        if(!modSTATUS){
+        if (!modSTATUS) {
 
-            await mku.create({id:m.sender, addedMods: "false"});
+            await mku.create({ id: m.sender, addedMods: "false" });
             modStatus = modSTATUS.addedMods || "false";
         }
         if (modSTATUS) {
             modStatus = modSTATUS.addedMods || "false";
         }
-        
+
 
 
 
@@ -330,7 +326,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (botModeSet) {
             workerMode = botModeSet.privateMode || "false";
             if (workerMode == "true") {
-                if (!global.owner.includes(`${m.sender.split("@")[0]}`) && modStatus == "false"  && isCmd && m.sender != botNumber) {
+                if (!global.owner.includes(`${m.sender.split("@")[0]}`) && modStatus == "false" && isCmd && m.sender != botNumber) {
                     console.log("\nCommand Rejected ! Bot is in private mode !\n");
                     return;
                 }
@@ -351,7 +347,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         var botWrokerGC = "true"
         if (botSwitchGC) {
             botWrokerGC = botSwitchGC.botSwitch || "true";
-            if (m.isGroup && botWrokerGC == "false" && !isAdmin && !isOwner  && modStatus == "false" && isCmd) {
+            if (m.isGroup && botWrokerGC == "false" && !isAdmin && !isOwner && modStatus == "false" && isCmd) {
                 return console.log(`\nCommand Rejected ! Bot is turned off in ${groupName} !\n`);
             }
         }
@@ -369,7 +365,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     if (m.quoted.sender == botNumber) {
                         const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
                         txt = `${botreply.data.cnt}`
-                        setTimeout(function() {
+                        setTimeout(function () {
                             m.reply(txt)
                         }, 2200);
                     }
@@ -388,7 +384,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
                 const botreply = await axios.get(`http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`)
                 txt = `${botreply.data.cnt}`
-                setTimeout(function() {
+                setTimeout(function () {
                     m.reply(txt)
                 }, 2200);
             }
@@ -410,8 +406,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (banGCStatus) {
             BANGCSTATUS = banGCStatus.bangroup || "false";
         }
-        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc`&& budy != `${prefix}unbangroup`&& body.startsWith(prefix) && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) {
-            if(m.isGroup  && !isOwner  && modStatus == "false"){
+        if (BANGCSTATUS == "true" && budy != `${prefix}unbangc` && budy != `${prefix}unbangroup` && body.startsWith(prefix) && budy != `${prefix}support` && budy != `${prefix}supportgc` && budy != `${prefix}owner` && budy != `${prefix}mods` && budy != `${prefix}mod` && budy != `${prefix}modlist`) {
+            if (m.isGroup && !isOwner && modStatus == "false") {
                 return m.reply(`*${global.botName}* is *Banned* on *${groupName}* group! \n\nType *${prefix}owner* or *${prefix}support* to submit a request to unban the group!`);
             }
         }
@@ -421,7 +417,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
 
 
-        
+
         const flags = args.filter((arg) => arg.startsWith("--"));
         if (body.startsWith(prefix) && !icmd) {
             let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n`;
@@ -432,7 +428,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     displayText: `${prefix}help`
                 },
                 type: 1,
-            }, ];
+            },];
             let bmffg = {
                 image: {
                     url: botImage1
@@ -477,9 +473,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             if (cmd.usage)
                 data.push(
                     `*Example :* ${cmd.usage
-            .replace(/%prefix/gi, prefix)
-            .replace(/%command/gi, cmd.name)
-            .replace(/%text/gi, text)}`
+                        .replace(/%prefix/gi, prefix)
+                        .replace(/%command/gi, cmd.name)
+                        .replace(/%text/gi, text)}`
                 );
             var buttonss = [{
                 buttonId: `${prefix}help`,
@@ -487,7 +483,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                     displayText: `${prefix}help`
                 },
                 type: 1,
-            }, ];
+            },];
             let buttonmess = {
                 text: `*Command Info*\n\n${data.join("\n")}`,
                 footer: `*${botName}*`,
@@ -530,12 +526,12 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                 //printSpam(isGroup, sender);
                 return await Miku.sendMessage(
                     m.from, {
-                        text: `You are on cooldown, please wait another _${timeLeft.toFixed(
-              1
-            )} second(s)_`,
-                    }, {
-                        quoted: m
-                    }
+                    text: `You are on cooldown, please wait another _${timeLeft.toFixed(
+                        1
+                    )} second(s)_`,
+                }, {
+                    quoted: m
+                }
                 );
             }
         }
@@ -556,8 +552,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             isAdmin,
             groupAdmin,
             text,
-            eco,
-            ty,
             quoted,
             mentionByTag,
             mime,

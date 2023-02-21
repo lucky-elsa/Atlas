@@ -27,7 +27,7 @@ module.exports = {
   
 let buttonMessage = {
       image: { url:botImage4},
-      caption: shibam.data,
+      caption: `*${shibam.data}*`,
       footer: `*${botName}*`,
       buttons: buttons,
       headerType: 4,
