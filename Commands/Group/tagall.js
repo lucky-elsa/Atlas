@@ -14,7 +14,7 @@ module.exports = {
     { text, prefix, isBotAdmin, isAdmin, participants, args }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+      return Miku.sendMessage(m.from, { text: `Only *Admins* can use this command.` }, { quoted: m });
 
     let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
 
