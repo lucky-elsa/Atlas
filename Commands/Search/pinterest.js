@@ -30,7 +30,7 @@ module.exports = {
         let txt = `     *『  Pinterest Search Engine  』*\n\n_🎀 Search Term:_ *${PinsearchTerm}*\n`;
         let buttonMessage = {
           image: { url: imgnyee },
-          caption: txt ,
+          caption: txt,
           footer: `*${botName}*`,
           buttons: buttons,
           headerType: 4,

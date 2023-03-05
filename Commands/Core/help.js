@@ -4,38 +4,67 @@ module.exports = {
   desc: "Gives all bot commands list",
   react: "✨",
   category: "Core",
-  start: async (Miku, m, {prefix,pushName,NSFWstatus,args,commands,text}) => {
+  start: async (
+    Miku,
+    m,
+    { prefix, pushName, NSFWstatus, args, commands, text }
+  ) => {
+    if (args[0]) {
+      let data = [];
+      let name = args[0].toLowerCase();
+      let cmd =
+        commands.get(name) ||
+        Array.from(commands.values()).find((v) => v.alias.includes(name));
+      if (!cmd || cmd.type == "hide") return m.reply("No Command Found");
+      else
+        data.push(
+          `🍁Command : ${cmd.name.replace(/^\w/, (c) => c.toUpperCase())}`
+        );
+      if (cmd.alias) data.push(`👾Alias : ${cmd.alias.join(", ")}`);
+      if (cmd.cool) data.push(`⏱️Cooldown: ${cmd.cool}`);
+      if (cmd.desc) data.push(`🧾Description : ${cmd.desc}`);
+      if (cmd.usage)
+        data.push(
+          `💡Example : ${cmd.usage
+            .replace(/%prefix/gi, prefix)
+            .replace(/%command/gi, cmd.name)
+            .replace(/%text/gi, text)}`
+        );
+      var buttonss = [
+        {
+          buttonId: `${prefix}help`,
+          buttonText: { displayText: `help` },
+          type: 1,
+        },
+      ];
+      let buth = {
+        text: `ℹ️Command Info\n\n${data.join("\n")}`,
+        footer: `${botName}`,
+        buttons: buttonss,
+        headerType: 1,
+      };
+      return Miku.sendMessage(m.from, buth, { quoted: m });
+    } else {
+      const pad = (s) => (s < 10 ? "0" : "") + s;
+        const formatTime = (seconds) => {
+        const hours = Math.floor(seconds / (60 * 60));
+        const minutes = Math.floor((seconds % (60 * 60)) / 60);
+        const secs = Math.floor(seconds % 60);
+        return time = `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
+        };
+        const uptime = () => formatTime(process.uptime());
 
-if (args[0]) {
-            let data = []
-            let name = args[0].toLowerCase()
-            let cmd = commands.get(name) || Array.from(commands.values()).find((v) => v.alias.includes(name))
-            if (!cmd || cmd.type == "hide") return m.reply("No Command Found")
-            else data.push(`🍁Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
-            if (cmd.alias) data.push(`👾Alias : ${cmd.alias.join(", ")}`) 
-            if(cmd.cool) data.push(`⏱️Cooldown: ${cmd.cool}`)       
-            if (cmd.desc) data.push(`🧾Description : ${cmd.desc}`)
-            if (cmd.usage) data.push(`💡Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
-            var buttonss = [
-				{buttonId: `${prefix}help`, buttonText: {displayText: `help`}, type: 1},]
-            let buth={
-                text:`ℹ️Command Info\n\n${data.join("\n")}`,
-                footer: `${botName}`,
-                buttons:buttonss,
-                headerType:1
-            }    
-            return Miku.sendMessage(m.from,buth,{quoted:m})
-        } else {
-
-let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
+      let textHelpMenu = `Konnichiwa *${pushName}* Senpai,
 
 I am *${botName}*, a bot developed by *Team Atlas*.
 
 🎀 My prefix is: *${prefix}*
 
+🧩 Server Uptime: *${uptime()}*
+
 Here's the list of my Commands.\n
-             
-╭────ꕥ Core ꕥ────╮
+           
+╭──────ꕥ Core ꕥ─────╮
 ├
 ├・🎐 ʜɪ, ʜᴇʟᴘ, 
 ├・🎐 ᴄᴏᴜᴘʟᴇᴘᴘ, ᴏᴡɴᴇʀ, 
@@ -43,7 +72,7 @@ Here's the list of my Commands.\n
 ├・🎐 ꜱᴜᴘᴘᴏʀᴛ, ʀᴀɴᴋ
 ├
 ╰──────────────────╯
-╭────ꕥ Group ꕥ────╮
+╭─────ꕥ Group ꕥ─────╮
 ├
 ├・🏮 ᴀᴅᴍɪɴꜱ, ᴀɴɴᴏᴜɴᴄᴇ,
 ├・🏮 ᴀɴᴛɪʟɪɴᴋɢᴄ, ʙᴏᴛꜱᴡɪᴛᴄʜ, 
@@ -58,7 +87,7 @@ Here's the list of my Commands.\n
 ├・🏮 ᴛᴀɢᴀʟʟ, ᴡᴇʟᴄᴏᴍᴇ
 ├
 ╰──────────────────╯
-╭────ꕥ Mods ꕥ────╮
+╭──────ꕥ Mods ꕥ──────╮
 ├
 ├・🎀 ᴀᴅᴅᴍᴏᴅ, ᴅᴇʟᴇᴛᴇᴍᴏᴅ, 
 ├・🎀 ʙᴀɴ, ᴜɴʙᴀɴ, 
@@ -70,15 +99,17 @@ Here's the list of my Commands.\n
 ├・🎀 ꜱᴇᴛᴄʜᴀʀᴀᴄᴛᴇʀ
 ├
 ╰──────────────────╯          
-╭────ꕥ Media ꕥ────╮
+╭──────ꕥ Media ꕥ─────╮
 ├
 ├・💫 ɪɢᴅʟ, ɪɢᴅʟ2, 
 ├・💫 ᴘʟᴀʏʟɪꜱᴛ, ᴘʟᴀʏ, 
 ├・💫 ʏᴛᴀᴜᴅɪᴏ, ʏᴛᴠɪᴅᴇᴏ, 
-├・💫 ʏᴛꜱ
+├・💫 ʏᴛꜱ, ᴛɪᴋᴛᴏᴋ,
+├・💫 ᴛɪᴋᴛᴏᴋᴀᴜᴅɪᴏ, ᴛɪᴋᴛᴏᴋᴠɪᴅᴇᴏ,
+├・💫 ᴛɪᴄᴛᴏᴋᴅᴏᴄ, ʏᴛᴅᴏᴄ,
 ├
 ╰──────────────────╯
-╭────ꕥ Search ꕥ────╮
+╭─────ꕥ Search ꕥ─────╮
 ├
 ├・🔎 ᴀɴɪᴍᴇ, ɢɪꜰꜱᴇᴀʀᴄʜ, 
 ├・🔎 ɢɪᴍᴀɢᴇ, ᴘɪɴᴛᴇʀᴇꜱᴛ, 
@@ -94,7 +125,8 @@ Here's the list of my Commands.\n
 ├・🎗 ꜱᴛɪᴄᴋᴇʀ, ꜱᴛɪᴄᴋᴇʀᴄʀᴏᴘ, 
 ├・🎗 ꜱᴛᴇᴀʟ, ᴛᴏᴀᴜᴅɪᴏ, 
 ├・🎗 ᴛᴏᴍᴘ3, ᴛᴏᴍᴘ4, 
-├・🎗 ᴛᴏᴜʀʟ
+├・🎗 ᴛᴏᴜʀʟ, ꜱᴛɪᴄᴋᴇʀᴍᴇᴍᴇ,
+├・🎗 ᴛᴇxᴛᴅᴇꜱɪɢɴ
 ├
 ╰──────────────────╯
 ╭────ꕥ Image Edit ꕥ────╮
@@ -114,13 +146,12 @@ Here's the list of my Commands.\n
 ╰──────────────────╯
 ╭────ꕥ Essentials ꕥ────╮
 ├
-├・🧩 ᴇʟᴇᴍᴇɴᴛ, ɪɢᴜꜱᴇʀ, 
-├・🧩 ꜱᴄʀᴇᴇɴꜱʜᴏᴛ, ꜱᴀʏ, 
-├・🧩 ꜱᴀʏᴊᴀᴘᴀɴᴇꜱᴇ, ,ꜱᴀʏʙᴇɴɢᴀʟɪ, 
+├・🧩 ᴇʟᴇᴍᴇɴᴛ, ꜱᴄʀᴇᴇɴꜱʜᴏᴛ
+├・🧩 Qᴜᴇꜱᴛɪᴏɴ, ꜱᴀʏ, 
+├・🧩 ꜱᴀʏᴊᴀᴘᴀɴᴇꜱᴇ, ꜱᴀʏʙᴇɴɢᴀʟɪ, 
 ├・🧩 ꜱᴀʏʜɪɴᴅɪ, ᴜᴅɪᴄᴛɪᴏɴᴀʀʏ
-├・🧩 Qᴜᴇꜱᴛɪᴏɴ
 ├
-╰──────────────────╯
+╰───────────────────────╯
 ╭────ꕥ Weeb ꕥ────╮
 ├
 ├・ 🧧 ᴀɴɪᴍᴇQᴜᴏᴛᴇ, ᴄᴏꜱᴘʟᴀʏ, 
@@ -183,10 +214,10 @@ Here's the list of my Commands.\n
 ├・ 🔖 ᴛʀᴀɴꜱꜰᴇʀ, ᴡᴀʟʟᴇᴛ, 
 ├・ 🔖 ᴡɪᴛʜᴅʀᴀᴡ
 ├
-╰──────────────────╯\n\n`
-          
-if (NSFWstatus == "true"){
-textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
+╰──────────────────╯\n\n`;
+
+      if (NSFWstatus == "true") {
+        textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 ├
 ├・ 💦 ᴘᴜꜱꜱʏ, ꜱᴘʀᴇᴀᴅᴘᴜꜱꜱʏ,
 ├・ 💦 ɢᴇɴꜱʜɪɴ, ꜱQᴜɪʀᴛ,
@@ -241,38 +272,312 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 ├・ 💦 ᴛᴀᴛᴛᴏᴏ, ᴄʜᴀɪɴ,
 ├・ 💦 ꜰʟᴀᴛᴄʜᴇꜱᴛ 
 ├
-╰──────────────────╯\n\n`
-}
-          
-textHelpMenu +=`*🔰  ${botName}  🔰*
+╰──────────────────╯\n\n`;
+      }
+
+      textHelpMenu += `*🔰  ${botName}  🔰*
  _Powered By:_ *Team ATLAS*
 
 🎀 To use any of these commands type " *${prefix}Command name* ".
 
 🏮 To get Support Group link type " *${prefix}support* ".
 
-🧩 To report any issues to Developer type " *${prefix}report <describe issue>* ".\n`
+🧩 To report any issues to Developer type " *${prefix}report <describe issue>* ".\n`;
 
-let buttons = [
-    {
-      buttonId: `${prefix}repo`,
-      buttonText: { displayText: "Source Code" },
-      type: 1,
-    },
-    {
-      buttonId: `${prefix}owner`,
-      buttonText: { displayText: "Owner(s)" },
-      type: 1,
-    },
-  ];
-  let buttonMessage = {
-    video: botVideo, gifPlayback: true,
-    caption: textHelpMenu,
-    buttons: buttons,
-    headerType: 4,
-  };
+      let favSongs = [
+        "dandilions",
+        "night changes",
+        "heat waves",
+        "counting stars",
+        "just dance",
+        "intentions",
+        "Someone to you",
+        "Cristina perry Hero",
+        "Chainsmokers takeaway",
+        "Chainsmokers closer",
+        "play date",
+        "maroon5 memories",
+        "Ed Sheeran photograph",
+        "Rosa linn snap",
+        "until i make you mine",
+        "post malone sunflower",
+        "A thousand years",
+        "mary on a cross",
+        "eminem mockingbird",
+        "taking to the moon kina",
+        "calm down",
+        "the chainsmokers",
+        "see you again",
+        "maroon5 girls like you",
+        "passenger let her go",
+        "ed sheeran perfect",
+        "twenty one pilots stressed out",
+        "justin bieber love yourself",
+        "linkin park numb",
+        "dusk till dawn",
+        "coldplay paradise",
+        "one direction what makes you beautiful",
+        "charlie puth attention",
+        "eminem lose yourself",
+        "happier",
+        "post malone psycho",
+        "avicii waiting for love",
+        "happeir marshmello",
+        "taylor swift blank space",
+        "built a bitch",
+        "fat rat well meet again",
+        "see youe tears",
+        "gangstars paradise",
+        "nf hope",
+        "nf clouds",
+        "nf just like you",
+        "nf story",
+        "nf lost",
+        "nf trust",
+        "nf the search",
+        "nf leave me alone",
+        "nf when i grew up",
+        "nf no name",
+        "nf let you down",
+        "nf lie",
+        "eminem not afraid",
+        "Stay",
+        "Good 4 U",
+        "Kiss Me More",
+        "Levitating",
+        "Montero (Call Me By Your Name)",
+        "Leave The Door Open",
+        "Peaches",
+        "Industry Baby",
+        "Save Your Tears",
+        "drivers license",
+        "Blinding Lights",
+        "Positions",
+        "Don't Start Now",
+        "Watermelon Sugar",
+        "Therefore I Am",
+        "My Ex's Best Friend",
+        "Mood",
+        "Heat Waves",
+        "Fancy Like",
+        "Take My Breath",
+        "Bad Habits",
+        "You Right",
+        "Heartbreak Anniversary",
+        "deja vu",
+        "Shivers",
+        "Happier Than Ever",
+        "Need To Know",
+        "I Don't Wanna Talk (feat. Mariah the Scientist)",
+        "Cold Heart",
+        "Leave Before You Love Me",
+        "Rumors",
+        "Waves",
+        "Love Nwantiti (feat. Dj Abux & Soulking)",
+        "Famous Friends",
+        "Leave The Door Open",
+        "Gone",
+        "Better Days",
+        "Good Days",
+        "Love Story (Taylor's Version)",
+        "Proud Of You",
+        "Off The Grid",
+        "Rapstar",
+        "Yebba's Heartbreak",
+        "In The Bible",
+        "Take Me Home Tonight",
+        "Streets",
+        "I Need You To Hate Me",
+        "Blue Jeans",
+        "Sweet Dreams",
+        "Leave The Door Open",
+        "Fancy Like",
+        "Need To Know",
+        "Kiss Me More",
+        "Rapstar",
+        "Montero (Call Me By Your Name)",
+        "Good 4 U",
+        "Stay",
+        "Bad Habits",
+        "My Ex's Best Friend",
+        "Save Your Tears",
+        "Levitating",
+        "Heartbreak Anniversary",
+        "Peaches",
+        "Take My Breath",
+        "Deja Vu",
+        "Good Days",
+        "Industry Baby",
+        "Blinding Lights",
+        "Mood",
+        "Don't Go Yet",
+        "Astronaut In The Ocean",
+        "Therefore I Am",
+        "drivers license",
+        "Shivers",
+        "Leave Before You Love Me",
+        "Rumors",
+        "Better Days",
+        "Friday (feat. Mufasa & Hypeman)",
+        "Without You",
+        "The Business",
+        "Love Nwantiti (feat. Dj Abux & Soulking)",
+        "You Right",
+        "Proud Of You",
+        "All I Know So Far",
+        "Wild Side",
+        "Take Me Home Tonight",
+        "Breaking Up Was Easy In The 90s",
+        "I Wanna Dance With Somebody (Who Loves Me)",
+        "In The Bible",
+        "Leave The Door Open",
+        "Don't Start Now",
+        "Savage Love (Laxed - Siren Beat)",
+        "Golden",
+        "Rasputin",
+        "Waves",
+        "Blue Jeans",
+        "Dancing With The Devil",
+        "Happier Than Ever",
+        "Bad Guy",
+        "Stay",
+        "Good 4 U",
+        "Levitating",
+        "Kiss Me More",
+        "Montero (Call Me By Your Name)",
+        "Bad Habits",
+        "Peaches",
+        "Save Your Tears",
+        "Industry Baby",
+        "Deja Vu",
+        "Heartbreak Anniversary",
+        "My Ex's Best Friend",
+        "Fancy Like",
+        "Take My Breath",
+        "Mood",
+        "Don't Go Yet",
+        "Rapstar",
+        "Blinding Lights",
+        "Shivers",
+        "Leave Before You Love Me",
+        "Therefore I Am",
+        "Good Days",
+        "drivers license",
+        "You Right",
+        "Better Days",
+        "Leave The Door Open",
+        "All I Know So Far",
+        "Wild Side",
+        "The Business",
+        "Rumors",
+        "Astronaut In The Ocean",
+        "Breaking Up Was Easy In The 90s",
+        "Dancing With The Devil",
+        "Happier Than Ever",
+        "Without You",
+        "Love Nwantiti (feat. Dj Abux & Soulking)",
+        "Golden",
+        "Waves",
+        "In The Bible",
+        "I Wanna Dance With Somebody (Who Loves Me)",
+        "Rasputin",
+        "Take Me Home Tonight",
+        "Bad Guy",
+        "Dance Monkey",
+        "Watermelon Sugar",
+        "Don't Start Now",
+        "Savage Love (Laxed - Siren Beat)",
+        "I Don't Wanna Live Forever",
+        "Levitating (feat. DaBaby)",
+        "Good 4 U",
+        "Levitating",
+        "Kiss Me More",
+        "Montero (Call Me By Your Name)",
+        "Bad Habits",
+        "Peaches",
+        "Save Your Tears",
+        "Industry Baby",
+        "Deja Vu",
+        "Heartbreak Anniversary",
+        "My Ex's Best Friend",
+        "Fancy Like",
+        "Take My Breath",
+        "Mood",
+        "Don't Go Yet",
+        "Rapstar",
+        "Blinding Lights",
+        "Shivers",
+        "Leave Before You Love Me",
+        "Therefore I Am",
+        "Good Days",
+        "drivers license",
+        "You Right",
+        "Better Days",
+        "Leave The Door Open",
+        "All I Know So Far",
+        "Wild Side",
+        "The Business",
+        "Rumors",
+        "Astronaut In The Ocean",
+        "Breaking Up Was Easy In The 90s",
+        "Dancing With The Devil",
+        "Happier Than Ever",
+        "Without You",
+        "Love Nwantiti (feat. Dj Abux & Soulking)",
+        "Golden",
+        "Waves",
+        "In The Bible",
+        "I Wanna Dance With Somebody (Who Loves Me)",
+        "Rasputin",
+        "Take Me Home Tonight",
+        "Bad Guy",
+        "Dance Monkey",
+        "Watermelon Sugar",
+        "Don't Start Now",
+        "Savage Love (Laxed - Siren Beat)",
+        "I Don't Wanna Live Forever",
+        "Levitating (feat. DaBaby)",
+        "Shallow",
+        "Rolling in the Deep",
+        "Someone Like You",
+        "Hello",
+        "Someone You Loved",
+        "All of Me",
+        "Thinking Out Loud",
+        "Shape of You",
+        "The A Team",
+        "Photograph",
+      ];
 
-  await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
-}
-  }
-}
+      let selectedSong = favSongs[Math.floor(Math.random() * favSongs.length)];
+
+      let buttons = [
+        {
+          buttonId: `${prefix}owner`,
+          buttonText: { displayText: "🧣 Bot Owner 🧣" },
+          type: 1,
+        },
+        {
+          buttonId: `${prefix}repo`,
+          buttonText: { displayText: "🧩 Source Code 🧩" },
+          type: 1,
+        },
+        {
+          buttonId: `${prefix}play ${selectedSong}`,
+          buttonText: { displayText: `🔖 Song of the day 🔖` },
+          type: 1,
+        },
+      ];
+      let buttonMessage = {
+        video: { url: botVideo },
+        gifPlayback: true,
+        caption: textHelpMenu,
+        buttons: buttons,
+        footer: `*${botName}*`,
+        headerType: 4,
+      };
+
+      await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+    }
+  },
+};

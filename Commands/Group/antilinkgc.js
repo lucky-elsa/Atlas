@@ -1,9 +1,4 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
 const { mk } = require("../../Database/dataschema.js");
-
-
 
 module.exports = {
     name: "antilinkgc",
@@ -100,7 +95,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\n*「  Group Altilink configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n*「  Group Antilink configuration  」*\n\nPlease click the button below\n*On / Off*\n\nNote: This will *delete* all links from groups and *remove* someone if they send any other *WhatsApp Group's Link*.`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,

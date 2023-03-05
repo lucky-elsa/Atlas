@@ -10,11 +10,14 @@ module.exports = {
   start: async (
     Miku,
     m,
-    { text, prefix, mentionByTag, pushName, isCreator, owner,modStatus }
+    { text, prefix, mentionByTag, pushName, isCreator, owner, modStatus }
   ) => {
-
-      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
-    //var TaggedUser = mentionByTag[0];
+    if (modStatus == "false" && !isCreator)
+      return Miku.sendMessage(
+        m.from,
+        { text: "Sorry, only my *Owner* and *Mods* can use this command !" },
+        { quoted: m }
+      );
 
     if (!text && !m.quoted) {
       return Miku.sendMessage(
@@ -27,7 +30,6 @@ module.exports = {
     } else {
       var mentionedUser = mentionByTag[0];
     }
-    //var mentionedUser = mentionByTag;
     let userId = (await mentionedUser) || m.msg.contextInfo.participant;
     try {
       var ownerlist = global.owner;
@@ -35,15 +37,12 @@ module.exports = {
         .findOne({ id: userId })
         .then(async (user) => {
           if (!user) {
-            await mku.create({id:userId, addedMods: false});
+            await mku.create({ id: userId, addedMods: false });
             return m.reply("User is not a *Mod* !");
-            /*Miku.sendMessage( 
-              m.from, 
-              { text: `@${mentionedUser.split("@")[0]} has been removed from *Mods* Successfully !`, mentions: [mentionedUser] }, 
-              { quoted: m } 
-            );*/
-          }
-          else if (user.addedMods=="false" && !ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
+          } else if (
+            user.addedMods == "false" &&
+            !ownerlist.includes(`${mentionedUser.split("@")[0]}`)
+          ) {
             return Miku.sendMessage(
               m.from,
               {
@@ -52,30 +51,36 @@ module.exports = {
               },
               { quoted: m }
             );
-          }
-          else if (ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
+          } else if (ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
             return Miku.sendMessage(
               m.from,
               {
-                text: `@${mentionedUser.split("@")[0]
-                  } is an *Owner* and cannot be removed from mod !`,
+                text: `@${
+                  mentionedUser.split("@")[0]
+                } is an *Owner* and cannot be removed from mod !`,
                 mentions: [mentionedUser],
               },
               { quoted: m }
             );
           } else {
-            await mku.findOneAndUpdate({ id: userId }, { addedMods: false }, { new: true }).then((user) => {
-
-              Miku.sendMessage(
-                m.from,
-                {
-                  text: `@${mentionedUser.split("@")[0]
+            await mku
+              .findOneAndUpdate(
+                { id: userId },
+                { addedMods: false },
+                { new: true }
+              )
+              .then((user) => {
+                Miku.sendMessage(
+                  m.from,
+                  {
+                    text: `@${
+                      mentionedUser.split("@")[0]
                     } has been removed from *Mods* Successfully !`,
-                  mentions: [mentionedUser],
-                },
-                { quoted: m }
-              );
-            })
+                    mentions: [mentionedUser],
+                  },
+                  { quoted: m }
+                );
+              });
           }
         })
         .catch((error) => {

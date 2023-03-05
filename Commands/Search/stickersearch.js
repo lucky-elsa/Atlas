@@ -1,9 +1,5 @@
 const axios = require("axios");
-const {
-  Sticker,
-  createSticker,
-  StickerTypes,
-} = require("wa-sticker-formatter");
+const { Sticker, StickerTypes } = require("wa-sticker-formatter");
 
 module.exports = {
   name: "stickersearch",
@@ -31,17 +27,17 @@ module.exports = {
       responseType: "arraybuffer",
     });
     const buffer = Buffer.from(response.data, "utf-8");
-  
-      let stickerMess = new Sticker(buffer, {
-        pack: packname,
-        author: pushName,
-        type: StickerTypes.FULL,
-        categories: ['🤩', '🎉'],
-        id: '12345',
-        quality: 60,
-        background: 'transparent'
+
+    let stickerMess = new Sticker(buffer, {
+      pack: packname,
+      author: pushName,
+      type: StickerTypes.FULL,
+      categories: ["🤩", "🎉"],
+      id: "12345",
+      quality: 60,
+      background: "transparent",
     });
-    const stickerBuffer2 = await stickerMess.toBuffer()
-    Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
+    const stickerBuffer2 = await stickerMess.toBuffer();
+    Miku.sendMessage(m.from, { sticker: stickerBuffer2 }, { quoted: m });
   },
 };

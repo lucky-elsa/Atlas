@@ -1,6 +1,3 @@
-require("../../config.js");
-require("../../Core.js");
-
 module.exports = {
   name: "tagall",
   alias: ["tag", "all"],
@@ -14,9 +11,17 @@ module.exports = {
     { text, prefix, isBotAdmin, isAdmin, participants, args }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: `Only *Admins* can use this command.` }, { quoted: m });
+      return Miku.sendMessage(
+        m.from,
+        { text: `Only *Admins* can use this command.` },
+        { quoted: m }
+      );
 
-    let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
+    let message = args
+      ? args.join(" ")
+      : m.quoted
+      ? m.quoted.msg
+      : "No Message";
 
     let mess = `               *『 Attention Here 』*
     
@@ -29,7 +34,10 @@ module.exports = {
     }
     mess += `\n\n                    *Thank You*\n`;
 
-    await Miku.sendMessage(m.from, { text: mess,mentions: participants.map(a => a.id) }, { quoted: m });
+    await Miku.sendMessage(
+      m.from,
+      { text: mess, mentions: participants.map((a) => a.id) },
+      { quoted: m }
+    );
   },
 };
-

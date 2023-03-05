@@ -35,7 +35,7 @@ module.exports = {
         (res) =>
           Miku.sendMessage(
             m.from,
-            { text: `User has been *Removed* Successfully by *${pushName}*` },
+            { text: `@${mentionedUser.split("@")[0]} has been *Removed* Successfully by *${pushName}*` },
             { quoted: m }
           )
       );

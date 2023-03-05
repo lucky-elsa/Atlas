@@ -1,5 +1,3 @@
-const YT = require("../../lib/ytdl-core.js");
-const fs = require("fs");
 const yts = require("youtube-yts");
 
 module.exports = {
@@ -22,19 +20,24 @@ module.exports = {
     let buttons = [
       {
         buttonId: `${prefix}ytad ${song.url}`,
-        buttonText: { displayText: "♫ Audio" },
+        buttonText: { displayText: "♬ Audio" },
         type: 1,
       },
       {
         buttonId: `${prefix}ytvd ${song.url}`,
-        buttonText: { displayText: "► Video" },
+        buttonText: { displayText: "▶ Video" },
+        type: 1,
+      },
+      {
+        buttonId: `${prefix}ytdoc ${song.url}`,
+        buttonText: { displayText: "∎ Document" },
         type: 1,
       },
     ];
     let buttonMessage = {
       image: { url: song.thumbnail },
       caption: `
-           *『  ${botName} Media Player  』*
+           *『 Youtube Audio Player 』*
 
 
 *Song name :* _${song.title}_
@@ -45,7 +48,7 @@ module.exports = {
 
 *Channel :* _${song.author.name}_
 
-*Url :* _${song.url}_\n`,
+*Url :* _${song.url}_\n\n`,
       footer: `*${botName}*`,
       buttons: buttons,
       headerType: 4,

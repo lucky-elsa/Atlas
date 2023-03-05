@@ -1,9 +1,4 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
 const { mk } = require("../../Database/dataschema.js");
-
-
 
 module.exports = {
     name: "nsfw",
@@ -48,20 +43,20 @@ module.exports = {
           );
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *Activated* in this group!` },
+            { text: `*NSFW* has been *Activated* in this group! \n\nType *${prefix}nsfwmenu* To get full NSFW commands list.` },
             { quoted: m }
           );
         } else {
           if (checkdata.switchNSFW == "true")
             return Miku.sendMessage(
                 m.from,
-                { text: `*NSFW* is already *Activated* in this group !` },
+                { text: `*NSFW* is already *Activated* in this group!\n\nType *${prefix}nsfwmenu* To get full NSFW commands list.` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { switchNSFW: "true" });
           return Miku.sendMessage(
             m.from,
-            { text: `*NSFW* has been *Activated* in this group!` },
+            { text: `*NSFW* has been *Activated* in this group!\n\nType *${prefix}nsfwmenu* To get full NSFW commands list.` },
             { quoted: m }
           );
         }
@@ -101,7 +96,7 @@ module.exports = {
         ];
         let bmffg = {
           image: {url : botImage5} ,
-          caption: `\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n*「 NSFW Configuration 」*\n\nPlease click the button below\n\nNote: This command will enable all adult(NSFW) commands in this group.\n`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,

@@ -1,7 +1,3 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
-const { mku, mk } = require("../../Database/dataschema.js");
 const fs = require("fs");
 const config = require('../../config');
 const eco = require('discord-mongoose-economy')
@@ -17,7 +13,7 @@ module.exports = {
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix,args} 
     ) => {
         if(!text)  {
             return Miku.sendMessage( 
@@ -26,13 +22,10 @@ module.exports = {
                 { quoted: m } 
             );
         }
-        let d = parseInt(text)
-        const pushname = m.pushName //|| 'NO name'
-        const texts = text.trim();
-		const user = m.sender;
-		const cara = 'cara'
-    const deposit = await eco.deposit(m.sender, "cara", texts);
-    const balance = await eco.balance(m.sender, "cara")
+        const user = m.sender
+        const cara = 'cara'
+        const num = parseInt(args[0]);
+      const deposit = await eco.deposit(user, cara, num);
         if(deposit.noten) return m.reply('You can\'t deposit what you don\'t have.');
         let buttons = [
             {

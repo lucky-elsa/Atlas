@@ -50,8 +50,6 @@ const {
 
 const fs = require("fs");
 const chalk = require("chalk");
-const Jimp = require('jimp');
-const yargs = require("yargs");
 const path = require("path");
 const figlet = require('figlet');
 const FileType = require('file-type');
@@ -60,14 +58,7 @@ const { join } = require("path");
 const {
     Boom
 } = require("@hapi/boom");
-const CFonts = require('cfonts');
-const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
-const {
-    exec,
-    spawn,
-    execSync
-} = require("child_process");
 const store = makeInMemoryStore({
     logger: pino().child({
         level: 'silent',
@@ -108,10 +99,6 @@ const {
 Commands.prefix = prefa
 const mongoose = require("mongoose");
 const Auth = require('./Processes/Auth');
-const {
-    clear
-} = require("console");
-
 
 const readCommands = () => {
     let dir = path.join(__dirname, "./Commands")
@@ -123,7 +110,6 @@ const readCommands = () => {
             Commands.category = dirs.filter(v => v !== "_").map(v => v)
             cmdlist[groups] = []
             let files = fs.readdirSync(`${dir}/${res}`).filter((file) => file.endsWith(".js"))
-            //console.log(files)
             for (const file of files) {
                 const command = require(`${dir}/${res}/${file}`)
                 cmdlist[groups].push(command)

@@ -1,5 +1,5 @@
-require("../Core.js");
 const { mk } = require("../Database/dataschema.js");
+require("../Core.js");
 
 module.exports = async (Miku, anu) => {
   try {

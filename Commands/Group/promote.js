@@ -17,7 +17,6 @@ module.exports = {
         { quoted: m }
       );
     }
-  //
     if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
@@ -49,7 +48,7 @@ module.exports = {
             {
               text: `Congratulations @${
                 mentionedUser.split("@")[0]
-              } Senpai 🥳, you have been *Promoted* Successfully !`,
+              } Senpai 🥳, you have been *Promoted* Successfully by *${pushName}* !`,
               mentions: [mentionedUser],
             },
             { quoted: m }

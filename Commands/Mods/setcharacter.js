@@ -1,9 +1,4 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
-const { mku, mkchar } = require("../../Database/dataschema.js");
-
-
+const { mkchar } = require("../../Database/dataschema.js");
 
 module.exports = { 
 
@@ -209,9 +204,9 @@ module.exports = {
             }).catch(error => {
                 return m.reply(`An error occurred while updating the character number.`)
             })}
-        /*else {
+        else {
             return m.reply(`Character number ${charNum} is not added.\n\ntype *${prefix}charlist* to see the list of added characters.`);
-        }*/
+        }
     })    
 
     }

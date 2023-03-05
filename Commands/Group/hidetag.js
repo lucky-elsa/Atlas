@@ -1,6 +1,3 @@
-require("../../config.js");
-require("../../Core.js");
-
 module.exports = {
   name: "hidetag",
   alias: ["htag", "ping"],

@@ -1,7 +1,3 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
-const { mku, mk } = require("../../Database/dataschema.js");
 const fs = require("fs");
 require("../../Database/dataschema.js");
 const config = require('../../config');

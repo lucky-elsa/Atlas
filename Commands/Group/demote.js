@@ -1,6 +1,3 @@
-require("../../config.js");
-require("../../Core.js");
-
 module.exports = {
   name: "demote",
   alias: ["dem"],
@@ -11,8 +8,8 @@ module.exports = {
   start: async (
     Miku,
     m,
-    { text, prefix, isBotAdmin, isAdmin, mentionByTag,pushName,groupAdmin}
-  ) =>{
+    { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, groupAdmin }
+  ) => {
     if (!isAdmin) {
       return Miku.sendMessage(
         m.from,
@@ -20,11 +17,11 @@ module.exports = {
         { quoted: m }
       );
     }
-  //
+
     if (!text && !m.quoted) {
       return Miku.sendMessage(
         m.from,
-        { text: `Please tag a user to *Demote*!` },
+        { text: `Please tag an user to *Demote*!` },
         { quoted: m }
       );
     } else if (m.quoted) {
@@ -34,12 +31,13 @@ module.exports = {
     }
 
     let userId = (await mentionedUser) || m.msg.contextInfo.participant;
-    if(!groupAdmin.includes(userId)){
+    if (!groupAdmin.includes(userId)) {
       return Miku.sendMessage(
         m.from,
-        { text: `@${
-          mentionedUser.split("@")[0]
-        } Senpai is not an *Admin* !`,mentions: [mentionedUser], },
+        {
+          text: `@${mentionedUser.split("@")[0]} Senpai is not an *Admin* !`,
+          mentions: [mentionedUser],
+        },
         { quoted: m }
       );
     }
@@ -52,19 +50,14 @@ module.exports = {
             {
               text: `Sorry @${
                 mentionedUser.split("@")[0]
-              } Senpai, you have been *Demoted* by an *Admin* !`,
+              } Senpai, you have been *Demoted* by *${pushName}* !`,
               mentions: [mentionedUser],
             },
             { quoted: m }
           )
       );
     } catch (error) {
-       Miku.sendMessage(
-        m.from,
-        { text: `${mess.botadmin}` },
-        { quoted: m }
-      ); 
+      Miku.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
     }
-    
   },
 };

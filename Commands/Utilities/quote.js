@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter')
+const { Sticker, StickerTypes } = require('wa-sticker-formatter')
 const fs = require("fs");
 
 module.exports = {

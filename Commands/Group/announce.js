@@ -1,6 +1,3 @@
-require("../../config.js");
-require("../../Core.js");
-
 module.exports = {
   name: "announce",
   alias: ["anounce", "announ"],
@@ -11,28 +8,22 @@ module.exports = {
   start: async (
     Miku,
     m,
-    { text, prefix, isAdmin, participants, args,buttonId }
+    { text, prefix, isAdmin, participants, args, buttonId }
   ) => {
+    var message = "*『 Attention Here 』*";
 
-      var message = "*『 Attention Here 』*";
-
-    if(m.quoted){
-        message = "*『 Attention Here 』*";
-      }
-    else if (!text && m.quoted) {
-      message = `${m.quoted ? m.quoted.msg : ''}`;
-    }
-    if(m.buttonId){
-      message = m.buttonId;
-    }
-    else if(args[0]){
-      message = args.join(' ');
-    }
-    else if(text ===''){
+    if (m.quoted) {
       message = "*『 Attention Here 』*";
+    } else if (!text && m.quoted) {
+      message = `${m.quoted ? m.quoted.msg : ""}`;
     }
-   
-    else{
+    if (m.buttonId) {
+      message = m.buttonId;
+    } else if (args[0]) {
+      message = args.join(" ");
+    } else if (text === "") {
+      message = "*『 Attention Here 』*";
+    } else {
       message = "*『 Attention Here 』*";
     }
     await Miku.sendMessage(

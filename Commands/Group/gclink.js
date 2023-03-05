@@ -8,11 +8,7 @@ module.exports = {
   category: "Group",
   usage: "gclink",
   react: "🍁",
-  start: async (
-    Miku,
-    m,
-    { prefix, isBotAdmin, isAdmin, metadata,mime }
-  ) => {
+  start: async (Miku, m, { prefix, isBotAdmin, isAdmin, metadata, mime }) => {
     if (!isAdmin)
       return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 

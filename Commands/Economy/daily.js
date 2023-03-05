@@ -1,7 +1,3 @@
-const mongoose = require("mongoose");
-require("../../config.js");
-require("../../Core.js");
-const { mku, mk } = require("../../Database/dataschema.js");
 const fs = require("fs");
 require("../../Database/dataschema.js");
 const config = require('../../config');
@@ -20,7 +16,7 @@ module.exports = {
     start: async ( 
         Miku, 
       m, 
-      { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
+      { text, prefix} 
     ) => {
          if (!m.isGroup) return Miku.sendMessage(m.from, { text: '*Group command ' }, { quoted: m });
          let user = m.sender 

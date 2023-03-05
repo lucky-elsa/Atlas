@@ -1,15 +1,15 @@
-const axios = require('axios');
+const axios = require("axios");
 
 module.exports = {
-    name: "waifu",
-    alias: ["swaifu","wify"],
-    desc: "Get anime girls picture.",
-    react: "🥵",
-    category: "Weeb",
-    start: async(Miku, m,{pushName,prefix}) => {
-        let waifus = await axios.get('https://api.waifu.pics/sfw/waifu');  
+  name: "waifu",
+  alias: ["swaifu", "wify"],
+  desc: "Get anime girls picture.",
+  react: "🥵",
+  category: "Weeb",
+  start: async (Miku, m, { pushName, prefix }) => {
+    let waifus = await axios.get("https://api.waifu.pics/sfw/waifu");
 
-var Button = [
+    var Button = [
       {
         buttonId: `${prefix}waifu`,
         buttonText: { displayText: `>>` },
@@ -17,7 +17,7 @@ var Button = [
       },
     ];
     let waf = {
-      image: {url:waifus.data.url},
+      image: { url: waifus.data.url },
       caption: `Here I am senpai!!😜`,
       footer: `*${botName}*`,
       buttons: Button,
@@ -26,5 +26,5 @@ var Button = [
     await Miku.sendMessage(m.from, waf, { quoted: m }).catch((err) => {
       return "Error!";
     });
-}, 
+  },
 };
