@@ -41,8 +41,10 @@
 <a href="https://github.com/FantoX001"><img title="Open Source" src="https://img.shields.io/badge/Open%20Source-YES-purple.svg?style=for-the-badge"></a>
 <a href="https://github.com/FantoX001"><img title="" src="https://img.shields.io/badge/Maintained-Of Course-green.svg?style=for-the-badge"></a>
 </p>
+<br>
 
 ---
+ <br>
  
 <h4 align="center"> Deploy on Repl.it - ( YouTube Tutorial Included & Highly Recommended )
 </h4>
