@@ -212,7 +212,7 @@ https://youtu.be/R-_DU73UH8Q
 ---
 <br>
 
-<h2 align="center">🧩 UserLand Deployment Method ( Not Recommented! Use Repl.it insted! ) 🧩
+<h2 align="center">🧩 UserLand Deployment Method ( Not Recommented!) 🧩
 </h2>
 
 #### ⚜️ Download `UserLand` application old version ( 3.1.2 ) from [Here](https://m.apkpure.com/userland-linux-on-android/tech.ula/variant/3.1.2-APK).
