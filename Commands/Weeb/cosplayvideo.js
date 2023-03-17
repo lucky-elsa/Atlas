@@ -8,7 +8,7 @@ module.exports = {
   usage: `cosplayamv`,
   react: "😉",
   start: async (Miku, m, { prefix }) => {
-    var VID = await getBuffer(`https://cosplay-video-api.onrender.com`);
+    var VID = await getBuffer(`https://nekopai-cosplayvideo-api.onrender.com/`);
     var Button = [
       {
         buttonId: `${prefix}cv`,
